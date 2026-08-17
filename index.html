@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FF14 Mitigation Planner</title>
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <button id="hamburger-btn" class="icon-btn" aria-label="開啟設定">☰</button>
+      <button id="import-csv-btn">匯入 CSV</button>
+      <input id="csv-file-input" type="file" accept=".csv" hidden />
+      <a id="csv-template-link" class="topbar-link" href="duty-timeline-template.csv" download>下載 CSV 範本</a>
+      <button id="reset-btn">重設</button>
+      <button id="export-sessions-btn">匯出全部場次</button>
+      <button id="import-sessions-btn">匯入場次</button>
+      <input id="import-sessions-file-input" type="file" accept=".json" hidden />
+      <input id="plan-name-input" class="plan-name-input" type="text" placeholder="排軸名稱" />
+    </header>
+
+    <div class="infobar">
+      <span id="level-badge">Lv.70</span>
+      <span id="jobs-badge">0 個職業</span>
+      <span class="legend">
+        <span class="legend-item"><i class="legend-swatch group-mitigation"></i>減傷</span>
+        <span class="legend-item"><i class="legend-swatch group-barrier"></i>護盾</span>
+        <span class="legend-item"><i class="legend-swatch group-healing"></i>治療</span>
+        <span class="legend-item"><i class="legend-swatch group-other"></i>其他</span>
+      </span>
+      <span class="hint">
+        點擊技能格排入技能，✓ 表示已排入、🔒 表示 CD 中（藍綠底＝效果仍持續中、灰底＝純等 CD）
+      </span>
+    </div>
+
+    <div class="layout">
+      <aside id="settings-drawer" class="settings-drawer">
+        <h2>設定</h2>
+        <fieldset>
+          <legend>場次</legend>
+          <select id="session-select"></select>
+          <div class="session-actions">
+            <button id="new-session-btn" type="button">新增場次</button>
+            <button id="delete-session-btn" type="button">刪除此場次</button>
+          </div>
+        </fieldset>
+        <label>
+          名稱
+          <input id="settings-name-input" type="text" />
+        </label>
+        <label>
+          副本
+          <input id="settings-duty-input" type="text" />
+        </label>
+        <label>
+          等級
+          <select id="settings-level-select">
+            <option value="50">50</option>
+            <option value="60">60</option>
+            <option value="70">70</option>
+            <option value="80">80</option>
+            <option value="90">90</option>
+            <option value="100">100</option>
+          </select>
+        </label>
+        <fieldset>
+          <legend>顯示分類</legend>
+          <div id="group-checkboxes"></div>
+        </fieldset>
+        <fieldset>
+          <legend>隊伍職業</legend>
+          <div id="job-checkboxes"></div>
+        </fieldset>
+        <button id="close-drawer-btn">關閉</button>
+      </aside>
+      <div id="drawer-overlay" class="drawer-overlay"></div>
+
+      <main class="table-wrap">
+        <div id="planner-table-container"></div>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+[
+  {
+    "id": "skill_56bb0b0951",
+    "job": "GNB",
+    "sourceRole": "ガンブレイカー",
+    "name": {
+      "ja": "ハート・オブ・ストーン",
+      "en": "Heart of Stone",
+      "de": "Steinernes Herz",
+      "fr": "Cœur de pierre",
+      "ko": "돌의 심장",
+      "zhCN": "石之心"
+    },
+    "level": 68,
+    "iconUrl": "https://xivapi.com/i/003000/003425.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 25,
+    "effects": {
+      "duration": 7,
+      "mitigation": {
+        "duration": 7,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85
+      }
+    }
+  },
+  {
+    "id": "skill_b7186eaafc",
+    "job": "GNB",
+    "sourceRole": "ガンブレイカー",
+    "name": {
+      "ja": "ハート・オブ・ライト",
+      "en": "Heart of Light",
+      "de": "Wackeres Herz",
+      "fr": "Cœur de Lumière",
+      "ko": "빛의 심장",
+      "zhCN": "光之心"
+    },
+    "level": 64,
+    "iconUrl": "https://xivapi.com/i/003000/003424.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.95,
+        "unique": 1
+      }
+    }
+  },
+  {
+    "id": "skill_305d1eba76",
+    "job": "GNB",
+    "sourceRole": "ガンブレイカー",
+    "name": {
+      "ja": "ボーライド",
+      "en": "Superbolide",
+      "de": "Meteoritenfall",
+      "fr": "Bolide",
+      "ko": "폭발 유성",
+      "zhCN": "超火流星"
+    },
+    "level": 50,
+    "iconUrl": "https://xivapi.com/i/003000/003416.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 360,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0,
+        "physical": 0,
+        "unique": 0
+      }
+    }
+  },
+  {
+    "id": "skill_1a12b50c71",
+    "job": "GNB",
+    "sourceRole": "ガンブレイカー",
+    "name": {
+      "ja": "オーロラ",
+      "en": "Aurora",
+      "de": "Aurora",
+      "fr": "Aurore",
+      "ko": "오로라",
+      "zhCN": "極光"
+    },
+    "level": 45,
+    "iconUrl": "https://xivapi.com/i/003000/003415.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 18,
+      "healing": {
+        "hot": {
+          "duration": 18,
+          "amount": 300
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_3cb65d3a04",
+    "job": "GNB",
+    "sourceRole": "ガンブレイカー",
+    "name": {
+      "ja": "ネビュラ",
+      "en": "Nebula",
+      "de": "Nebula",
+      "fr": "Nébuleuse",
+      "ko": "성운",
+      "zhCN": "星雲"
+    },
+    "level": 38,
+    "iconUrl": "https://xivapi.com/i/003000/003412.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.7,
+        "physical": 0.7,
+        "unique": 0.7
+      }
+    }
+  },
+  {
+    "id": "skill_bf0edd16a8",
+    "job": "GNB",
+    "sourceRole": "ガンブレイカー",
+    "name": {
+      "ja": "カモフラージュ",
+      "en": "Camouflage",
+      "de": "Camouflage",
+      "fr": "Camouflage",
+      "ko": "위장술",
+      "zhCN": "偽裝"
+    },
+    "level": 6,
+    "iconUrl": "https://xivapi.com/i/003000/003404.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 20,
+      "mitigation": {
+        "duration": 20,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9,
+        "parry": 0.5
+      }
+    }
+  },
+  {
+    "id": "skill_3a9a91ee59",
+    "job": "GNB",
+    "sourceRole": "ガンブレイカー",
+    "name": {
+      "ja": "グレートネビュラ",
+      "en": "Great Nebula",
+      "de": "Große Nebula",
+      "fr": "Grande nébuleuse",
+      "ko": "대성운",
+      "zhCN": "大星雲"
+    },
+    "level": 92,
+    "iconUrl": "https://xivapi.com/i/003000/003435.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.6,
+        "physical": 0.6,
+        "unique": 0.6
+      },
+      "healing": {
+        "healRatio": 0.2
+      },
+      "hpBuff": {
+        "duration": 15,
+        "multiplier": 1.2
+      }
+    }
+  },
+  {
+    "id": "skill_a5aa0a98c1",
+    "job": "GNB",
+    "sourceRole": "ガンブレイカー",
+    "name": {
+      "ja": "オーロラ",
+      "en": "Aurora",
+      "de": "Aurora",
+      "fr": "Aurore",
+      "ko": "오로라",
+      "zhCN": "極光"
+    },
+    "level": 84,
+    "iconUrl": "https://xivapi.com/i/003000/003415.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 2,
+    "cooldown": 60,
+    "effects": {
+      "duration": 18,
+      "healing": {
+        "hot": {
+          "duration": 18,
+          "amount": 300
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_7c27b4b8ac",
+    "job": "GNB",
+    "sourceRole": "ガンブレイカー",
+    "name": {
+      "ja": "ハート・オブ・コランダム",
+      "en": "Heart of Corundum",
+      "de": "Herz des Korunds",
+      "fr": "Cœur de corindon",
+      "ko": "강옥의 심장",
+      "zhCN": "剛玉之心"
+    },
+    "level": 82,
+    "iconUrl": "https://xivapi.com/i/003000/003430.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 25,
+    "effects": {
+      "duration": 8,
+      "mitigation": {
+        "duration": 8,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85
+      },
+      "criticalMitigation": {
+        "duration": 4,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85
+      }
+    }
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "skill_6519ea8000",
+    "job": "BRD",
+    "sourceRole": "吟遊詩人",
+    "name": {
+      "ja": "地神のミンネ",
+      "en": "Nature's Minne",
+      "de": "Nophicas Minne",
+      "fr": "Minne de la nature",
+      "ko": "Nature's Minne",
+      "zhCN": "大地神的抒情戀歌"
+    },
+    "level": 66,
+    "iconUrl": "https://xivapi.com/i/002000/002615.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "target": "RANGE_AFFECTED_ALL",
+        "duration": 15,
+        "timesHealBuffed": 1.15
+      }
+    }
+  },
+  {
+    "id": "skill_de6322a6a8",
+    "job": "BRD",
+    "sourceRole": "吟遊詩人",
+    "name": {
+      "ja": "トルバドゥール",
+      "en": "Troubadour",
+      "de": "Troubadour",
+      "fr": "Troubadour",
+      "ko": "방랑하는 음악가",
+      "zhCN": "行吟"
+    },
+    "level": 62,
+    "iconUrl": "https://xivapi.com/i/002000/002612.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_ba166a5fc4",
+    "job": "BRD",
+    "sourceRole": "吟遊詩人",
+    "name": {
+      "ja": "トルバドゥール",
+      "en": "Troubadour",
+      "de": "Troubadour",
+      "fr": "Troubadour",
+      "ko": "방랑하는 음악가",
+      "zhCN": "行吟"
+    },
+    "level": 98,
+    "iconUrl": "https://xivapi.com/i/002000/002612.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85
+      }
+    }
+  },
+  {
+    "id": "skill_b2d8aa2626",
+    "job": "BRD",
+    "sourceRole": "吟遊詩人",
+    "name": {
+      "ja": "トルバドゥール",
+      "en": "Troubadour",
+      "de": "Troubadour",
+      "fr": "Troubadour",
+      "ko": "방랑하는 음악가",
+      "zhCN": "行吟"
+    },
+    "level": 88,
+    "iconUrl": "https://xivapi.com/i/002000/002612.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  }
+]

@@ -1,0 +1,2 @@
+1. 學者能量吸收已經更新再 ff14_mitigation_skills_normalized
+2. ff14_mitigation_skills_normalized 檔案幫我依職業拆分，標題 skill_SCH，讀取的時候可以透過迴圈的方式把資料讀進去，避免未來新職業，用可動態讀黨的方法讀取

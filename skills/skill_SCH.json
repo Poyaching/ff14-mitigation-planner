@@ -1,0 +1,869 @@
+[
+  {
+    "id": "skill_413e4658",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "エナジードレイン",
+      "en": "Energy Drain",
+      "de": "",
+      "fr": "",
+      "ko": "",
+      "zhCN": "能量吸收"
+    },
+    "level": 10,
+    "iconUrl": "https://xivapi.com/i/000000/000514.png",
+    "ability": true,
+    "assign": "SINGLE_ENEMY",
+    "charges": 1,
+    "cooldown": 1
+  },
+  {
+    "id": "skill_413e319983",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "サモン・セラフィム",
+      "en": "Summon Seraph",
+      "de": "Seraph-Beschwörung",
+      "fr": "Invocation Séraphin",
+      "ko": "세라핌 소환",
+      "zhCN": "熾天召喚"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/002000/002850.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 22,
+      "mitigation": {
+        "duration": 22
+      }
+    }
+  },
+  {
+    "id": "skill_bf6f470416",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "コンソレイション",
+      "en": "Consolation",
+      "de": "Seelentrost",
+      "fr": "Dictame",
+      "ko": "위안",
+      "zhCN": "慰藉"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/002000/002851.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 30,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 162.5
+      },
+      "barrier": {
+        "effect": {
+          "amount": 162.5
+        }
+      }
+    },
+    "availability": {
+      "duration": 22,
+      "skill": "サモン・セラフィム"
+    }
+  },
+  {
+    "id": "skill_21d5d38ff1",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "野戦治療の陣",
+      "en": "Sacred Soil",
+      "de": "Geweihte Erde",
+      "fr": "Dogme de survie",
+      "ko": "야전치유진",
+      "zhCN": "野戰治療陣"
+    },
+    "level": 78,
+    "iconUrl": "https://xivapi.com/i/002000/002804.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 30,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "healing": {
+        "hot": {
+          "duration": 15,
+          "amount": 100
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_1957e272af",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "フェイブレッシング",
+      "en": "Fey Blessing",
+      "de": "Gunst der Feen",
+      "fr": "Bénédiction féérique",
+      "ko": "요정의 축복",
+      "zhCN": "異想的祥光"
+    },
+    "level": 76,
+    "iconUrl": "https://xivapi.com/i/002000/002854.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 208
+      }
+    }
+  },
+  {
+    "id": "skill_faebd2a493",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "秘策",
+      "en": "Recitation",
+      "de": "Raffinesse",
+      "fr": "Récitation",
+      "ko": "비책",
+      "zhCN": "秘策"
+    },
+    "level": 74,
+    "iconUrl": "https://xivapi.com/i/002000/002822.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15
+    }
+  },
+  {
+    "id": "skill_a67e46c195",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "フェイユニオン",
+      "en": "Fey Union",
+      "de": "Feenbund",
+      "fr": "Union féerique",
+      "ko": "요정의 결합",
+      "zhCN": "異想的融光"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/002000/002818.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 3,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "hot": {
+          "amount": 260
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_74ebd13203",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "深謀遠慮の策",
+      "en": "Excogitation",
+      "de": "Weise Voraussicht",
+      "fr": "Traité de l'excogitation",
+      "ko": "심모원려책",
+      "zhCN": "深謀遠慮之策"
+    },
+    "level": 62,
+    "iconUrl": "https://xivapi.com/i/002000/002813.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 45,
+    "effects": {
+      "duration": 45,
+      "mitigation": {
+        "duration": 45
+      },
+      "healing": {
+        "heal": 800
+      }
+    }
+  },
+  {
+    "id": "skill_c9d5ced1cc",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "転化",
+      "en": "Dissipation",
+      "de": "Dissipation",
+      "fr": "Dissipation",
+      "ko": "에테르 전환",
+      "zhCN": "轉化"
+    },
+    "level": 60,
+    "iconUrl": "https://xivapi.com/i/002000/002810.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "target": "SELF_EFFECTED_GCD",
+        "duration": 30,
+        "timesHealBuffed": 1.2
+      }
+    }
+  },
+  {
+    "id": "skill_5cf6f15188",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "展開戦術",
+      "en": "Deployment Tactics",
+      "de": "Dislokation",
+      "fr": "Stratagème du déploiement",
+      "ko": "전개전술",
+      "zhCN": "展開戰術"
+    },
+    "level": 56,
+    "iconUrl": "https://xivapi.com/i/002000/002808.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0
+    }
+  },
+  {
+    "id": "skill_89c5530d6a",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "不撓不屈の策",
+      "en": "Indomitability",
+      "de": "Unbezwingbarkeit",
+      "fr": "Traité de la persévérance",
+      "ko": "불요불굴책",
+      "zhCN": "不屈不撓之策"
+    },
+    "level": 52,
+    "iconUrl": "https://xivapi.com/i/002000/002806.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 30,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    }
+  },
+  {
+    "id": "skill_3e3bd57b5e",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "野戦治療の陣",
+      "en": "Sacred Soil",
+      "de": "Geweihte Erde",
+      "fr": "Dogme de survie",
+      "ko": "야전치유진",
+      "zhCN": "野戰治療陣"
+    },
+    "level": 50,
+    "iconUrl": "https://xivapi.com/i/002000/002804.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 30,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_5fba480e84",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "エーテルフロー",
+      "en": "Aetherflow",
+      "de": "Ätherfluss",
+      "fr": "Flux d'éther",
+      "ko": "에테르 순환",
+      "zhCN": "以太超流"
+    },
+    "level": 45,
+    "iconUrl": "https://xivapi.com/i/000000/000510.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 0
+    }
+  },
+  {
+    "id": "skill_b067871ea5",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "生命活性法",
+      "en": "Lustrate",
+      "de": "Revitalisierung",
+      "fr": "Loi de revivification",
+      "ko": "생명활성술",
+      "zhCN": "生命活性法"
+    },
+    "level": 45,
+    "iconUrl": "https://xivapi.com/i/002000/002805.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 600
+      }
+    }
+  },
+  {
+    "id": "skill_bee4b398cc",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "フェイイルミネーション",
+      "en": "Fey Illumination",
+      "de": "Illumination",
+      "fr": "Illumination féérique",
+      "ko": "요정의 광휘",
+      "zhCN": "異想的幻光"
+    },
+    "level": 40,
+    "iconUrl": "https://xivapi.com/i/002000/002829.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 20,
+      "mitigation": {
+        "duration": 20,
+        "magic": 0.95,
+        "physical": 1,
+        "unique": 1
+      },
+      "healing": {
+        "target": "RANGE_AFFECTED_GCD",
+        "duration": 20,
+        "timesHealBuffed": 1.1
+      }
+    }
+  },
+  {
+    "id": "skill_d4057fd35e",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "士気高揚の策",
+      "en": "Succor",
+      "de": "Kurieren",
+      "fr": "Traité du soulagement",
+      "ko": "사기고양책",
+      "zhCN": "士氣高揚之策"
+    },
+    "level": 35,
+    "iconUrl": "https://xivapi.com/i/002000/002802.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 200
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 230
+        }
+      }
+    },
+    "resource": {
+      "mp": 1000
+    }
+  },
+  {
+    "id": "skill_4ee46f0541",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "鼓舞激勵の策",
+      "en": "Adloquium",
+      "de": "Adloquium",
+      "fr": "Traité du réconfort",
+      "ko": "고무격려책",
+      "zhCN": "鼓舞激勵之策"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/002000/002801.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "秘策",
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 300
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 375
+        },
+        "additional": {
+          "duration": 30,
+          "amount": 375
+        }
+      }
+    },
+    "resource": {
+      "mp": 1000
+    }
+  },
+  {
+    "id": "skill_55e007b8ad",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "光の囁き",
+      "en": "Whispering Dawn",
+      "de": "Erhebendes Flüstern",
+      "fr": "Murmure de l'aurore",
+      "ko": "빛의 속삭임",
+      "zhCN": "仙光的低語"
+    },
+    "level": 20,
+    "iconUrl": "https://xivapi.com/i/002000/002827.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 21,
+      "healing": {
+        "hot": {
+          "duration": 21,
+          "amount": 52
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_61abc28e90",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "フィジク",
+      "en": "Physick",
+      "de": "Physick",
+      "fr": "Médecine",
+      "ko": "치유술",
+      "zhCN": "醫術"
+    },
+    "level": 4,
+    "iconUrl": "https://xivapi.com/i/000000/000518.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    },
+    "resource": {
+      "mp": 400
+    }
+  },
+  {
+    "id": "skill_562ee9ba0c",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "セラフィズム",
+      "en": "Seraphism",
+      "de": "Seraphenlehre",
+      "fr": "Séraphisme",
+      "ko": "세라피즘",
+      "zhCN": "熾天附體"
+    },
+    "level": 100,
+    "iconUrl": "https://xivapi.com/i/002000/002881.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 20,
+      "healing": {
+        "hot": {
+          "duration": 20,
+          "amount": 100
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_b55b5eff43",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "アクセッション",
+      "en": "Accession",
+      "de": "Höchstes Gut",
+      "fr": "Accession",
+      "ko": "강림",
+      "zhCN": "降臨之章"
+    },
+    "level": 100,
+    "iconUrl": "https://xivapi.com/i/002000/002883.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 240
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 432
+        }
+      }
+    },
+    "resource": {
+      "mp": 900
+    },
+    "availability": {
+      "duration": 20,
+      "skill": "セラフィズム"
+    }
+  },
+  {
+    "id": "skill_43f686f3f7",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "マニフェステーション",
+      "en": "Manifestation",
+      "de": "Manifestation",
+      "fr": "Manifestation",
+      "ko": "현시",
+      "zhCN": "顯靈之章"
+    },
+    "level": 100,
+    "iconUrl": "https://xivapi.com/i/002000/002882.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "秘策",
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 360
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 648
+        },
+        "additional": {
+          "duration": 30,
+          "amount": 648
+        }
+      }
+    },
+    "resource": {
+      "mp": 900
+    },
+    "availability": {
+      "duration": 20,
+      "skill": "セラフィズム"
+    }
+  },
+  {
+    "id": "skill_e1e2cf50aa",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "秘策",
+      "en": "Recitation",
+      "de": "Raffinesse",
+      "fr": "Récitation",
+      "ko": "비책",
+      "zhCN": "秘策"
+    },
+    "level": 98,
+    "iconUrl": "https://xivapi.com/i/002000/002822.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 15
+    }
+  },
+  {
+    "id": "skill_dec1e6cb1b",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "意気軒昂の策",
+      "en": "Concitation",
+      "de": "Übermut",
+      "fr": "Traité de l'exultation",
+      "ko": "의기왕성책",
+      "zhCN": "意氣軒昂之策"
+    },
+    "level": 96,
+    "iconUrl": "https://xivapi.com/i/002000/002880.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 200
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 360
+        }
+      }
+    },
+    "resource": {
+      "mp": 900
+    }
+  },
+  {
+    "id": "skill_64b66095ac",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "疾風怒濤の計",
+      "en": "Expedient",
+      "de": "Sturm und Drang",
+      "fr": "Thèse fluidique",
+      "ko": "질풍노도계",
+      "zhCN": "疾風怒濤之計"
+    },
+    "level": 90,
+    "iconUrl": "https://xivapi.com/i/002000/002878.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 20,
+      "mitigation": {
+        "duration": 20,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_edd3425c44",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "展開戦術",
+      "en": "Deployment Tactics",
+      "de": "Dislokation",
+      "fr": "Stratagème du déploiement",
+      "ko": "전개전술",
+      "zhCN": "展開戰術"
+    },
+    "level": 88,
+    "iconUrl": "https://xivapi.com/i/002000/002808.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 0
+    }
+  },
+  {
+    "id": "skill_f4eee52a76",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "生命回生法",
+      "en": "Protraction",
+      "de": "Protraktion",
+      "fr": "Loi de la protraction",
+      "ko": "생명회생술",
+      "zhCN": "生命回生法"
+    },
+    "level": 86,
+    "iconUrl": "https://xivapi.com/i/002000/002877.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 10,
+      "hpBuff": {
+        "duration": 10,
+        "multiplier": 1.1
+      }
+    }
+  },
+  {
+    "id": "skill_3b2f5c35d1",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "フィジク",
+      "en": "Physick",
+      "de": "Physick",
+      "fr": "Médecine",
+      "ko": "치유술",
+      "zhCN": "醫術"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/000000/000518.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 450
+      }
+    },
+    "resource": {
+      "mp": 400
+    }
+  },
+  {
+    "id": "skill_3ac050aef6",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "鼓舞激勵の策",
+      "en": "Adloquium",
+      "de": "Adloquium",
+      "fr": "Traité du réconfort",
+      "ko": "고무격려책",
+      "zhCN": "鼓舞激勵之策"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/002000/002801.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "秘策",
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 300
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 540
+        },
+        "additional": {
+          "duration": 30,
+          "amount": 540
+        }
+      }
+    },
+    "resource": {
+      "mp": 900
+    }
+  },
+  {
+    "id": "skill_59900bf0bc",
+    "job": "SCH",
+    "sourceRole": "學者",
+    "name": {
+      "ja": "士気高揚の策",
+      "en": "Succor",
+      "de": "Kurieren",
+      "fr": "Traité du soulagement",
+      "ko": "사기고양책",
+      "zhCN": "士氣高揚之策"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/002000/002802.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 200
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 320
+        }
+      }
+    },
+    "resource": {
+      "mp": 900
+    }
+  }
+]

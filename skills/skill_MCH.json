@@ -1,0 +1,114 @@
+[
+  {
+    "id": "skill_10e455618f",
+    "job": "MCH",
+    "sourceRole": "機工士",
+    "name": {
+      "ja": "ウェポンブレイク",
+      "en": "Dismantle",
+      "de": "Zerlegen",
+      "fr": "Brise-arme",
+      "ko": "Dismantle",
+      "zhCN": "武裝解除"
+    },
+    "level": 62,
+    "iconUrl": "https://xivapi.com/i/003000/003011.png",
+    "ability": true,
+    "assign": "SINGLE_ENEMY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_34aa91b9f4",
+    "job": "MCH",
+    "sourceRole": "機工士",
+    "name": {
+      "ja": "タクティシャン",
+      "en": "Tactician",
+      "de": "Taktiker",
+      "fr": "Tacticien",
+      "ko": "책략가",
+      "zhCN": "策動"
+    },
+    "level": 56,
+    "iconUrl": "https://xivapi.com/i/003000/003040.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_b5092ac99a",
+    "job": "MCH",
+    "sourceRole": "機工士",
+    "name": {
+      "ja": "タクティシャン",
+      "en": "Tactician",
+      "de": "Taktiker",
+      "fr": "Tacticien",
+      "ko": "책략가",
+      "zhCN": "策動"
+    },
+    "level": 98,
+    "iconUrl": "https://xivapi.com/i/003000/003040.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85
+      }
+    }
+  },
+  {
+    "id": "skill_16032dcee6",
+    "job": "MCH",
+    "sourceRole": "機工士",
+    "name": {
+      "ja": "タクティシャン",
+      "en": "Tactician",
+      "de": "Taktiker",
+      "fr": "Tacticien",
+      "ko": "책략가",
+      "zhCN": "策動"
+    },
+    "level": 88,
+    "iconUrl": "https://xivapi.com/i/003000/003040.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  }
+]

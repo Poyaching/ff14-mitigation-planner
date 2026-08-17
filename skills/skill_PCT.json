@@ -1,0 +1,59 @@
+[
+  {
+    "id": "skill_c7ad0d4134",
+    "job": "PCT",
+    "sourceRole": "ピクトマンサー",
+    "name": {
+      "ja": "テンペラコート",
+      "en": "Tempera Coat",
+      "de": "Tempera-Schicht",
+      "fr": "Enduit a tempera",
+      "ko": "템페라 밑칠",
+      "zhCN": "坦培拉塗層"
+    },
+    "level": 10,
+    "iconUrl": "https://xivapi.com/i/003000/003835.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 10
+    },
+    "availability": {
+      "duration": 10,
+      "skill": "テンペラコート"
+    }
+  },
+  {
+    "id": "skill_68c040801d",
+    "job": "PCT",
+    "sourceRole": "ピクトマンサー",
+    "name": {
+      "ja": "テンペラグラッサ",
+      "en": "Tempera Grassa",
+      "de": "Fette Tempera",
+      "fr": "Tempera grassa",
+      "ko": "템페라 덧칠",
+      "zhCN": "油性坦培拉塗層"
+    },
+    "level": 88,
+    "iconUrl": "https://xivapi.com/i/003000/003836.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 10,
+      "barrier": {
+        "buff": {
+          "duration": 10,
+          "multiplier": 0.1
+        }
+      }
+    },
+    "availability": {
+      "duration": 10
+    }
+  }
+]

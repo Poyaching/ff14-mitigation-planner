@@ -1,0 +1,969 @@
+[
+  {
+    "id": "skill_e46063933d",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "テンパランス",
+      "en": "Temperance",
+      "de": "Linderung",
+      "fr": "Tempérance",
+      "ko": "절제",
+      "zhCN": "節制"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/002000/002645.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 20,
+      "mitigation": {
+        "duration": 20,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "healing": {
+        "target": "SELF_EFFECTED_GCD",
+        "duration": 20,
+        "timesHealBuffed": 1.2
+      }
+    }
+  },
+  {
+    "id": "skill_c16db48216",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ハート・オブ・ラプチャー",
+      "en": "Afflatus Rapture",
+      "de": "Afflatus laetitiae",
+      "fr": "Offrande de ravissement",
+      "ko": "황홀한 마음",
+      "zhCN": "狂喜之心"
+    },
+    "level": 76,
+    "iconUrl": "https://xivapi.com/i/002000/002643.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "インドゥルゲンティア",
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "moreHeal": 500,
+        "heal": 300
+      }
+    }
+  },
+  {
+    "id": "skill_8e81ab9baa",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "インドゥルゲンティア",
+      "en": "Plenary Indulgence",
+      "de": "Vollkommener Ablass",
+      "fr": "Indulgence plénière",
+      "ko": "대사면",
+      "zhCN": "全大赦"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/002000/002639.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "healing": {
+        "target": "RANGE_AFFECTED_GCD",
+        "duration": 10,
+        "addHealBuffed": 200
+      }
+    }
+  },
+  {
+    "id": "skill_fd9c87cd64",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ディヴァインベニゾン",
+      "en": "Divine Benison",
+      "de": "Göttlicher Segen",
+      "fr": "Faveur divine",
+      "ko": "신성한 축복",
+      "zhCN": "神祝禱"
+    },
+    "level": 66,
+    "iconUrl": "https://xivapi.com/i/002000/002638.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 30,
+    "effects": {
+      "duration": 15,
+      "barrier": {
+        "effect": {
+          "duration": 15,
+          "amount": 500
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_5af1e1ae6f",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "テトラグラマトン",
+      "en": "Tetragrammaton",
+      "de": "Tetragrammaton",
+      "fr": "Tétragramme",
+      "ko": "신의 이름",
+      "zhCN": "神名"
+    },
+    "level": 60,
+    "iconUrl": "https://xivapi.com/i/002000/002633.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 700
+      }
+    }
+  },
+  {
+    "id": "skill_a3978246be",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "アサイズ",
+      "en": "Assize",
+      "de": "Assise",
+      "fr": "Assises",
+      "ko": "심판",
+      "zhCN": "法令"
+    },
+    "level": 56,
+    "iconUrl": "https://xivapi.com/i/002000/002634.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 40,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    }
+  },
+  {
+    "id": "skill_50248096fc",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "アサイラム",
+      "en": "Asylum",
+      "de": "Refugium",
+      "fr": "Asile",
+      "ko": "성소",
+      "zhCN": "庇護所"
+    },
+    "level": 52,
+    "iconUrl": "https://xivapi.com/i/002000/002632.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 24,
+      "healing": {
+        "target": "RANGE_AFFECTED_ALL",
+        "duration": 24,
+        "timesHealBuffed": 1.1,
+        "hot": {
+          "duration": 24,
+          "amount": 100
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_b413794061",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ハート・オブ・ソラス",
+      "en": "Afflatus Solace",
+      "de": "Afflatus solatii",
+      "fr": "Offrande de réconfort",
+      "ko": "위로의 마음",
+      "zhCN": "安慰之心"
+    },
+    "level": 52,
+    "iconUrl": "https://xivapi.com/i/002000/002640.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 700
+      }
+    }
+  },
+  {
+    "id": "skill_1d390404b1",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ベネディクション",
+      "en": "Benediction",
+      "de": "Benediktion",
+      "fr": "Bénédiction",
+      "ko": "거룩한 축복",
+      "zhCN": "天賜祝福"
+    },
+    "level": 50,
+    "iconUrl": "https://xivapi.com/i/002000/002627.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "healRatio": 1
+      }
+    }
+  },
+  {
+    "id": "skill_83d291ebc1",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "メディカラ",
+      "en": "Medica II",
+      "de": "Resedra",
+      "fr": "Extra Médica",
+      "ko": "메디카라",
+      "zhCN": "醫濟"
+    },
+    "level": 50,
+    "iconUrl": "https://xivapi.com/i/000000/000409.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "インドゥルゲンティア",
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "moreHeal": 400,
+        "heal": 200,
+        "hot": {
+          "duration": 15,
+          "amount": 100
+        }
+      }
+    },
+    "resource": {
+      "mp": 1000
+    }
+  },
+  {
+    "id": "skill_dcc8e6cf93",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ケアルガ",
+      "en": "Cure III",
+      "de": "Vitaga",
+      "fr": "Méga Soin",
+      "ko": "케알가",
+      "zhCN": "愈療"
+    },
+    "level": 40,
+    "iconUrl": "https://xivapi.com/i/000000/000407.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "インドゥルゲンティア",
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "moreHeal": 750,
+        "heal": 550
+      }
+    },
+    "resource": {
+      "mp": 1500
+    }
+  },
+  {
+    "id": "skill_6ef3d4e540",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "リジェネ",
+      "en": "Regen",
+      "de": "Regena",
+      "fr": "Récup",
+      "ko": "리제네",
+      "zhCN": "再生"
+    },
+    "level": 35,
+    "iconUrl": "https://xivapi.com/i/002000/002628.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 18,
+      "healing": {
+        "hot": {
+          "duration": 18,
+          "amount": 200
+        }
+      }
+    },
+    "resource": {
+      "mp": 500
+    }
+  },
+  {
+    "id": "skill_6d0b925c46",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ケアルラ",
+      "en": "Cure II",
+      "de": "Vitra",
+      "fr": "Extra Soin",
+      "ko": "케알라",
+      "zhCN": "救療"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/000000/000406.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 700
+      }
+    },
+    "resource": {
+      "mp": 1000
+    }
+  },
+  {
+    "id": "skill_acfa1d0257",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "メディカ",
+      "en": "Medica",
+      "de": "Reseda",
+      "fr": "Médica",
+      "ko": "메디카",
+      "zhCN": "醫治"
+    },
+    "level": 10,
+    "iconUrl": "https://xivapi.com/i/000000/000408.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "インドゥルゲンティア",
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "moreHeal": 500,
+        "heal": 300
+      }
+    },
+    "resource": {
+      "mp": 900
+    }
+  },
+  {
+    "id": "skill_3232986ace",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ケアル",
+      "en": "Cure",
+      "de": "Vita",
+      "fr": "Soin",
+      "ko": "케알",
+      "zhCN": "治療"
+    },
+    "level": 2,
+    "iconUrl": "https://xivapi.com/i/000000/000405.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 450
+      }
+    },
+    "resource": {
+      "mp": 400
+    }
+  },
+  {
+    "id": "skill_ca2afd31d8",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ディヴァインカレス",
+      "en": "Divine Caress",
+      "de": "Göttliche Umarmung",
+      "fr": "Caresse divine",
+      "ko": "신성한 손길",
+      "zhCN": "神愛撫"
+    },
+    "level": 100,
+    "iconUrl": "https://xivapi.com/i/002000/002128.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 10,
+      "healing": {
+        "hot": {
+          "duration": 15,
+          "amount": 200
+        }
+      },
+      "barrier": {
+        "effect": {
+          "duration": 10,
+          "amount": 400
+        }
+      }
+    },
+    "availability": {
+      "duration": 30,
+      "skill": "テンパランス"
+    }
+  },
+  {
+    "id": "skill_b046911424",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "テトラグラマトン",
+      "en": "Tetragrammaton",
+      "de": "Tetragrammaton",
+      "fr": "Tétragramme",
+      "ko": "신의 이름",
+      "zhCN": "神名"
+    },
+    "level": 98,
+    "iconUrl": "https://xivapi.com/i/002000/002633.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 2,
+    "cooldown": 60,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 700
+      }
+    }
+  },
+  {
+    "id": "skill_76f6a43db8",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "メディガ",
+      "en": "Medica III",
+      "de": "Resega",
+      "fr": "Méga Médica",
+      "ko": "메디카가",
+      "zhCN": "醫養"
+    },
+    "level": 92,
+    "iconUrl": "https://xivapi.com/i/002000/002127.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "インドゥルゲンティア",
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "moreHeal": 450,
+        "heal": 250,
+        "hot": {
+          "duration": 15,
+          "amount": 175
+        }
+      }
+    },
+    "resource": {
+      "mp": 1000
+    }
+  },
+  {
+    "id": "skill_cc67ba3369",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "リタージー・オブ・ベル(ダメージトリガー)",
+      "en": "Liturgy of the Bell(damage trigger)",
+      "de": "Glockenspiel(Schaden auslösen)",
+      "fr": "Tintinnabule(déclencheur de dégâts)",
+      "ko": "예배종(데미지 트리거)",
+      "zhCN": "禮儀之鈴(傷害觸發)"
+    },
+    "level": 90,
+    "iconUrl": "https://xivapi.com/i/002000/002649.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    }
+  },
+  {
+    "id": "skill_4560f987e6",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "リタージー・オブ・ベル(時間経過:殘1)",
+      "en": "Liturgy of the Bell(Time Lapse: Stack 1)",
+      "de": "Glockenspiel(Zeitraffer: Stapel 1)",
+      "fr": "Tintinnabule(Time Lapse : Pile 1)",
+      "ko": "예배종(시간 경과 : 스택 1)",
+      "zhCN": "禮儀之鈴(延時攝影：堆棧 1)"
+    },
+    "level": 90,
+    "iconUrl": "https://xivapi.com/i/002000/002649.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 200
+      }
+    }
+  },
+  {
+    "id": "skill_168c6fa204",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "リタージー・オブ・ベル(時間経過:殘2)",
+      "en": "Liturgy of the Bell(Time Lapse: Stack 2)",
+      "de": "Glockenspiel(Zeitraffer: Stapel 2)",
+      "fr": "Tintinnabule(Time Lapse : Pile 2)",
+      "ko": "예배종(시간 경과 : 스택 2)",
+      "zhCN": "禮儀之鈴(延時攝影：堆棧 2)"
+    },
+    "level": 90,
+    "iconUrl": "https://xivapi.com/i/002000/002649.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    }
+  },
+  {
+    "id": "skill_8c9cd9f4c1",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "リタージー・オブ・ベル(時間経過:殘3)",
+      "en": "Liturgy of the Bell(Time Lapse: Stack 3)",
+      "de": "Glockenspiel(Zeitraffer: Stapel 3)",
+      "fr": "Tintinnabule(Time Lapse : Pile 3)",
+      "ko": "예배종(시간 경과 : 스택 3)",
+      "zhCN": "禮儀之鈴(延時攝影：堆棧 3)"
+    },
+    "level": 90,
+    "iconUrl": "https://xivapi.com/i/002000/002649.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 600
+      }
+    }
+  },
+  {
+    "id": "skill_08fc6d2b20",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "リタージー・オブ・ベル(時間経過:殘4)",
+      "en": "Liturgy of the Bell(Time Lapse: Stack 4)",
+      "de": "Glockenspiel(Zeitraffer: Stapel 4)",
+      "fr": "Tintinnabule(Time Lapse : Pile 4)",
+      "ko": "예배종(시간 경과 : 스택 4)",
+      "zhCN": "禮儀之鈴(延時攝影：堆棧 4)"
+    },
+    "level": 90,
+    "iconUrl": "https://xivapi.com/i/002000/002649.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 800
+      }
+    }
+  },
+  {
+    "id": "skill_adb6b7d60b",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "リタージー・オブ・ベル(時間経過:殘5)",
+      "en": "Liturgy of the Bell(Time Lapse: Stack 5)",
+      "de": "Glockenspiel(Zeitraffer: Stapel 5)",
+      "fr": "Tintinnabule(Time Lapse : Pile 5)",
+      "ko": "예배종(시간 경과 : 스택 5)",
+      "zhCN": "禮儀之鈴(延時攝影：堆棧 5)"
+    },
+    "level": 90,
+    "iconUrl": "https://xivapi.com/i/002000/002649.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 1000
+      }
+    }
+  },
+  {
+    "id": "skill_75dab58ffb",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ディヴァインベニゾン",
+      "en": "Divine Benison",
+      "de": "Göttlicher Segen",
+      "fr": "Faveur divine",
+      "ko": "신성한 축복",
+      "zhCN": "神祝禱"
+    },
+    "level": 88,
+    "iconUrl": "https://xivapi.com/i/002000/002638.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 2,
+    "cooldown": 30,
+    "effects": {
+      "duration": 15,
+      "barrier": {
+        "effect": {
+          "duration": 15,
+          "amount": 500
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_2a95ef9882",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "アクアヴェール",
+      "en": "Aquaveil",
+      "de": "Wasserschleier",
+      "fr": "Aquavoile",
+      "ko": "물의 장막",
+      "zhCN": "水流幕"
+    },
+    "level": 86,
+    "iconUrl": "https://xivapi.com/i/002000/002648.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 8,
+      "mitigation": {
+        "duration": 8,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85
+      }
+    }
+  },
+  {
+    "id": "skill_03b349f1ab",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ケアル",
+      "en": "Cure",
+      "de": "Vita",
+      "fr": "Soin",
+      "ko": "케알",
+      "zhCN": "治療"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/000000/000405.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 500
+      }
+    },
+    "resource": {
+      "mp": 400
+    }
+  },
+  {
+    "id": "skill_07c2df8102",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ケアルガ",
+      "en": "Cure III",
+      "de": "Vitaga",
+      "fr": "Méga Soin",
+      "ko": "케알가",
+      "zhCN": "愈療"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/000000/000407.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "インドゥルゲンティア",
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "moreHeal": 800,
+        "heal": 600
+      }
+    },
+    "resource": {
+      "mp": 1500
+    }
+  },
+  {
+    "id": "skill_b6d1bcb2b1",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ケアルラ",
+      "en": "Cure II",
+      "de": "Vitra",
+      "fr": "Extra Soin",
+      "ko": "케알라",
+      "zhCN": "救療"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/000000/000406.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 800
+      }
+    },
+    "resource": {
+      "mp": 1000
+    }
+  },
+  {
+    "id": "skill_6be12a9f47",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ハート・オブ・ソラス",
+      "en": "Afflatus Solace",
+      "de": "Afflatus solatii",
+      "fr": "Offrande de réconfort",
+      "ko": "위로의 마음",
+      "zhCN": "安慰之心"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/002000/002640.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 800
+      }
+    }
+  },
+  {
+    "id": "skill_2a15929765",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "ハート・オブ・ラプチャー",
+      "en": "Afflatus Rapture",
+      "de": "Afflatus laetitiae",
+      "fr": "Offrande de ravissement",
+      "ko": "황홀한 마음",
+      "zhCN": "狂喜之心"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/002000/002643.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    }
+  },
+  {
+    "id": "skill_e231eaa55b",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "メディカ",
+      "en": "Medica",
+      "de": "Reseda",
+      "fr": "Médica",
+      "ko": "메디카",
+      "zhCN": "醫治"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/000000/000408.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "インドゥルゲンティア",
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "moreHeal": 600,
+        "heal": 400
+      }
+    },
+    "resource": {
+      "mp": 900
+    }
+  },
+  {
+    "id": "skill_229f78743d",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "メディカラ",
+      "en": "Medica II",
+      "de": "Resedra",
+      "fr": "Extra Médica",
+      "ko": "메디카라",
+      "zhCN": "醫濟"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/000000/000409.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "heal": 250,
+        "hot": {
+          "duration": 15,
+          "amount": 150
+        }
+      }
+    },
+    "resource": {
+      "mp": 1000
+    }
+  },
+  {
+    "id": "skill_9d726eb52c",
+    "job": "WHM",
+    "sourceRole": "白魔道士",
+    "name": {
+      "ja": "リジェネ",
+      "en": "Regen",
+      "de": "Regena",
+      "fr": "Récup",
+      "ko": "리제네",
+      "zhCN": "再生"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/002000/002628.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "インドゥルゲンティア",
+    "effects": {
+      "duration": 18,
+      "healing": {
+        "moreHeal": 450,
+        "hot": {
+          "duration": 18,
+          "amount": 250
+        }
+      }
+    },
+    "resource": {
+      "mp": 500
+    }
+  }
+]

@@ -1,0 +1,376 @@
+[
+  {
+    "id": "skill_79c88067c9",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "シェルトロン",
+      "en": "Sheltron",
+      "de": "Schiltron",
+      "fr": "Schiltron",
+      "ko": "방벽",
+      "zhCN": "盾陣"
+    },
+    "level": 74,
+    "iconUrl": "https://xivapi.com/i/002000/002510.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 5,
+    "effects": {
+      "duration": 6,
+      "mitigation": {
+        "duration": 6,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85
+      }
+    }
+  },
+  {
+    "id": "skill_3c49d2aca2",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "パッセージ・オブ・アームズ",
+      "en": "Passage of Arms",
+      "de": "Waffengang",
+      "fr": "Passe d'armes",
+      "ko": "결연한 수호자",
+      "zhCN": "武裝戍衛"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/002000/002515.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 18,
+      "mitigation": {
+        "duration": 18,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85,
+        "block": 1
+      }
+    }
+  },
+  {
+    "id": "skill_ee86bd02e4",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "インターベンション",
+      "en": "Intervention",
+      "de": "Intervention",
+      "fr": "Intervention",
+      "ko": "중재",
+      "zhCN": "幹預"
+    },
+    "level": 62,
+    "iconUrl": "https://xivapi.com/i/002000/002512.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 10,
+    "effects": {
+      "duration": 6,
+      "mitigation": {
+        "duration": 6,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_755e12912e",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "ディヴァインヴェール",
+      "en": "Divine Veil",
+      "de": "Heiliger Quell",
+      "fr": "Voile divin",
+      "ko": "신성한 보호막",
+      "zhCN": "聖光幕簾"
+    },
+    "level": 56,
+    "iconUrl": "https://xivapi.com/i/002000/002508.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 30,
+      "barrier": {
+        "buff": {
+          "duration": 30,
+          "multiplier": 0.1
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_672fe01444",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "ブルワーク",
+      "en": "Bulwark",
+      "de": "Bollwerk",
+      "fr": "Forteresse",
+      "ko": "Bulwark",
+      "zhCN": "壁壘"
+    },
+    "level": 52,
+    "iconUrl": "https://xivapi.com/i/000000/000167.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "block": 0.2
+      }
+    }
+  },
+  {
+    "id": "skill_32d69aa76e",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "インビンシブル",
+      "en": "Hallowed Ground",
+      "de": "Heiliger Boden",
+      "fr": "Invincible",
+      "ko": "천하무적",
+      "zhCN": "神聖領域"
+    },
+    "level": 50,
+    "iconUrl": "https://xivapi.com/i/002000/002502.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 420,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0,
+        "physical": 0,
+        "unique": 0
+      }
+    }
+  },
+  {
+    "id": "skill_b84974f56d",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "センチネル",
+      "en": "Sentinel",
+      "de": "Sentinel",
+      "fr": "Sentinelle",
+      "ko": "경계",
+      "zhCN": "預警"
+    },
+    "level": 38,
+    "iconUrl": "https://xivapi.com/i/000000/000151.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.7,
+        "physical": 0.7,
+        "unique": 0.7
+      }
+    }
+  },
+  {
+    "id": "skill_ea10ccd62b",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "シェルトロン",
+      "en": "Sheltron",
+      "de": "Schiltron",
+      "fr": "Schiltron",
+      "ko": "방벽",
+      "zhCN": "盾陣"
+    },
+    "level": 35,
+    "iconUrl": "https://xivapi.com/i/002000/002510.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 5,
+    "effects": {
+      "duration": 4,
+      "mitigation": {
+        "duration": 4,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85
+      }
+    }
+  },
+  {
+    "id": "skill_b3c213d4cf",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "エクストリームガード",
+      "en": "Guardian",
+      "de": "Heilige Wacht",
+      "fr": "Garde extrême",
+      "ko": "극한 방어",
+      "zhCN": "極致防御"
+    },
+    "level": 92,
+    "iconUrl": "https://xivapi.com/i/002000/002524.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.6,
+        "physical": 0.6,
+        "unique": 0.6
+      },
+      "barrier": {
+        "effect": {
+          "duration": 15,
+          "amount": 1000
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_067cc3dfbd",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "ディヴァインヴェール",
+      "en": "Divine Veil",
+      "de": "Heiliger Quell",
+      "fr": "Voile divin",
+      "ko": "신성한 보호막",
+      "zhCN": "聖光幕簾"
+    },
+    "level": 88,
+    "iconUrl": "https://xivapi.com/i/002000/002508.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 400
+      },
+      "barrier": {
+        "buff": {
+          "duration": 30,
+          "multiplier": 0.1
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_8b3ecd971b",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "インターベンション",
+      "en": "Intervention",
+      "de": "Intervention",
+      "fr": "Intervention",
+      "ko": "중재",
+      "zhCN": "幹預"
+    },
+    "level": 82,
+    "iconUrl": "https://xivapi.com/i/002000/002512.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 10,
+    "precondition": "ランパート|センチネル|エクストリームガード",
+    "effects": {
+      "duration": 8,
+      "mitigation": {
+        "duration": 8,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "criticalMitigation": {
+        "duration": 4,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "conditionalMitigation": {
+        "magic": 0.8,
+        "physical": 0.8,
+        "unique": 0.8
+      },
+      "healing": {
+        "hot": {
+          "duration": 12,
+          "amount": 250
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_075061bda7",
+    "job": "PLD",
+    "sourceRole": "騎士",
+    "name": {
+      "ja": "ホーリーシェルトロン",
+      "en": "Holy Sheltron",
+      "de": "Heiliges Schiltron",
+      "fr": "Schiltron sacré",
+      "ko": "신성한 방벽",
+      "zhCN": "聖盾陣"
+    },
+    "level": 82,
+    "iconUrl": "https://xivapi.com/i/002000/002950.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 5,
+    "effects": {
+      "duration": 8,
+      "mitigation": {
+        "duration": 8,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85
+      },
+      "criticalMitigation": {
+        "duration": 4,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85
+      },
+      "healing": {
+        "hot": {
+          "duration": 12,
+          "amount": 250
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "skill_db2a422754",
+    "job": "RDM",
+    "sourceRole": "赤魔道士",
+    "name": {
+      "ja": "バマジク",
+      "en": "Magick Barrier",
+      "de": "Magiebarriere",
+      "fr": "Barrière anti-magie",
+      "ko": "바매직",
+      "zhCN": "抗死"
+    },
+    "level": 86,
+    "iconUrl": "https://xivapi.com/i/003000/003237.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0.9,
+        "physical": 1,
+        "unique": 1
+      },
+      "healing": {
+        "target": "RANGE_AFFECTED_ALL",
+        "duration": 10,
+        "timesHealBuffed": 1.05
+      }
+    }
+  }
+]

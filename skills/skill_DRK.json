@@ -1,0 +1,204 @@
+[
+  {
+    "id": "skill_bf1daeb578",
+    "job": "DRK",
+    "sourceRole": "暗黒騎士",
+    "name": {
+      "ja": "ダークミッショナリー",
+      "en": "Dark Missionary",
+      "de": "Dunkler Bote",
+      "fr": "Missionnaire des Ténèbres",
+      "ko": "어둠의 포교자",
+      "zhCN": "暗黑布道"
+    },
+    "level": 66,
+    "iconUrl": "https://xivapi.com/i/003000/003087.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.95,
+        "unique": 1
+      }
+    }
+  },
+  {
+    "id": "skill_817dc6cd08",
+    "job": "DRK",
+    "sourceRole": "暗黒騎士",
+    "name": {
+      "ja": "ブラック騎士",
+      "en": "The Blackest Night",
+      "de": "Schwärzeste Nacht",
+      "fr": "Nuit noirissime",
+      "ko": "흑야",
+      "zhCN": "至黑之夜"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/003000/003081.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 15,
+    "effects": {
+      "duration": 7,
+      "barrier": {
+        "buff": {
+          "duration": 7,
+          "multiplier": 0.25
+        }
+      }
+    },
+    "resource": {
+      "mp": 3000
+    }
+  },
+  {
+    "id": "skill_efcd96c54b",
+    "job": "DRK",
+    "sourceRole": "暗黒騎士",
+    "name": {
+      "ja": "リビングデッド",
+      "en": "Living Dead",
+      "de": "Totenerweckung",
+      "fr": "Mort-vivant",
+      "ko": "산송장",
+      "zhCN": "行屍走肉"
+    },
+    "level": 50,
+    "iconUrl": "https://xivapi.com/i/003000/003077.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 300,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 1,
+        "physical": 1,
+        "unique": 1
+      }
+    }
+  },
+  {
+    "id": "skill_b7c6a4ff8e",
+    "job": "DRK",
+    "sourceRole": "暗黒騎士",
+    "name": {
+      "ja": "ダークマインド",
+      "en": "Dark Mind",
+      "de": "Dunkler Geist",
+      "fr": "Esprit ténébreux",
+      "ko": "어두운 감정",
+      "zhCN": "棄明投暗"
+    },
+    "level": 45,
+    "iconUrl": "https://xivapi.com/i/003000/003076.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0.8,
+        "physical": 0.9,
+        "unique": 1
+      }
+    }
+  },
+  {
+    "id": "skill_9e403057e5",
+    "job": "DRK",
+    "sourceRole": "暗黒騎士",
+    "name": {
+      "ja": "シャドウウォール",
+      "en": "Shadow Wall",
+      "de": "Schattenwand",
+      "fr": "Mur d'ombre",
+      "ko": "그림자 장벽",
+      "zhCN": "暗影墻"
+    },
+    "level": 38,
+    "iconUrl": "https://xivapi.com/i/003000/003075.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.7,
+        "physical": 0.7,
+        "unique": 0.7
+      }
+    }
+  },
+  {
+    "id": "skill_166a20abd5",
+    "job": "DRK",
+    "sourceRole": "暗黒騎士",
+    "name": {
+      "ja": "シャドウヴィジル",
+      "en": "Shadowed Vigil",
+      "de": "Schattenwacht",
+      "fr": "Vigile ténébreux",
+      "ko": "그림자 요새",
+      "zhCN": "暗影衛"
+    },
+    "level": 92,
+    "iconUrl": "https://xivapi.com/i/003000/003094.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.6,
+        "physical": 0.6,
+        "unique": 0.6
+      },
+      "healing": {
+        "heal": 1200
+      }
+    }
+  },
+  {
+    "id": "skill_c8d434902e",
+    "job": "DRK",
+    "sourceRole": "暗黒騎士",
+    "name": {
+      "ja": "オブレーション",
+      "en": "Oblation",
+      "de": "Opfergabe",
+      "fr": "Oblation",
+      "ko": "헌신",
+      "zhCN": "獻奉"
+    },
+    "level": 82,
+    "iconUrl": "https://xivapi.com/i/003000/003089.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 2,
+    "cooldown": 60,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  }
+]

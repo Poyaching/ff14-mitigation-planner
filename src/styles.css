@@ -1,0 +1,532 @@
+/* Excel / Spreadsheet 型高密度矩陣（Spec §21, §22）－ 深色主題 */
+
+:root {
+  --bg: #0f1216;
+  --panel-bg: #171b21;
+  --header-bg: #1a1f26;
+  --border: #2a3038;
+  --row-alt: #151a20;
+  --accent: #3b82f6;
+  --text: #e5e7eb;
+  --muted: #8b93a1;
+
+  /* 技能格狀態配色 */
+  --available-bg: #12151a;
+  --used-bg: #123a24;
+  --used-text: #4ade80;
+  --locked-cd-bg: #1c2128;
+  --locked-active-bg: #123a3d;
+  --locked-active-text: #5eead4;
+
+  /* 技能分類配色（Skill.group） */
+  --group-mitigation: #60a5fa;
+  --group-barrier: #c4b5fd;
+  --group-healing: #4ade80;
+  --group-other: #9ca3af;
+
+  /* 預留欄位（資源／結果傷害）*/
+  --reserved-bg: #171b21;
+  --reserved-border: #3a4048;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Noto Sans TC", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Top Bar (Spec §4) */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel-bg);
+  flex: none;
+}
+
+.icon-btn {
+  font-size: 18px;
+  color: var(--text);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.topbar button {
+  border: 1px solid var(--border);
+  background: #1f2530;
+  color: var(--text);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.topbar button:hover,
+.icon-btn:hover {
+  background: #262d3a;
+}
+
+.topbar-link {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  background: #1f2530;
+  color: var(--text);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.topbar-link:hover {
+  background: #262d3a;
+}
+
+.plan-name-input {
+  flex: 1;
+  min-width: 160px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 13px;
+  background: #12151a;
+  color: var(--text);
+}
+
+/* Info bar */
+.infobar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--panel-bg);
+  border-bottom: 1px solid var(--border);
+  flex: none;
+}
+
+#level-badge,
+#jobs-badge {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.infobar .hint {
+  margin-left: auto;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+}
+
+/* Layout */
+.layout {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.table-wrap {
+  flex: 1;
+  overflow: auto;
+  background: var(--bg);
+}
+
+/* Settings Drawer (Spec §4 Hamburger, §5) */
+.settings-drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  background: var(--panel-bg);
+  border-right: 1px solid var(--border);
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.5);
+  padding: 16px;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease;
+  z-index: 20;
+  overflow-y: auto;
+  color: var(--text);
+}
+
+.settings-drawer.open {
+  transform: translateX(0);
+}
+
+.settings-drawer h2 {
+  margin-top: 0;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.settings-drawer label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.settings-drawer input[type="text"],
+.settings-drawer select {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 13px;
+  background: #12151a;
+  color: var(--text);
+}
+
+.settings-drawer fieldset {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin: 0 0 12px;
+  padding: 8px;
+}
+
+.session-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.session-actions button {
+  flex: 1;
+  border: 1px solid var(--border);
+  background: #1f2530;
+  color: var(--text);
+  border-radius: 4px;
+  padding: 6px 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.session-actions button:hover:not(:disabled) {
+  background: #262d3a;
+}
+
+.session-actions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.settings-drawer legend {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 0 4px;
+}
+
+.job-checkbox {
+  display: block;
+  font-size: 13px;
+  color: var(--text);
+  padding: 3px 0;
+}
+
+.job-role-heading {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.job-role-heading:first-child {
+  margin-top: 0;
+}
+
+.legend-swatch.group-mitigation { background: var(--group-mitigation); }
+.legend-swatch.group-barrier { background: var(--group-barrier); }
+.legend-swatch.group-healing { background: var(--group-healing); }
+.legend-swatch.group-other { background: var(--group-other); }
+
+#close-drawer-btn {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #1f2530;
+  color: var(--text);
+  cursor: pointer;
+}
+
+#close-drawer-btn:hover {
+  background: #262d3a;
+}
+
+.drawer-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Planner Table (Spec §2.1, §7, §19, §20, §21, §22) */
+.planner-table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 13px;
+  min-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.planner-table th,
+.planner-table td {
+  border: 1px solid var(--border);
+  padding: 0 8px;
+  height: 38px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.planner-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--header-bg);
+  font-weight: 600;
+  z-index: 1;
+}
+
+/* 三層 Header：固定欄／結果傷害 rowspan=3、Mitigation rowspan=1、
+   職業分類 rowspan=1、個別技能 rowspan=1（Spec 需求 2） */
+.planner-table thead tr:nth-child(1) th {
+  top: 0;
+}
+
+.planner-table thead tr:nth-child(2) th {
+  top: 38px;
+}
+
+.planner-table thead tr:nth-child(3) th {
+  top: 76px;
+}
+
+.mitigation-header,
+.job-group-header,
+.result-header {
+  text-align: center;
+}
+
+.job-group-header {
+  font-size: 12px;
+  color: var(--muted);
+  background: #1d2229;
+}
+
+.result-header {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.skill-header {
+  height: 96px;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  padding: 6px 2px 4px;
+  border-top: 3px solid transparent;
+}
+
+.skill-header.group-mitigation { border-top-color: var(--group-mitigation); }
+.skill-header.group-barrier { border-top-color: var(--group-barrier); }
+.skill-header.group-healing { border-top-color: var(--group-healing); }
+.skill-header.group-other { border-top-color: var(--group-other); }
+
+.skill-header.empty {
+  writing-mode: horizontal-tb;
+  color: var(--muted);
+  border-top-color: transparent;
+}
+
+.skill-header.resource-header {
+  border-top-style: dashed;
+  border-top-color: var(--reserved-border);
+  background: var(--reserved-bg);
+  color: var(--muted);
+}
+
+.skill-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 3px;
+  border-radius: 3px;
+  object-fit: cover;
+  flex: none;
+}
+
+.resource-placeholder-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 3px;
+  border-radius: 3px;
+  border: 1px dashed var(--reserved-border);
+  flex: none;
+}
+
+.charge-badge {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #0f1216;
+  background: var(--accent);
+  border-radius: 6px;
+  padding: 0 3px;
+  line-height: 1.3;
+}
+
+.skill-name {
+  display: block;
+  font-size: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  max-height: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 auto;
+}
+
+.event-row:nth-child(even) {
+  background: var(--row-alt);
+}
+
+.phase-cell {
+  text-align: center;
+  font-weight: 600;
+  background: #1a1f26;
+}
+
+.time-cell {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.damage-cell {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.result-cell {
+  background: var(--reserved-bg);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.result-cell.result-reduced {
+  color: var(--used-text);
+}
+
+.resource-cell {
+  background: var(--reserved-bg);
+  border-left: 1px dashed var(--reserved-border);
+  border-right: 1px dashed var(--reserved-border);
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.type-cell {
+  text-transform: capitalize;
+}
+
+.type-physical {
+  color: #fbbf24;
+}
+
+.type-magic {
+  color: #60a5fa;
+}
+
+.type-true {
+  color: #c4b5fd;
+}
+
+.skill-cell {
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.skill-cell.state-available {
+  background: var(--available-bg);
+}
+
+.skill-cell.state-available:hover {
+  background: #1c2536;
+}
+
+.skill-cell.state-used {
+  background: var(--used-bg);
+  color: var(--used-text);
+  font-weight: 700;
+}
+
+/* CD 中：純等 CD（效果已消失）與仍在持續涵蓋範圍內，底色分開（Spec 需求 4） */
+.skill-cell.state-locked {
+  background: var(--locked-cd-bg);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.skill-cell.state-locked.covered {
+  background: var(--locked-active-bg);
+  color: var(--locked-active-text);
+}
+
+.skill-cell.group-mitigation.state-available:hover { background: #1e2c46; }
+.skill-cell.group-barrier.state-available:hover { background: #2a2440; }
+.skill-cell.group-healing.state-available:hover { background: #16351f; }

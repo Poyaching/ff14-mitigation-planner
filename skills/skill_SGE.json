@@ -1,0 +1,985 @@
+[
+  {
+    "id": "skill_4bf9d06a3f",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "パンハイマ",
+      "en": "Panhaima",
+      "de": "Panhaima",
+      "fr": "Panhaima",
+      "ko": "온혈액",
+      "zhCN": "泛輸血"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003679.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "barrier": {
+        "effect": {
+          "duration": 15,
+          "amount": 200
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_20c0c2269f",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "パンハイマ(時間経過:殘1)",
+      "en": "Panhaima(Time Lapse: Stack 1)",
+      "de": "Panhaima(Zeitraffer: Stapel 1)",
+      "fr": "Panhaima(Time Lapse : Pile 1)",
+      "ko": "온혈액(시간 경과 : 스택 1)",
+      "zhCN": "泛輸血(延時攝影：堆棧 1)"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003679.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 100
+      }
+    }
+  },
+  {
+    "id": "skill_234e2cdb9b",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "パンハイマ(時間経過:殘2)",
+      "en": "Panhaima(Time Lapse: Stack 2)",
+      "de": "Panhaima(Zeitraffer: Stapel 2)",
+      "fr": "Panhaima(Time Lapse : Pile 2)",
+      "ko": "온혈액(시간 경과 : 스택 2)",
+      "zhCN": "泛輸血(延時攝影：堆棧 2)"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003679.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 200
+      }
+    }
+  },
+  {
+    "id": "skill_52ba4ebfa4",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "パンハイマ(時間経過:殘3)",
+      "en": "Panhaima(Time Lapse: Stack 3)",
+      "de": "Panhaima(Zeitraffer: Stapel 3)",
+      "fr": "Panhaima(Time Lapse : Pile 3)",
+      "ko": "온혈액(시간 경과 : 스택 3)",
+      "zhCN": "泛輸血(延時攝影：堆棧 3)"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003679.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 300
+      }
+    }
+  },
+  {
+    "id": "skill_d519d3d0ab",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "パンハイマ(時間経過:殘4)",
+      "en": "Panhaima(Time Lapse: Stack 4)",
+      "de": "Panhaima(Zeitraffer: Stapel 4)",
+      "fr": "Panhaima(Time Lapse : Pile 4)",
+      "ko": "온혈액(시간 경과 : 스택 4)",
+      "zhCN": "泛輸血(延時攝影：堆棧 4)"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003679.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    }
+  },
+  {
+    "id": "skill_242279cea3",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "パンハイマ(時間経過:殘5)",
+      "en": "Panhaima(Time Lapse: Stack 5)",
+      "de": "Panhaima(Zeitraffer: Stapel 5)",
+      "fr": "Panhaima(Time Lapse : Pile 5)",
+      "ko": "온혈액(시간 경과 : 스택 5)",
+      "zhCN": "泛輸血(延時攝影：堆棧 5)"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003679.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 500
+      }
+    }
+  },
+  {
+    "id": "skill_a69a818d89",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ケーラコレ",
+      "en": "Kerachole",
+      "de": "Kerachole",
+      "fr": "Kerachole",
+      "ko": "케이라콜레",
+      "zhCN": "堅角清汁"
+    },
+    "level": 78,
+    "iconUrl": "https://xivapi.com/i/003000/003666.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 30,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "healing": {
+        "hot": {
+          "duration": 15,
+          "amount": 100
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_8ec2909e08",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ホーリズム",
+      "en": "Holos",
+      "de": "Holos",
+      "fr": "Holos",
+      "ko": "전체론",
+      "zhCN": "整體論"
+    },
+    "level": 76,
+    "iconUrl": "https://xivapi.com/i/003000/003678.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 20,
+      "mitigation": {
+        "duration": 20,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "healing": {
+        "heal": 300
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 300
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_d90bd2b201",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "リゾーマタ",
+      "en": "Rhizomata",
+      "de": "Rizomata",
+      "fr": "Rizomata",
+      "ko": "만물의 근원",
+      "zhCN": "根素"
+    },
+    "level": 74,
+    "iconUrl": "https://xivapi.com/i/003000/003677.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 0
+    }
+  },
+  {
+    "id": "skill_85880ab4e6",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ハイマ",
+      "en": "Haima",
+      "de": "Haima",
+      "fr": "Haima",
+      "ko": "혈액",
+      "zhCN": "輸血"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/003000/003673.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "barrier": {
+        "effect": {
+          "duration": 15,
+          "amount": 300
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_f17cb8833e",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ハイマ(時間経過:殘1)",
+      "en": "Haima(Time Lapse: Stack 1)",
+      "de": "Haima(Zeitraffer: Stapel 1)",
+      "fr": "Haima(Time Lapse : Pile 1)",
+      "ko": "혈액(시간 경과 : 스택 1)",
+      "zhCN": "輸血(延時攝影：堆棧 1)"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/003000/003673.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 150
+      }
+    }
+  },
+  {
+    "id": "skill_82fcc4ec4c",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ハイマ(時間経過:殘2)",
+      "en": "Haima(Time Lapse: Stack 2)",
+      "de": "Haima(Zeitraffer: Stapel 2)",
+      "fr": "Haima(Time Lapse : Pile 2)",
+      "ko": "혈액(시간 경과 : 스택 2)",
+      "zhCN": "輸血(延時攝影：堆棧 2)"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/003000/003673.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 300
+      }
+    }
+  },
+  {
+    "id": "skill_d3410667ba",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ハイマ(時間経過:殘3)",
+      "en": "Haima(Time Lapse: Stack 3)",
+      "de": "Haima(Zeitraffer: Stapel 3)",
+      "fr": "Haima(Time Lapse : Pile 3)",
+      "ko": "혈액(시간 경과 : 스택 3)",
+      "zhCN": "輸血(延時攝影：堆棧 3)"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/003000/003673.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 450
+      }
+    }
+  },
+  {
+    "id": "skill_717329bf13",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ハイマ(時間経過:殘4)",
+      "en": "Haima(Time Lapse: Stack 4)",
+      "de": "Haima(Zeitraffer: Stapel 4)",
+      "fr": "Haima(Time Lapse : Pile 4)",
+      "ko": "혈액(시간 경과 : 스택 4)",
+      "zhCN": "輸血(延時攝影：堆棧 4)"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/003000/003673.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 600
+      }
+    }
+  },
+  {
+    "id": "skill_fdab14f061",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ハイマ(時間経過:殘5)",
+      "en": "Haima(Time Lapse: Stack 5)",
+      "de": "Haima(Zeitraffer: Stapel 5)",
+      "fr": "Haima(Time Lapse : Pile 5)",
+      "ko": "혈액(시간 경과 : 스택 5)",
+      "zhCN": "輸血(延時攝影：堆棧 5)"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/003000/003673.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 750
+      }
+    }
+  },
+  {
+    "id": "skill_551aa1ac1b",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "タウロコレ",
+      "en": "Taurochole",
+      "de": "Taurochole",
+      "fr": "Taurochole",
+      "ko": "타우로콜레",
+      "zhCN": "白牛清汁"
+    },
+    "level": 62,
+    "iconUrl": "https://xivapi.com/i/003000/003671.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 45,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "healing": {
+        "heal": 700
+      }
+    }
+  },
+  {
+    "id": "skill_2511baae09",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ピュシスII",
+      "en": "Physis II",
+      "de": "Physis II",
+      "fr": "Physis II",
+      "ko": "퓌시스 2",
+      "zhCN": "自生II"
+    },
+    "level": 60,
+    "iconUrl": "https://xivapi.com/i/003000/003670.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 10,
+      "healing": {
+        "target": "RANGE_AFFECTED_ALL",
+        "duration": 10,
+        "timesHealBuffed": 1.1,
+        "hot": {
+          "duration": 15,
+          "amount": 130
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_24b0c9ee76",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ペプシス(エウクラシア・ディアグノシス)",
+      "en": "Pepsis(Eukrasian Diagnosis)",
+      "de": "Pepsis(Eukratische Diagnose)",
+      "fr": "Pepsis(Diagnosis eucrasique)",
+      "ko": "소화 작용(정상건강: 진단치료)",
+      "zhCN": "消化(均衡診斷)"
+    },
+    "level": 58,
+    "iconUrl": "https://xivapi.com/i/003000/003669.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 30,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 450
+      }
+    }
+  },
+  {
+    "id": "skill_74dc24bd8b",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ペプシス(エウクラシア・プログノシス)",
+      "en": "Pepsis(Eukrasian Prognosis)",
+      "de": "Pepsis(Eukratische Prognose)",
+      "fr": "Pepsis(Prognosis eucrasique)",
+      "ko": "소화 작용(정상건강: 예후)",
+      "zhCN": "消化(均衡預後)"
+    },
+    "level": 58,
+    "iconUrl": "https://xivapi.com/i/003000/003669.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 30,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 350
+      }
+    }
+  },
+  {
+    "id": "skill_026f315ecb",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ゾーエ",
+      "en": "Zoe",
+      "de": "Zoe",
+      "fr": "Zoe",
+      "ko": "생명력",
+      "zhCN": "活化"
+    },
+    "level": 56,
+    "iconUrl": "https://xivapi.com/i/003000/003668.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "target": "SELF_EFFECTED_GCD",
+        "duration": 30,
+        "timesHealBuffed": 1.5
+      }
+    }
+  },
+  {
+    "id": "skill_2f59d6205f",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "イックソコレ",
+      "en": "Ixochole",
+      "de": "Ixochole",
+      "fr": "Ixochole",
+      "ko": "익소콜레",
+      "zhCN": "寄生清汁"
+    },
+    "level": 52,
+    "iconUrl": "https://xivapi.com/i/003000/003667.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 30,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    }
+  },
+  {
+    "id": "skill_b6295c65ff",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ケーラコレ",
+      "en": "Kerachole",
+      "de": "Kerachole",
+      "fr": "Kerachole",
+      "ko": "케이라콜레",
+      "zhCN": "堅角清汁"
+    },
+    "level": 50,
+    "iconUrl": "https://xivapi.com/i/003000/003666.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 30,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_1dbfae59af",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ドルオコレ",
+      "en": "Druochole",
+      "de": "Druochole",
+      "fr": "Druochole",
+      "ko": "드루오콜레",
+      "zhCN": "靈橡清汁"
+    },
+    "level": 45,
+    "iconUrl": "https://xivapi.com/i/003000/003664.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 600
+      }
+    }
+  },
+  {
+    "id": "skill_cdda6806d6",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "エウクラシア・ディアグノシス",
+      "en": "Eukrasian Diagnosis",
+      "de": "Eukratische Diagnose",
+      "fr": "Diagnosis eucrasique",
+      "ko": "정상건강: 진단치료",
+      "zhCN": "均衡診斷"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/003000/003659.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 300
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 375
+        }
+      }
+    },
+    "resource": {
+      "mp": 900
+    }
+  },
+  {
+    "id": "skill_b1ba953a67",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "エウクラシア・プログノシス",
+      "en": "Eukrasian Prognosis",
+      "de": "Eukratische Prognose",
+      "fr": "Prognosis eucrasique",
+      "ko": "정상건강: 예후",
+      "zhCN": "均衡預後"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/003000/003660.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 100
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 230
+        }
+      }
+    },
+    "resource": {
+      "mp": 900
+    }
+  },
+  {
+    "id": "skill_0bbbe558af",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "プログノシス",
+      "en": "Prognosis",
+      "de": "Prognose",
+      "fr": "Prognosis",
+      "ko": "예후",
+      "zhCN": "預後"
+    },
+    "level": 10,
+    "iconUrl": "https://xivapi.com/i/003000/003654.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 300
+      }
+    },
+    "resource": {
+      "mp": 700
+    }
+  },
+  {
+    "id": "skill_4f0bc9d30e",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ディアグノシス",
+      "en": "Diagnosis",
+      "de": "Diagnose",
+      "fr": "Diagnosis",
+      "ko": "진단치료",
+      "zhCN": "診斷"
+    },
+    "level": 2,
+    "iconUrl": "https://xivapi.com/i/003000/003652.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    },
+    "resource": {
+      "mp": 400
+    }
+  },
+  {
+    "id": "skill_19dbf9a631",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "フィロソフィア",
+      "en": "Philosophia",
+      "de": "Philosophia",
+      "fr": "Philosophia",
+      "ko": "필로소피아",
+      "zhCN": "智慧之愛"
+    },
+    "level": 100,
+    "iconUrl": "https://xivapi.com/i/003000/003690.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 20,
+      "healing": {
+        "target": "SELF_EFFECTED_GCD",
+        "duration": 20,
+        "timesHealBuffed": 1.2
+      }
+    }
+  },
+  {
+    "id": "skill_db04479532",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ピュシスII",
+      "en": "Physis II",
+      "de": "Physis II",
+      "fr": "Physis II",
+      "ko": "퓌시스 2",
+      "zhCN": "自生II"
+    },
+    "level": 98,
+    "iconUrl": "https://xivapi.com/i/003000/003670.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "target": "RANGE_AFFECTED_ALL",
+        "duration": 15,
+        "timesHealBuffed": 1.1,
+        "hot": {
+          "duration": 15,
+          "amount": 130
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_7f426ba1d7",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "エウクラシア・プログノシスII",
+      "en": "Eukrasian Prognosis II",
+      "de": "Eukratische Prognose II",
+      "fr": "Prognosis eucrasique II",
+      "ko": "정상건강: 예후 2",
+      "zhCN": "均衡預後II"
+    },
+    "level": 96,
+    "iconUrl": "https://xivapi.com/i/003000/003689.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 100
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 360
+        }
+      }
+    },
+    "resource": {
+      "mp": 800
+    }
+  },
+  {
+    "id": "skill_253c57d25e",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "プネウマ",
+      "en": "Pneuma",
+      "de": "Pneuma",
+      "fr": "Pneuma",
+      "ko": "프네우마",
+      "zhCN": "魂靈風息"
+    },
+    "level": 90,
+    "iconUrl": "https://xivapi.com/i/003000/003686.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 600
+      }
+    },
+    "resource": {
+      "mp": 700
+    }
+  },
+  {
+    "id": "skill_606861de65",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ゾーエ",
+      "en": "Zoe",
+      "de": "Zoe",
+      "fr": "Zoe",
+      "ko": "생명력",
+      "zhCN": "活化"
+    },
+    "level": 88,
+    "iconUrl": "https://xivapi.com/i/003000/003668.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 10,
+      "healing": {
+        "target": "SELF_EFFECTED_GCD",
+        "duration": 30,
+        "timesHealBuffed": 1.5
+      }
+    }
+  },
+  {
+    "id": "skill_70b86de193",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "エウクラシア・ディアグノシス",
+      "en": "Eukrasian Diagnosis",
+      "de": "Eukratische Diagnose",
+      "fr": "Diagnosis eucrasique",
+      "ko": "정상건강: 진단치료",
+      "zhCN": "均衡診斷"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/003000/003659.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 300
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 540
+        }
+      }
+    },
+    "resource": {
+      "mp": 800
+    }
+  },
+  {
+    "id": "skill_aa414f99e4",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "エウクラシア・プログノシス",
+      "en": "Eukrasian Prognosis",
+      "de": "Eukratische Prognose",
+      "fr": "Prognosis eucrasique",
+      "ko": "정상건강: 예후",
+      "zhCN": "均衡預後"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/003000/003660.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 100
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 320
+        }
+      }
+    },
+    "resource": {
+      "mp": 800
+    }
+  },
+  {
+    "id": "skill_0d04ecea9a",
+    "job": "SGE",
+    "sourceRole": "賢者",
+    "name": {
+      "ja": "ディアグノシス",
+      "en": "Diagnosis",
+      "de": "Diagnose",
+      "fr": "Diagnosis",
+      "ko": "진단치료",
+      "zhCN": "診斷"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/003000/003652.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 450
+      }
+    },
+    "resource": {
+      "mp": 400
+    }
+  }
+]

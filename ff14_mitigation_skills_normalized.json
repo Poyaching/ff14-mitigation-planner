@@ -1,0 +1,6112 @@
+{
+  "jobCodes": {
+    "學者": "SCH",
+    "賢者": "SGE",
+    "占星術師": "AST",
+    "白魔道士": "WHM",
+    "舞者": "DNC",
+    "戰士": "WAR",
+    "騎士": "PLD",
+    "暗黑騎士": "DRK",
+    "絕槍戰士": "GNB",
+    "吟遊詩人": "BRD",
+    "武僧": "MNK",
+    "機工士": "MCH",
+    "繪靈法師": "PCT",
+    "赤魔道士": "RDM"
+  },
+  "roleGroups": {
+    "坦": "TANK",
+    "近戰": "MELEE",
+    "法師": "CASTER"
+  },
+  "skills": [
+      {
+      "id": "skill_413e4658",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "エナジードレイン",
+        "en": "Energy Drain",
+        "de": "",
+        "fr": "",
+        "ko": "",
+        "zhCN": "能量吸收"
+      },
+      "level": 10,
+      "iconUrl": "https://xivapi.com/i/000000/000514.png",
+      "ability": true,
+      "assign": "SINGLE_ENEMY",
+      "charges": 1,
+      "cooldown": 1
+    },
+    {
+      "id": "skill_413e319983",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "サモン・セラフィム",
+        "en": "Summon Seraph",
+        "de": "Seraph-Beschwörung",
+        "fr": "Invocation Séraphin",
+        "ko": "세라핌 소환",
+        "zhCN": "熾天召喚"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/002000/002850.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 22,
+        "mitigation": {
+          "duration": 22
+        }
+      }
+    },
+    {
+      "id": "skill_bf6f470416",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "コンソレイション",
+        "en": "Consolation",
+        "de": "Seelentrost",
+        "fr": "Dictame",
+        "ko": "위안",
+        "zhCN": "慰藉"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/002000/002851.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 30,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 162.5
+        },
+        "barrier": {
+          "effect": {
+            "amount": 162.5
+          }
+        }
+      },
+      "availability": {
+        "duration": 22,
+        "skill": "サモン・セラフィム"
+      }
+    },
+    {
+      "id": "skill_4bf9d06a3f",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "パンハイマ",
+        "en": "Panhaima",
+        "de": "Panhaima",
+        "fr": "Panhaima",
+        "ko": "온혈액",
+        "zhCN": "泛輸血"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003679.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "barrier": {
+          "effect": {
+            "duration": 15,
+            "amount": 200
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_20c0c2269f",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "パンハイマ(時間経過:殘1)",
+        "en": "Panhaima(Time Lapse: Stack 1)",
+        "de": "Panhaima(Zeitraffer: Stapel 1)",
+        "fr": "Panhaima(Time Lapse : Pile 1)",
+        "ko": "온혈액(시간 경과 : 스택 1)",
+        "zhCN": "泛輸血(延時攝影：堆棧 1)"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003679.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 100
+        }
+      }
+    },
+    {
+      "id": "skill_234e2cdb9b",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "パンハイマ(時間経過:殘2)",
+        "en": "Panhaima(Time Lapse: Stack 2)",
+        "de": "Panhaima(Zeitraffer: Stapel 2)",
+        "fr": "Panhaima(Time Lapse : Pile 2)",
+        "ko": "온혈액(시간 경과 : 스택 2)",
+        "zhCN": "泛輸血(延時攝影：堆棧 2)"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003679.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 200
+        }
+      }
+    },
+    {
+      "id": "skill_52ba4ebfa4",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "パンハイマ(時間経過:殘3)",
+        "en": "Panhaima(Time Lapse: Stack 3)",
+        "de": "Panhaima(Zeitraffer: Stapel 3)",
+        "fr": "Panhaima(Time Lapse : Pile 3)",
+        "ko": "온혈액(시간 경과 : 스택 3)",
+        "zhCN": "泛輸血(延時攝影：堆棧 3)"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003679.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 300
+        }
+      }
+    },
+    {
+      "id": "skill_d519d3d0ab",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "パンハイマ(時間経過:殘4)",
+        "en": "Panhaima(Time Lapse: Stack 4)",
+        "de": "Panhaima(Zeitraffer: Stapel 4)",
+        "fr": "Panhaima(Time Lapse : Pile 4)",
+        "ko": "온혈액(시간 경과 : 스택 4)",
+        "zhCN": "泛輸血(延時攝影：堆棧 4)"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003679.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      }
+    },
+    {
+      "id": "skill_242279cea3",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "パンハイマ(時間経過:殘5)",
+        "en": "Panhaima(Time Lapse: Stack 5)",
+        "de": "Panhaima(Zeitraffer: Stapel 5)",
+        "fr": "Panhaima(Time Lapse : Pile 5)",
+        "ko": "온혈액(시간 경과 : 스택 5)",
+        "zhCN": "泛輸血(延時攝影：堆棧 5)"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003679.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 500
+        }
+      }
+    },
+    {
+      "id": "skill_f6d29358af",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ニュートラルセクト",
+        "en": "Neutral Sect",
+        "de": "Neutral",
+        "fr": "Adepte de la neutralité",
+        "ko": "하루별읽기",
+        "zhCN": "中間學派"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003552.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "target": "SELF_EFFECTED_GCD",
+          "duration": 20,
+          "timesHealBuffed": 1.2
+        }
+      }
+    },
+    {
+      "id": "skill_e46063933d",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "テンパランス",
+        "en": "Temperance",
+        "de": "Linderung",
+        "fr": "Tempérance",
+        "ko": "절제",
+        "zhCN": "節制"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/002000/002645.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 20,
+        "mitigation": {
+          "duration": 20,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "healing": {
+          "target": "SELF_EFFECTED_GCD",
+          "duration": 20,
+          "timesHealBuffed": 1.2
+        }
+      }
+    },
+    {
+      "id": "skill_2020b51a3e",
+      "job": "DNC",
+      "sourceRole": "舞者",
+      "name": {
+        "ja": "インプロビゼーションフィニッシュ",
+        "en": "Improvised Finish",
+        "de": "Improvisiertes Finale",
+        "fr": "Final improvisé",
+        "ko": "즉흥 연기 마무리",
+        "zhCN": "即興表演結束"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003479.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0
+      }
+    },
+    {
+      "id": "skill_86cb5adc17",
+      "job": "DNC",
+      "sourceRole": "舞者",
+      "name": {
+        "ja": "インプロビゼーションフィニッシュ(踴りの激情0)",
+        "en": "Improvised Finish(Rising Rhythm 0)",
+        "de": "Improvisiertes Finale(Tanzekstase 0)",
+        "fr": "Final improvisé(Frénésie des danseurs 0)",
+        "ko": "즉흥 연기 마무리(열정 중첩 0)",
+        "zhCN": "即興表演結束(舞動的熱情 0)"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003479.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "barrier": {
+          "buff": {
+            "duration": 30,
+            "multiplier": 0.05
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_0cfdf1d921",
+      "job": "DNC",
+      "sourceRole": "舞者",
+      "name": {
+        "ja": "インプロビゼーションフィニッシュ(踴りの激情1)",
+        "en": "Improvised Finish(Rising Rhythm 1)",
+        "de": "Improvisiertes Finale(Tanzekstase 1)",
+        "fr": "Final improvisé(Frénésie des danseurs 1)",
+        "ko": "즉흥 연기 마무리(열정 중첩 1)",
+        "zhCN": "即興表演結束(舞動的熱情 1)"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003479.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "barrier": {
+          "buff": {
+            "duration": 30,
+            "multiplier": 0.06
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_5b5aa43a3b",
+      "job": "DNC",
+      "sourceRole": "舞者",
+      "name": {
+        "ja": "インプロビゼーションフィニッシュ(踴りの激情2)",
+        "en": "Improvised Finish(Rising Rhythm 2)",
+        "de": "Improvisiertes Finale(Tanzekstase 2)",
+        "fr": "Final improvisé(Frénésie des danseurs 2)",
+        "ko": "즉흥 연기 마무리(열정 중첩 2)",
+        "zhCN": "即興表演結束(舞動的熱情 2)"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003479.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "barrier": {
+          "buff": {
+            "duration": 30,
+            "multiplier": 0.07
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_119b2f2ab7",
+      "job": "DNC",
+      "sourceRole": "舞者",
+      "name": {
+        "ja": "インプロビゼーションフィニッシュ(踴りの激情3)",
+        "en": "Improvised Finish(Rising Rhythm 3)",
+        "de": "Improvisiertes Finale(Tanzekstase 3)",
+        "fr": "Final improvisé(Frénésie des danseurs 3)",
+        "ko": "즉흥 연기 마무리(열정 중첩 3)",
+        "zhCN": "即興表演結束(舞動的熱情 3)"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003479.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "barrier": {
+          "buff": {
+            "duration": 30,
+            "multiplier": 0.08
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_da314ff781",
+      "job": "DNC",
+      "sourceRole": "舞者",
+      "name": {
+        "ja": "インプロビゼーションフィニッシュ(踴りの激情4)",
+        "en": "Improvised Finish(Rising Rhythm 4)",
+        "de": "Improvisiertes Finale(Tanzekstase 4)",
+        "fr": "Final improvisé(Frénésie des danseurs 4)",
+        "ko": "즉흥 연기 마무리(열정 중첩 4)",
+        "zhCN": "即興表演結束(舞動的熱情 4)"
+      },
+      "level": 80,
+      "iconUrl": "https://xivapi.com/i/003000/003479.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "barrier": {
+          "buff": {
+            "duration": 30,
+            "multiplier": 0.1
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_21d5d38ff1",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "野戦治療の陣",
+        "en": "Sacred Soil",
+        "de": "Geweihte Erde",
+        "fr": "Dogme de survie",
+        "ko": "야전치유진",
+        "zhCN": "野戰治療陣"
+      },
+      "level": 78,
+      "iconUrl": "https://xivapi.com/i/002000/002804.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 30,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "healing": {
+          "hot": {
+            "duration": 15,
+            "amount": 100
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_a69a818d89",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ケーラコレ",
+        "en": "Kerachole",
+        "de": "Kerachole",
+        "fr": "Kerachole",
+        "ko": "케이라콜레",
+        "zhCN": "堅角清汁"
+      },
+      "level": 78,
+      "iconUrl": "https://xivapi.com/i/003000/003666.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 30,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "healing": {
+          "hot": {
+            "duration": 15,
+            "amount": 100
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_bb3c55910b",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ディグニティ(最小)",
+        "en": "Essential Dignity(minimum)",
+        "de": "Essenzielle Würde(minimum)",
+        "fr": "Dignité essentielle(le minimum)",
+        "ko": "본질적 위계(최소)",
+        "zhCN": "先天稟賦(最低限度)"
+      },
+      "level": 78,
+      "iconUrl": "https://xivapi.com/i/003000/003141.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 2,
+      "cooldown": 40,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      }
+    },
+    {
+      "id": "skill_78a9d98af8",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ディグニティ(最大)",
+        "en": "Essential Dignity(maximum)",
+        "de": "Essenzielle Würde(maximal)",
+        "fr": "Dignité essentielle(maximum)",
+        "ko": "본질적 위계(최대)",
+        "zhCN": "先天稟賦(最大)"
+      },
+      "level": 78,
+      "iconUrl": "https://xivapi.com/i/003000/003141.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 2,
+      "cooldown": 40,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 900
+        }
+      }
+    },
+    {
+      "id": "skill_65007fd91c",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "スリル・オブ・バトル",
+        "en": "Thrill of Battle",
+        "de": "Kampfrausch",
+        "fr": "Frisson de la bataille",
+        "ko": "전투의 짜릿함",
+        "zhCN": "戰栗"
+      },
+      "level": 78,
+      "iconUrl": "https://xivapi.com/i/000000/000263.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 10,
+        "healing": {
+          "target": "SELF_AFFECTED_ALL",
+          "duration": 10,
+          "timesHealBuffed": 1.2
+        },
+        "hpBuff": {
+          "duration": 10,
+          "multiplier": 1.2
+        }
+      }
+    },
+    {
+      "id": "skill_1957e272af",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "フェイブレッシング",
+        "en": "Fey Blessing",
+        "de": "Gunst der Feen",
+        "fr": "Bénédiction féérique",
+        "ko": "요정의 축복",
+        "zhCN": "異想的祥光"
+      },
+      "level": 76,
+      "iconUrl": "https://xivapi.com/i/002000/002854.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 208
+        }
+      }
+    },
+    {
+      "id": "skill_8ec2909e08",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ホーリズム",
+        "en": "Holos",
+        "de": "Holos",
+        "fr": "Holos",
+        "ko": "전체론",
+        "zhCN": "整體論"
+      },
+      "level": 76,
+      "iconUrl": "https://xivapi.com/i/003000/003678.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 20,
+        "mitigation": {
+          "duration": 20,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "healing": {
+          "heal": 300
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 300
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_813994fcc3",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ホロスコープ",
+        "en": "Horoscope",
+        "de": "Horoskop",
+        "fr": "Horoscope",
+        "ko": "별점운",
+        "zhCN": "天宮圖"
+      },
+      "level": 76,
+      "iconUrl": "https://xivapi.com/i/003000/003550.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 10,
+        "healing": {
+          "heal": 200
+        }
+      }
+    },
+    {
+      "id": "skill_acefd7a47e",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ホロスコープ・ヘリオス",
+        "en": "Horoscope Helios",
+        "de": "Helios-Horoskop",
+        "fr": "Hélios aspecté",
+        "ko": "별점운: 헬리오스",
+        "zhCN": "陽星天宮圖"
+      },
+      "level": 76,
+      "iconUrl": "https://xivapi.com/i/003000/003551.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 400
+        }
+      }
+    },
+    {
+      "id": "skill_011af80a3c",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "シェイクオフ",
+        "en": "Shake It Off",
+        "de": "Abschütteln",
+        "fr": "Débarrassage",
+        "ko": "뿌리치기",
+        "zhCN": "擺脫"
+      },
+      "level": 76,
+      "iconUrl": "https://xivapi.com/i/002000/002563.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 300,
+          "hot": {
+            "duration": 15,
+            "amount": 100
+          }
+        },
+        "barrier": {
+          "buff": {
+            "duration": 30,
+            "multiplier": 0.15
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_de73c8a6b4",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "原初の猛り",
+        "en": "Nascent Flash",
+        "de": "Urflackern",
+        "fr": "Exaltation naissante",
+        "ko": "원초의 분노",
+        "zhCN": "原初的勇猛"
+      },
+      "level": 76,
+      "iconUrl": "https://xivapi.com/i/002000/002567.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 25,
+      "effects": {
+        "duration": 6,
+        "mitigation": {
+          "duration": 6,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_c16db48216",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ハート・オブ・ラプチャー",
+        "en": "Afflatus Rapture",
+        "de": "Afflatus laetitiae",
+        "fr": "Offrande de ravissement",
+        "ko": "황홀한 마음",
+        "zhCN": "狂喜之心"
+      },
+      "level": 76,
+      "iconUrl": "https://xivapi.com/i/002000/002643.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "インドゥルゲンティア",
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "moreHeal": 500,
+          "heal": 300
+        }
+      }
+    },
+    {
+      "id": "skill_79c88067c9",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "シェルトロン",
+        "en": "Sheltron",
+        "de": "Schiltron",
+        "fr": "Schiltron",
+        "ko": "방벽",
+        "zhCN": "盾陣"
+      },
+      "level": 74,
+      "iconUrl": "https://xivapi.com/i/002000/002510.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 5,
+      "effects": {
+        "duration": 6,
+        "mitigation": {
+          "duration": 6,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85
+        }
+      }
+    },
+    {
+      "id": "skill_faebd2a493",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "秘策",
+        "en": "Recitation",
+        "de": "Raffinesse",
+        "fr": "Récitation",
+        "ko": "비책",
+        "zhCN": "秘策"
+      },
+      "level": 74,
+      "iconUrl": "https://xivapi.com/i/002000/002822.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15
+      }
+    },
+    {
+      "id": "skill_d90bd2b201",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "リゾーマタ",
+        "en": "Rhizomata",
+        "de": "Rizomata",
+        "fr": "Rizomata",
+        "ko": "만물의 근원",
+        "zhCN": "根素"
+      },
+      "level": 74,
+      "iconUrl": "https://xivapi.com/i/003000/003677.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 0
+      }
+    },
+    {
+      "id": "skill_9264334dac",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "星天交差",
+        "en": "Celestial Intersection",
+        "de": "Kongruenz",
+        "fr": "Rencontre céleste",
+        "ko": "천궁의 교차",
+        "zhCN": "巨星主宰"
+      },
+      "level": 74,
+      "iconUrl": "https://xivapi.com/i/003000/003556.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 30,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 200
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 400
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_bf1daeb578",
+      "job": "DRK",
+      "sourceRole": "暗黒騎士",
+      "name": {
+        "ja": "ダークミッショナリー",
+        "en": "Dark Missionary",
+        "de": "Dunkler Bote",
+        "fr": "Missionnaire des Ténèbres",
+        "ko": "어둠의 포교자",
+        "zhCN": "暗黑布道"
+      },
+      "level": 66,
+      "iconUrl": "https://xivapi.com/i/003000/003087.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.95,
+          "unique": 1
+        }
+      }
+    },
+    {
+      "id": "skill_3c49d2aca2",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "パッセージ・オブ・アームズ",
+        "en": "Passage of Arms",
+        "de": "Waffengang",
+        "fr": "Passe d'armes",
+        "ko": "결연한 수호자",
+        "zhCN": "武裝戍衛"
+      },
+      "level": 70,
+      "iconUrl": "https://xivapi.com/i/002000/002515.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 18,
+        "mitigation": {
+          "duration": 18,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85,
+          "block": 1
+        }
+      }
+    },
+    {
+      "id": "skill_817dc6cd08",
+      "job": "DRK",
+      "sourceRole": "暗黒騎士",
+      "name": {
+        "ja": "ブラック騎士",
+        "en": "The Blackest Night",
+        "de": "Schwärzeste Nacht",
+        "fr": "Nuit noirissime",
+        "ko": "흑야",
+        "zhCN": "至黑之夜"
+      },
+      "level": 70,
+      "iconUrl": "https://xivapi.com/i/003000/003081.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 15,
+      "effects": {
+        "duration": 7,
+        "barrier": {
+          "buff": {
+            "duration": 7,
+            "multiplier": 0.25
+          }
+        }
+      },
+      "resource": {
+        "mp": 3000
+      }
+    },
+    {
+      "id": "skill_a67e46c195",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "フェイユニオン",
+        "en": "Fey Union",
+        "de": "Feenbund",
+        "fr": "Union féerique",
+        "ko": "요정의 결합",
+        "zhCN": "異想的融光"
+      },
+      "level": 70,
+      "iconUrl": "https://xivapi.com/i/002000/002818.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 3,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "hot": {
+            "amount": 260
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_85880ab4e6",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ハイマ",
+        "en": "Haima",
+        "de": "Haima",
+        "fr": "Haima",
+        "ko": "혈액",
+        "zhCN": "輸血"
+      },
+      "level": 70,
+      "iconUrl": "https://xivapi.com/i/003000/003673.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "barrier": {
+          "effect": {
+            "duration": 15,
+            "amount": 300
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_f17cb8833e",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ハイマ(時間経過:殘1)",
+        "en": "Haima(Time Lapse: Stack 1)",
+        "de": "Haima(Zeitraffer: Stapel 1)",
+        "fr": "Haima(Time Lapse : Pile 1)",
+        "ko": "혈액(시간 경과 : 스택 1)",
+        "zhCN": "輸血(延時攝影：堆棧 1)"
+      },
+      "level": 70,
+      "iconUrl": "https://xivapi.com/i/003000/003673.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 150
+        }
+      }
+    },
+    {
+      "id": "skill_82fcc4ec4c",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ハイマ(時間経過:殘2)",
+        "en": "Haima(Time Lapse: Stack 2)",
+        "de": "Haima(Zeitraffer: Stapel 2)",
+        "fr": "Haima(Time Lapse : Pile 2)",
+        "ko": "혈액(시간 경과 : 스택 2)",
+        "zhCN": "輸血(延時攝影：堆棧 2)"
+      },
+      "level": 70,
+      "iconUrl": "https://xivapi.com/i/003000/003673.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 300
+        }
+      }
+    },
+    {
+      "id": "skill_d3410667ba",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ハイマ(時間経過:殘3)",
+        "en": "Haima(Time Lapse: Stack 3)",
+        "de": "Haima(Zeitraffer: Stapel 3)",
+        "fr": "Haima(Time Lapse : Pile 3)",
+        "ko": "혈액(시간 경과 : 스택 3)",
+        "zhCN": "輸血(延時攝影：堆棧 3)"
+      },
+      "level": 70,
+      "iconUrl": "https://xivapi.com/i/003000/003673.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 450
+        }
+      }
+    },
+    {
+      "id": "skill_717329bf13",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ハイマ(時間経過:殘4)",
+        "en": "Haima(Time Lapse: Stack 4)",
+        "de": "Haima(Zeitraffer: Stapel 4)",
+        "fr": "Haima(Time Lapse : Pile 4)",
+        "ko": "혈액(시간 경과 : 스택 4)",
+        "zhCN": "輸血(延時攝影：堆棧 4)"
+      },
+      "level": 70,
+      "iconUrl": "https://xivapi.com/i/003000/003673.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 600
+        }
+      }
+    },
+    {
+      "id": "skill_fdab14f061",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ハイマ(時間経過:殘5)",
+        "en": "Haima(Time Lapse: Stack 5)",
+        "de": "Haima(Zeitraffer: Stapel 5)",
+        "fr": "Haima(Time Lapse : Pile 5)",
+        "ko": "혈액(시간 경과 : 스택 5)",
+        "zhCN": "輸血(延時攝影：堆棧 5)"
+      },
+      "level": 70,
+      "iconUrl": "https://xivapi.com/i/003000/003673.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 750
+        }
+      }
+    },
+    {
+      "id": "skill_ba5763927b",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "クラウンレディ",
+        "en": "Lady of Crowns",
+        "de": "Königin der Kronen",
+        "fr": "Reine des couronnes",
+        "ko": "여왕의 날개",
+        "zhCN": "王冠之貴婦"
+      },
+      "level": 70,
+      "iconUrl": "https://xivapi.com/i/003000/003146.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 1,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      },
+      "availability": {
+        "duration": 1200,
+        "skill": "アンブラルドロー"
+      }
+    },
+    {
+      "id": "skill_8e81ab9baa",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "インドゥルゲンティア",
+        "en": "Plenary Indulgence",
+        "de": "Vollkommener Ablass",
+        "fr": "Indulgence plénière",
+        "ko": "대사면",
+        "zhCN": "全大赦"
+      },
+      "level": 70,
+      "iconUrl": "https://xivapi.com/i/002000/002639.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "healing": {
+          "target": "RANGE_AFFECTED_GCD",
+          "duration": 10,
+          "addHealBuffed": 200
+        }
+      }
+    },
+    {
+      "id": "skill_56bb0b0951",
+      "job": "GNB",
+      "sourceRole": "ガンブレイカー",
+      "name": {
+        "ja": "ハート・オブ・ストーン",
+        "en": "Heart of Stone",
+        "de": "Steinernes Herz",
+        "fr": "Cœur de pierre",
+        "ko": "돌의 심장",
+        "zhCN": "石之心"
+      },
+      "level": 68,
+      "iconUrl": "https://xivapi.com/i/003000/003425.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 25,
+      "effects": {
+        "duration": 7,
+        "mitigation": {
+          "duration": 7,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85
+        }
+      }
+    },
+    {
+      "id": "skill_abf2394cab",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "シェイクオフ",
+        "en": "Shake It Off",
+        "de": "Abschütteln",
+        "fr": "Débarrassage",
+        "ko": "뿌리치기",
+        "zhCN": "擺脫"
+      },
+      "level": 68,
+      "iconUrl": "https://xivapi.com/i/002000/002563.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "hot": {
+            "duration": 15,
+            "amount": 100
+          }
+        },
+        "barrier": {
+          "buff": {
+            "duration": 30,
+            "multiplier": 0.15
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_6519ea8000",
+      "job": "BRD",
+      "sourceRole": "吟遊詩人",
+      "name": {
+        "ja": "地神のミンネ",
+        "en": "Nature's Minne",
+        "de": "Nophicas Minne",
+        "fr": "Minne de la nature",
+        "ko": "Nature's Minne",
+        "zhCN": "大地神的抒情戀歌"
+      },
+      "level": 66,
+      "iconUrl": "https://xivapi.com/i/002000/002615.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "target": "RANGE_AFFECTED_ALL",
+          "duration": 15,
+          "timesHealBuffed": 1.15
+        }
+      }
+    },
+    {
+      "id": "skill_fd9c87cd64",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ディヴァインベニゾン",
+        "en": "Divine Benison",
+        "de": "Göttlicher Segen",
+        "fr": "Faveur divine",
+        "ko": "신성한 축복",
+        "zhCN": "神祝禱"
+      },
+      "level": 66,
+      "iconUrl": "https://xivapi.com/i/002000/002638.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 30,
+      "effects": {
+        "duration": 15,
+        "barrier": {
+          "effect": {
+            "duration": 15,
+            "amount": 500
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_b7186eaafc",
+      "job": "GNB",
+      "sourceRole": "ガンブレイカー",
+      "name": {
+        "ja": "ハート・オブ・ライト",
+        "en": "Heart of Light",
+        "de": "Wackeres Herz",
+        "fr": "Cœur de Lumière",
+        "ko": "빛의 심장",
+        "zhCN": "光之心"
+      },
+      "level": 64,
+      "iconUrl": "https://xivapi.com/i/003000/003424.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.95,
+          "unique": 1
+        }
+      }
+    },
+    {
+      "id": "skill_fbcebb3070",
+      "job": "MNK",
+      "sourceRole": "モンク",
+      "name": {
+        "ja": "金剛の極意",
+        "en": "Riddle of Earth",
+        "de": "Steinernes Enigma",
+        "fr": "Énigme de la terre",
+        "ko": "금강의 극의",
+        "zhCN": "金剛極意"
+      },
+      "level": 64,
+      "iconUrl": "https://xivapi.com/i/002000/002537.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_312954a466",
+      "job": "MNK",
+      "sourceRole": "モンク",
+      "name": {
+        "ja": "金剛周天",
+        "en": "Earth's Reply",
+        "de": "Erdumrundung",
+        "fr": "Réaction de la terre",
+        "ko": "금강주천",
+        "zhCN": "金剛周天"
+      },
+      "level": 64,
+      "iconUrl": "https://xivapi.com/i/002000/002549.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 1,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 300
+        }
+      },
+      "availability": {
+        "duration": 30,
+        "skill": "金剛の極意"
+      }
+    },
+    {
+      "id": "skill_ee86bd02e4",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "インターベンション",
+        "en": "Intervention",
+        "de": "Intervention",
+        "fr": "Intervention",
+        "ko": "중재",
+        "zhCN": "幹預"
+      },
+      "level": 62,
+      "iconUrl": "https://xivapi.com/i/002000/002512.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 10,
+      "effects": {
+        "duration": 6,
+        "mitigation": {
+          "duration": 6,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_74ebd13203",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "深謀遠慮の策",
+        "en": "Excogitation",
+        "de": "Weise Voraussicht",
+        "fr": "Traité de l'excogitation",
+        "ko": "심모원려책",
+        "zhCN": "深謀遠慮之策"
+      },
+      "level": 62,
+      "iconUrl": "https://xivapi.com/i/002000/002813.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 45,
+      "effects": {
+        "duration": 45,
+        "mitigation": {
+          "duration": 45
+        },
+        "healing": {
+          "heal": 800
+        }
+      }
+    },
+    {
+      "id": "skill_10e455618f",
+      "job": "MCH",
+      "sourceRole": "機工士",
+      "name": {
+        "ja": "ウェポンブレイク",
+        "en": "Dismantle",
+        "de": "Zerlegen",
+        "fr": "Brise-arme",
+        "ko": "Dismantle",
+        "zhCN": "武裝解除"
+      },
+      "level": 62,
+      "iconUrl": "https://xivapi.com/i/003000/003011.png",
+      "ability": true,
+      "assign": "SINGLE_ENEMY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_de6322a6a8",
+      "job": "BRD",
+      "sourceRole": "吟遊詩人",
+      "name": {
+        "ja": "トルバドゥール",
+        "en": "Troubadour",
+        "de": "Troubadour",
+        "fr": "Troubadour",
+        "ko": "방랑하는 음악가",
+        "zhCN": "行吟"
+      },
+      "level": 62,
+      "iconUrl": "https://xivapi.com/i/002000/002612.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_551aa1ac1b",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "タウロコレ",
+        "en": "Taurochole",
+        "de": "Taurochole",
+        "fr": "Taurochole",
+        "ko": "타우로콜레",
+        "zhCN": "白牛清汁"
+      },
+      "level": 62,
+      "iconUrl": "https://xivapi.com/i/003000/003671.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 45,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "healing": {
+          "heal": 700
+        }
+      }
+    },
+    {
+      "id": "skill_80b0dd5d7f",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "アーサリースター(巨星の支配者)",
+        "en": "Earthly Star(Giant Dominance)",
+        "de": "Irdischer Stern(Planetare Herrschaft)",
+        "fr": "Étoile terrestre(Domination stellaire)",
+        "ko": "지상의 별(큰별의 지배자)",
+        "zhCN": "地星(巨星主宰)"
+      },
+      "level": 62,
+      "iconUrl": "https://xivapi.com/i/003000/003144.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 720
+        }
+      }
+    },
+    {
+      "id": "skill_73de6e14cb",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "アーサリースター(星の支配者)",
+        "en": "Earthly Star(Earthly Dominance)",
+        "de": "Irdischer Stern(Irdische Herrschaft)",
+        "fr": "Étoile terrestre(Domination terrestre)",
+        "ko": "지상의 별(별의 지배자)",
+        "zhCN": "地星(地星主宰)"
+      },
+      "level": 62,
+      "iconUrl": "https://xivapi.com/i/003000/003143.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 540
+        }
+      }
+    },
+    {
+      "id": "skill_c9d5ced1cc",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "転化",
+        "en": "Dissipation",
+        "de": "Dissipation",
+        "fr": "Dissipation",
+        "ko": "에테르 전환",
+        "zhCN": "轉化"
+      },
+      "level": 60,
+      "iconUrl": "https://xivapi.com/i/002000/002810.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "target": "SELF_EFFECTED_GCD",
+          "duration": 30,
+          "timesHealBuffed": 1.2
+        }
+      }
+    },
+    {
+      "id": "skill_2511baae09",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ピュシスII",
+        "en": "Physis II",
+        "de": "Physis II",
+        "fr": "Physis II",
+        "ko": "퓌시스 2",
+        "zhCN": "自生II"
+      },
+      "level": 60,
+      "iconUrl": "https://xivapi.com/i/003000/003670.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 10,
+        "healing": {
+          "target": "RANGE_AFFECTED_ALL",
+          "duration": 10,
+          "timesHealBuffed": 1.1,
+          "hot": {
+            "duration": 15,
+            "amount": 130
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_11a08b48dc",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "星天対抗",
+        "en": "Celestial Opposition",
+        "de": "Opposition",
+        "fr": "Opposition céleste",
+        "ko": "천궁의 반목",
+        "zhCN": "天星沖日"
+      },
+      "level": 60,
+      "iconUrl": "https://xivapi.com/i/003000/003142.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "heal": 200,
+          "hot": {
+            "duration": 15,
+            "amount": 100
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_5af1e1ae6f",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "テトラグラマトン",
+        "en": "Tetragrammaton",
+        "de": "Tetragrammaton",
+        "fr": "Tétragramme",
+        "ko": "신의 이름",
+        "zhCN": "神名"
+      },
+      "level": 60,
+      "iconUrl": "https://xivapi.com/i/002000/002633.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 700
+        }
+      }
+    },
+    {
+      "id": "skill_24b0c9ee76",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ペプシス(エウクラシア・ディアグノシス)",
+        "en": "Pepsis(Eukrasian Diagnosis)",
+        "de": "Pepsis(Eukratische Diagnose)",
+        "fr": "Pepsis(Diagnosis eucrasique)",
+        "ko": "소화 작용(정상건강: 진단치료)",
+        "zhCN": "消化(均衡診斷)"
+      },
+      "level": 58,
+      "iconUrl": "https://xivapi.com/i/003000/003669.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 30,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 450
+        }
+      }
+    },
+    {
+      "id": "skill_74dc24bd8b",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ペプシス(エウクラシア・プログノシス)",
+        "en": "Pepsis(Eukrasian Prognosis)",
+        "de": "Pepsis(Eukratische Prognose)",
+        "fr": "Pepsis(Prognosis eucrasique)",
+        "ko": "소화 작용(정상건강: 예후)",
+        "zhCN": "消化(均衡預後)"
+      },
+      "level": 58,
+      "iconUrl": "https://xivapi.com/i/003000/003669.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 30,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 350
+        }
+      }
+    },
+    {
+      "id": "skill_b3f9c8a4c3",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "運命の輪",
+        "en": "Collective Unconscious",
+        "de": "Numinosum",
+        "fr": "Inconscient collectif",
+        "ko": "운명의 수레바퀴",
+        "zhCN": "命運之輪"
+      },
+      "level": 58,
+      "iconUrl": "https://xivapi.com/i/003000/003140.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "healing": {
+          "hot": {
+            "duration": 15,
+            "amount": 100
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_043d84e9eb",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "エクリブリウム",
+        "en": "Equilibrium",
+        "de": "Äquilibrium",
+        "fr": "Équilibre",
+        "ko": "평정심",
+        "zhCN": "泰然自若"
+      },
+      "level": 58,
+      "iconUrl": "https://xivapi.com/i/002000/002560.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 1200
+        }
+      }
+    },
+    {
+      "id": "skill_755e12912e",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "ディヴァインヴェール",
+        "en": "Divine Veil",
+        "de": "Heiliger Quell",
+        "fr": "Voile divin",
+        "ko": "신성한 보호막",
+        "zhCN": "聖光幕簾"
+      },
+      "level": 56,
+      "iconUrl": "https://xivapi.com/i/002000/002508.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 30,
+        "barrier": {
+          "buff": {
+            "duration": 30,
+            "multiplier": 0.1
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_5cf6f15188",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "展開戦術",
+        "en": "Deployment Tactics",
+        "de": "Dislokation",
+        "fr": "Stratagème du déploiement",
+        "ko": "전개전술",
+        "zhCN": "展開戰術"
+      },
+      "level": 56,
+      "iconUrl": "https://xivapi.com/i/002000/002808.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0
+      }
+    },
+    {
+      "id": "skill_34aa91b9f4",
+      "job": "MCH",
+      "sourceRole": "機工士",
+      "name": {
+        "ja": "タクティシャン",
+        "en": "Tactician",
+        "de": "Taktiker",
+        "fr": "Tacticien",
+        "ko": "책략가",
+        "zhCN": "策動"
+      },
+      "level": 56,
+      "iconUrl": "https://xivapi.com/i/003000/003040.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_026f315ecb",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ゾーエ",
+        "en": "Zoe",
+        "de": "Zoe",
+        "fr": "Zoe",
+        "ko": "생명력",
+        "zhCN": "活化"
+      },
+      "level": 56,
+      "iconUrl": "https://xivapi.com/i/003000/003668.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "target": "SELF_EFFECTED_GCD",
+          "duration": 30,
+          "timesHealBuffed": 1.5
+        }
+      }
+    },
+    {
+      "id": "skill_8542faf48a",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "原初の直感",
+        "en": "Raw Intuition",
+        "de": "Urinstinkt",
+        "fr": "Intuition pure",
+        "ko": "원초의 직감",
+        "zhCN": "原初的直覺"
+      },
+      "level": 56,
+      "iconUrl": "https://xivapi.com/i/002000/002559.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 25,
+      "effects": {
+        "duration": 6,
+        "mitigation": {
+          "duration": 6,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_a3978246be",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "アサイズ",
+        "en": "Assize",
+        "de": "Assise",
+        "fr": "Assises",
+        "ko": "심판",
+        "zhCN": "法令"
+      },
+      "level": 56,
+      "iconUrl": "https://xivapi.com/i/002000/002634.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 40,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      }
+    },
+    {
+      "id": "skill_d4e4673a79",
+      "job": "DNC",
+      "sourceRole": "舞者",
+      "name": {
+        "ja": "守りのサンバ",
+        "en": "Shield Samba",
+        "de": "Schildsamba",
+        "fr": "Samba protectrice",
+        "ko": "수세의 삼바",
+        "zhCN": "防守之桑巴"
+      },
+      "level": 56,
+      "iconUrl": "https://xivapi.com/i/003000/003469.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_672fe01444",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "ブルワーク",
+        "en": "Bulwark",
+        "de": "Bollwerk",
+        "fr": "Forteresse",
+        "ko": "Bulwark",
+        "zhCN": "壁壘"
+      },
+      "level": 52,
+      "iconUrl": "https://xivapi.com/i/000000/000167.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "block": 0.2
+        }
+      }
+    },
+    {
+      "id": "skill_89c5530d6a",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "不撓不屈の策",
+        "en": "Indomitability",
+        "de": "Unbezwingbarkeit",
+        "fr": "Traité de la persévérance",
+        "ko": "불요불굴책",
+        "zhCN": "不屈不撓之策"
+      },
+      "level": 52,
+      "iconUrl": "https://xivapi.com/i/002000/002806.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 30,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      }
+    },
+    {
+      "id": "skill_2f59d6205f",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "イックソコレ",
+        "en": "Ixochole",
+        "de": "Ixochole",
+        "fr": "Ixochole",
+        "ko": "익소콜레",
+        "zhCN": "寄生清汁"
+      },
+      "level": 52,
+      "iconUrl": "https://xivapi.com/i/003000/003667.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 30,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      }
+    },
+    {
+      "id": "skill_50248096fc",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "アサイラム",
+        "en": "Asylum",
+        "de": "Refugium",
+        "fr": "Asile",
+        "ko": "성소",
+        "zhCN": "庇護所"
+      },
+      "level": 52,
+      "iconUrl": "https://xivapi.com/i/002000/002632.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 24,
+        "healing": {
+          "target": "RANGE_AFFECTED_ALL",
+          "duration": 24,
+          "timesHealBuffed": 1.1,
+          "hot": {
+            "duration": 24,
+            "amount": 100
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_b413794061",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ハート・オブ・ソラス",
+        "en": "Afflatus Solace",
+        "de": "Afflatus solatii",
+        "fr": "Offrande de réconfort",
+        "ko": "위로의 마음",
+        "zhCN": "安慰之心"
+      },
+      "level": 52,
+      "iconUrl": "https://xivapi.com/i/002000/002640.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 700
+        }
+      }
+    },
+    {
+      "id": "skill_305d1eba76",
+      "job": "GNB",
+      "sourceRole": "ガンブレイカー",
+      "name": {
+        "ja": "ボーライド",
+        "en": "Superbolide",
+        "de": "Meteoritenfall",
+        "fr": "Bolide",
+        "ko": "폭발 유성",
+        "zhCN": "超火流星"
+      },
+      "level": 50,
+      "iconUrl": "https://xivapi.com/i/003000/003416.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 360,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0,
+          "physical": 0,
+          "unique": 0
+        }
+      }
+    },
+    {
+      "id": "skill_32d69aa76e",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "インビンシブル",
+        "en": "Hallowed Ground",
+        "de": "Heiliger Boden",
+        "fr": "Invincible",
+        "ko": "천하무적",
+        "zhCN": "神聖領域"
+      },
+      "level": 50,
+      "iconUrl": "https://xivapi.com/i/002000/002502.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 420,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0,
+          "physical": 0,
+          "unique": 0
+        }
+      }
+    },
+    {
+      "id": "skill_efcd96c54b",
+      "job": "DRK",
+      "sourceRole": "暗黒騎士",
+      "name": {
+        "ja": "リビングデッド",
+        "en": "Living Dead",
+        "de": "Totenerweckung",
+        "fr": "Mort-vivant",
+        "ko": "산송장",
+        "zhCN": "行屍走肉"
+      },
+      "level": 50,
+      "iconUrl": "https://xivapi.com/i/003000/003077.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 300,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 1,
+          "physical": 1,
+          "unique": 1
+        }
+      }
+    },
+    {
+      "id": "skill_3e3bd57b5e",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "野戦治療の陣",
+        "en": "Sacred Soil",
+        "de": "Geweihte Erde",
+        "fr": "Dogme de survie",
+        "ko": "야전치유진",
+        "zhCN": "野戰治療陣"
+      },
+      "level": 50,
+      "iconUrl": "https://xivapi.com/i/002000/002804.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 30,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_b6295c65ff",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ケーラコレ",
+        "en": "Kerachole",
+        "de": "Kerachole",
+        "fr": "Kerachole",
+        "ko": "케이라콜레",
+        "zhCN": "堅角清汁"
+      },
+      "level": 50,
+      "iconUrl": "https://xivapi.com/i/003000/003666.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 30,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_1d390404b1",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ベネディクション",
+        "en": "Benediction",
+        "de": "Benediktion",
+        "fr": "Bénédiction",
+        "ko": "거룩한 축복",
+        "zhCN": "天賜祝福"
+      },
+      "level": 50,
+      "iconUrl": "https://xivapi.com/i/002000/002627.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "healRatio": 1
+        }
+      }
+    },
+    {
+      "id": "skill_83d291ebc1",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "メディカラ",
+        "en": "Medica II",
+        "de": "Resedra",
+        "fr": "Extra Médica",
+        "ko": "메디카라",
+        "zhCN": "醫濟"
+      },
+      "level": 50,
+      "iconUrl": "https://xivapi.com/i/000000/000409.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "インドゥルゲンティア",
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "moreHeal": 400,
+          "heal": 200,
+          "hot": {
+            "duration": 15,
+            "amount": 100
+          }
+        }
+      },
+      "resource": {
+        "mp": 1000
+      }
+    },
+    {
+      "id": "skill_1a12b50c71",
+      "job": "GNB",
+      "sourceRole": "ガンブレイカー",
+      "name": {
+        "ja": "オーロラ",
+        "en": "Aurora",
+        "de": "Aurora",
+        "fr": "Aurore",
+        "ko": "오로라",
+        "zhCN": "極光"
+      },
+      "level": 45,
+      "iconUrl": "https://xivapi.com/i/003000/003415.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 18,
+        "healing": {
+          "hot": {
+            "duration": 18,
+            "amount": 300
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_b7c6a4ff8e",
+      "job": "DRK",
+      "sourceRole": "暗黒騎士",
+      "name": {
+        "ja": "ダークマインド",
+        "en": "Dark Mind",
+        "de": "Dunkler Geist",
+        "fr": "Esprit ténébreux",
+        "ko": "어두운 감정",
+        "zhCN": "棄明投暗"
+      },
+      "level": 45,
+      "iconUrl": "https://xivapi.com/i/003000/003076.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0.8,
+          "physical": 0.9,
+          "unique": 1
+        }
+      }
+    },
+    {
+      "id": "skill_5fba480e84",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "エーテルフロー",
+        "en": "Aetherflow",
+        "de": "Ätherfluss",
+        "fr": "Flux d'éther",
+        "ko": "에테르 순환",
+        "zhCN": "以太超流"
+      },
+      "level": 45,
+      "iconUrl": "https://xivapi.com/i/000000/000510.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 0
+      }
+    },
+    {
+      "id": "skill_b067871ea5",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "生命活性法",
+        "en": "Lustrate",
+        "de": "Revitalisierung",
+        "fr": "Loi de revivification",
+        "ko": "생명활성술",
+        "zhCN": "生命活性法"
+      },
+      "level": 45,
+      "iconUrl": "https://xivapi.com/i/002000/002805.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 1,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 600
+        }
+      }
+    },
+    {
+      "id": "skill_1dbfae59af",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ドルオコレ",
+        "en": "Druochole",
+        "de": "Druochole",
+        "fr": "Druochole",
+        "ko": "드루오콜레",
+        "zhCN": "靈橡清汁"
+      },
+      "level": 45,
+      "iconUrl": "https://xivapi.com/i/003000/003664.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 1,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 600
+        }
+      }
+    },
+    {
+      "id": "skill_176add41a8",
+      "job": "MNK",
+      "sourceRole": "モンク",
+      "name": {
+        "ja": "マントラ",
+        "en": "Mantra",
+        "de": "Mantra",
+        "fr": "Mantra",
+        "ko": "만트라",
+        "zhCN": "真言"
+      },
+      "level": 42,
+      "iconUrl": "https://xivapi.com/i/000000/000216.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "target": "RANGE_AFFECTED_ALL",
+          "duration": 15,
+          "timesHealBuffed": 1.1
+        }
+      }
+    },
+    {
+      "id": "skill_7b4262b395",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "アスペクト・ヘリオス",
+        "en": "Aspected Helios",
+        "de": "Aspektierter Helios",
+        "fr": "Hélios aspecté",
+        "ko": "별읽기: 헬리오스",
+        "zhCN": "陽星相位"
+      },
+      "level": 42,
+      "iconUrl": "https://xivapi.com/i/003000/003130.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "ニュートラルセクト",
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "heal": 200,
+          "hot": {
+            "duration": 15,
+            "amount": 150
+          }
+        },
+        "barrier": {
+          "additional": {
+            "duration": 30,
+            "amount": 250
+          }
+        }
+      },
+      "resource": {
+        "mp": 800
+      }
+    },
+    {
+      "id": "skill_40c1709924",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "ホルムギャング",
+        "en": "Holmgang",
+        "de": "Holmgang",
+        "fr": "Holmgang",
+        "ko": "일대일 결투",
+        "zhCN": "死鬥"
+      },
+      "level": 42,
+      "iconUrl": "https://xivapi.com/i/000000/000266.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 240,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 1,
+          "physical": 1,
+          "unique": 1
+        }
+      }
+    },
+    {
+      "id": "skill_bee4b398cc",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "フェイイルミネーション",
+        "en": "Fey Illumination",
+        "de": "Illumination",
+        "fr": "Illumination féérique",
+        "ko": "요정의 광휘",
+        "zhCN": "異想的幻光"
+      },
+      "level": 40,
+      "iconUrl": "https://xivapi.com/i/002000/002829.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 20,
+        "mitigation": {
+          "duration": 20,
+          "magic": 0.95,
+          "physical": 1,
+          "unique": 1
+        },
+        "healing": {
+          "target": "RANGE_AFFECTED_GCD",
+          "duration": 20,
+          "timesHealBuffed": 1.1
+        }
+      }
+    },
+    {
+      "id": "skill_dcc8e6cf93",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ケアルガ",
+        "en": "Cure III",
+        "de": "Vitaga",
+        "fr": "Méga Soin",
+        "ko": "케알가",
+        "zhCN": "愈療"
+      },
+      "level": 40,
+      "iconUrl": "https://xivapi.com/i/000000/000407.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "インドゥルゲンティア",
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "moreHeal": 750,
+          "heal": 550
+        }
+      },
+      "resource": {
+        "mp": 1500
+      }
+    },
+    {
+      "id": "skill_3cb65d3a04",
+      "job": "GNB",
+      "sourceRole": "ガンブレイカー",
+      "name": {
+        "ja": "ネビュラ",
+        "en": "Nebula",
+        "de": "Nebula",
+        "fr": "Nébuleuse",
+        "ko": "성운",
+        "zhCN": "星雲"
+      },
+      "level": 38,
+      "iconUrl": "https://xivapi.com/i/003000/003412.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.7,
+          "physical": 0.7,
+          "unique": 0.7
+        }
+      }
+    },
+    {
+      "id": "skill_b84974f56d",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "センチネル",
+        "en": "Sentinel",
+        "de": "Sentinel",
+        "fr": "Sentinelle",
+        "ko": "경계",
+        "zhCN": "預警"
+      },
+      "level": 38,
+      "iconUrl": "https://xivapi.com/i/000000/000151.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.7,
+          "physical": 0.7,
+          "unique": 0.7
+        }
+      }
+    },
+    {
+      "id": "skill_9e403057e5",
+      "job": "DRK",
+      "sourceRole": "暗黒騎士",
+      "name": {
+        "ja": "シャドウウォール",
+        "en": "Shadow Wall",
+        "de": "Schattenwand",
+        "fr": "Mur d'ombre",
+        "ko": "그림자 장벽",
+        "zhCN": "暗影墻"
+      },
+      "level": 38,
+      "iconUrl": "https://xivapi.com/i/003000/003075.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.7,
+          "physical": 0.7,
+          "unique": 0.7
+        }
+      }
+    },
+    {
+      "id": "skill_2e752a633c",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "ヴェンジェンス",
+        "en": "Vengeance",
+        "de": "Rachsucht",
+        "fr": "Représailles",
+        "ko": "보복",
+        "zhCN": "覆仇"
+      },
+      "level": 38,
+      "iconUrl": "https://xivapi.com/i/000000/000267.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.7,
+          "physical": 0.7,
+          "unique": 0.7
+        }
+      }
+    },
+    {
+      "id": "skill_ea10ccd62b",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "シェルトロン",
+        "en": "Sheltron",
+        "de": "Schiltron",
+        "fr": "Schiltron",
+        "ko": "방벽",
+        "zhCN": "盾陣"
+      },
+      "level": 35,
+      "iconUrl": "https://xivapi.com/i/002000/002510.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 5,
+      "effects": {
+        "duration": 4,
+        "mitigation": {
+          "duration": 4,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85
+        }
+      }
+    },
+    {
+      "id": "skill_d4057fd35e",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "士気高揚の策",
+        "en": "Succor",
+        "de": "Kurieren",
+        "fr": "Traité du soulagement",
+        "ko": "사기고양책",
+        "zhCN": "士氣高揚之策"
+      },
+      "level": 35,
+      "iconUrl": "https://xivapi.com/i/002000/002802.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 200
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 230
+          }
+        }
+      },
+      "resource": {
+        "mp": 1000
+      }
+    },
+    {
+      "id": "skill_6ef3d4e540",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "リジェネ",
+        "en": "Regen",
+        "de": "Regena",
+        "fr": "Récup",
+        "ko": "리제네",
+        "zhCN": "再生"
+      },
+      "level": 35,
+      "iconUrl": "https://xivapi.com/i/002000/002628.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 18,
+        "healing": {
+          "hot": {
+            "duration": 18,
+            "amount": 200
+          }
+        }
+      },
+      "resource": {
+        "mp": 500
+      }
+    },
+    {
+      "id": "skill_727d474bb9",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "アスペクト・ベネフィク",
+        "en": "Aspected Benefic",
+        "de": "Harmonischer Orbis",
+        "fr": "Bienfaisance aspectée",
+        "ko": "별읽기: 베네피크",
+        "zhCN": "吉星相位"
+      },
+      "level": 34,
+      "iconUrl": "https://xivapi.com/i/003000/003127.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "ニュートラルセクト",
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "heal": 200,
+          "hot": {
+            "duration": 15,
+            "amount": 200
+          }
+        },
+        "barrier": {
+          "additional": {
+            "duration": 30,
+            "amount": 500
+          }
+        }
+      },
+      "resource": {
+        "mp": 400
+      }
+    },
+    {
+      "id": "skill_4ee46f0541",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "鼓舞激勵の策",
+        "en": "Adloquium",
+        "de": "Adloquium",
+        "fr": "Traité du réconfort",
+        "ko": "고무격려책",
+        "zhCN": "鼓舞激勵之策"
+      },
+      "level": 30,
+      "iconUrl": "https://xivapi.com/i/002000/002801.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "秘策",
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 300
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 375
+          },
+          "additional": {
+            "duration": 30,
+            "amount": 375
+          }
+        }
+      },
+      "resource": {
+        "mp": 1000
+      }
+    },
+    {
+      "id": "skill_cdda6806d6",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "エウクラシア・ディアグノシス",
+        "en": "Eukrasian Diagnosis",
+        "de": "Eukratische Diagnose",
+        "fr": "Diagnosis eucrasique",
+        "ko": "정상건강: 진단치료",
+        "zhCN": "均衡診斷"
+      },
+      "level": 30,
+      "iconUrl": "https://xivapi.com/i/003000/003659.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 300
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 375
+          }
+        }
+      },
+      "resource": {
+        "mp": 900
+      }
+    },
+    {
+      "id": "skill_b1ba953a67",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "エウクラシア・プログノシス",
+        "en": "Eukrasian Prognosis",
+        "de": "Eukratische Prognose",
+        "fr": "Prognosis eucrasique",
+        "ko": "정상건강: 예후",
+        "zhCN": "均衡預後"
+      },
+      "level": 30,
+      "iconUrl": "https://xivapi.com/i/003000/003660.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 100
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 230
+          }
+        }
+      },
+      "resource": {
+        "mp": 900
+      }
+    },
+    {
+      "id": "skill_a011da397c",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "アストラルドロー",
+        "en": "Astral Draw",
+        "de": "Lichtziehen",
+        "fr": "Tirage astral",
+        "ko": "별빛 점지",
+        "zhCN": "星極抽卡"
+      },
+      "level": 30,
+      "iconUrl": "https://xivapi.com/i/003000/003564.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 55,
+      "effects": {
+        "duration": 0
+      },
+      "availability": {
+        "timerShared": "アンブラルドロー"
+      }
+    },
+    {
+      "id": "skill_1945548e0d",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "アンブラルドロー",
+        "en": "Umbral Draw",
+        "de": "Schattenziehen",
+        "fr": "Tirage ombral",
+        "ko": "그림자 점지",
+        "zhCN": "靈極抽卡"
+      },
+      "level": 30,
+      "iconUrl": "https://xivapi.com/i/003000/003565.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 55,
+      "effects": {
+        "duration": 0
+      },
+      "availability": {
+        "timerShared": "アストラルドロー"
+      }
+    },
+    {
+      "id": "skill_90dac0e86a",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "オシュオンの矢",
+        "en": "The Arrow",
+        "de": "Pfeil",
+        "fr": "La Flèche",
+        "ko": "오쉬온의 화살",
+        "zhCN": "放浪神之箭"
+      },
+      "level": 30,
+      "iconUrl": "https://xivapi.com/i/003000/003112.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 1,
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "target": "SINGLE_AFFECTED_ALL",
+          "duration": 15,
+          "timesHealBuffed": 1.1
+        }
+      },
+      "availability": {
+        "duration": 1200,
+        "skill": "アストラルドロー"
+      }
+    },
+    {
+      "id": "skill_a5169e2b38",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "サリャクの水瓶",
+        "en": "The Ewer",
+        "de": "Krug",
+        "fr": "L'Aiguière",
+        "ko": "살리아크의 물병",
+        "zhCN": "河流神之瓶"
+      },
+      "level": 30,
+      "iconUrl": "https://xivapi.com/i/003000/003114.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 1,
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "hot": {
+            "duration": 15,
+            "amount": 200
+          }
+        }
+      },
+      "availability": {
+        "duration": 1200,
+        "skill": "アンブラルドロー"
+      }
+    },
+    {
+      "id": "skill_5667a96a31",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ビエルゴの塔",
+        "en": "The Spire",
+        "de": "Turm",
+        "fr": "La Tour",
+        "ko": "비레고의 탑",
+        "zhCN": "建築神之塔"
+      },
+      "level": 30,
+      "iconUrl": "https://xivapi.com/i/003000/003115.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 1,
+      "effects": {
+        "duration": 30,
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 400
+          }
+        }
+      },
+      "availability": {
+        "duration": 1200,
+        "skill": "アストラルドロー"
+      }
+    },
+    {
+      "id": "skill_859be5d134",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "世界樹の幹",
+        "en": "The Bole",
+        "de": "Eiche",
+        "fr": "Le Tronc",
+        "ko": "세계수의 줄기",
+        "zhCN": "世界樹之幹"
+      },
+      "level": 30,
+      "iconUrl": "https://xivapi.com/i/003000/003111.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 1,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      },
+      "availability": {
+        "duration": 1200,
+        "skill": "アンブラルドロー"
+      }
+    },
+    {
+      "id": "skill_7d8a34b462",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "スリル・オブ・バトル",
+        "en": "Thrill of Battle",
+        "de": "Kampfrausch",
+        "fr": "Frisson de la bataille",
+        "ko": "전투의 짜릿함",
+        "zhCN": "戰栗"
+      },
+      "level": 30,
+      "iconUrl": "https://xivapi.com/i/000000/000263.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 10,
+        "hpBuff": {
+          "duration": 10,
+          "multiplier": 1.2
+        }
+      }
+    },
+    {
+      "id": "skill_6d0b925c46",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ケアルラ",
+        "en": "Cure II",
+        "de": "Vitra",
+        "fr": "Extra Soin",
+        "ko": "케알라",
+        "zhCN": "救療"
+      },
+      "level": 30,
+      "iconUrl": "https://xivapi.com/i/000000/000406.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 700
+        }
+      },
+      "resource": {
+        "mp": 1000
+      }
+    },
+    {
+      "id": "skill_43ead96c2e",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ベネフィラ",
+        "en": "Benefic II",
+        "de": "Harmonieaspekt II",
+        "fr": "Bienfaisance II",
+        "ko": "베네피라",
+        "zhCN": "福星"
+      },
+      "level": 26,
+      "iconUrl": "https://xivapi.com/i/003000/003128.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 700
+        }
+      },
+      "resource": {
+        "mp": 700
+      }
+    },
+    {
+      "id": "skill_9101445d01",
+      "roleGroup": "TANK",
+      "sourceRole": "タンク",
+      "name": {
+        "ja": "リプライザル",
+        "en": "Reprisal",
+        "de": "Reflexion",
+        "fr": "Rétorsion",
+        "ko": "앙갚음",
+        "zhCN": "雪仇"
+      },
+      "level": 22,
+      "iconUrl": "https://xivapi.com/i/000000/000806.png",
+      "ability": true,
+      "assign": "RANGE_ENEMY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_4fa7efea62",
+      "roleGroup": "MELEE",
+      "sourceRole": "近接",
+      "name": {
+        "ja": "牽制",
+        "en": "Feint",
+        "de": "Zermürben",
+        "fr": "Restreinte",
+        "ko": "견제",
+        "zhCN": "牽制"
+      },
+      "level": 22,
+      "iconUrl": "https://xivapi.com/i/000000/000828.png",
+      "ability": true,
+      "assign": "SINGLE_ENEMY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0.95,
+          "physical": 0.9,
+          "unique": 1
+        }
+      }
+    },
+    {
+      "id": "skill_55e007b8ad",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "光の囁き",
+        "en": "Whispering Dawn",
+        "de": "Erhebendes Flüstern",
+        "fr": "Murmure de l'aurore",
+        "ko": "빛의 속삭임",
+        "zhCN": "仙光的低語"
+      },
+      "level": 20,
+      "iconUrl": "https://xivapi.com/i/002000/002827.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 21,
+        "healing": {
+          "hot": {
+            "duration": 21,
+            "amount": 52
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_7008073a38",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ディグニティ(最小)",
+        "en": "Essential Dignity(minimum)",
+        "de": "Essenzielle Würde(minimum)",
+        "fr": "Dignité essentielle(le minimum)",
+        "ko": "본질적 위계(최소)",
+        "zhCN": "先天稟賦(最低限度)"
+      },
+      "level": 15,
+      "iconUrl": "https://xivapi.com/i/003000/003141.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 40,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      }
+    },
+    {
+      "id": "skill_e2c6d51853",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ディグニティ(最大)",
+        "en": "Essential Dignity(maximum)",
+        "de": "Essenzielle Würde(maximal)",
+        "fr": "Dignité essentielle(maximum)",
+        "ko": "본질적 위계(최대)",
+        "zhCN": "先天稟賦(最大)"
+      },
+      "level": 15,
+      "iconUrl": "https://xivapi.com/i/003000/003141.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 40,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 900
+        }
+      }
+    },
+    {
+      "id": "skill_c7ad0d4134",
+      "job": "PCT",
+      "sourceRole": "ピクトマンサー",
+      "name": {
+        "ja": "テンペラコート",
+        "en": "Tempera Coat",
+        "de": "Tempera-Schicht",
+        "fr": "Enduit a tempera",
+        "ko": "템페라 밑칠",
+        "zhCN": "坦培拉塗層"
+      },
+      "level": 10,
+      "iconUrl": "https://xivapi.com/i/003000/003835.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 10
+      },
+      "availability": {
+        "duration": 10,
+        "skill": "テンペラコート"
+      }
+    },
+    {
+      "id": "skill_0bbbe558af",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "プログノシス",
+        "en": "Prognosis",
+        "de": "Prognose",
+        "fr": "Prognosis",
+        "ko": "예후",
+        "zhCN": "預後"
+      },
+      "level": 10,
+      "iconUrl": "https://xivapi.com/i/003000/003654.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 300
+        }
+      },
+      "resource": {
+        "mp": 700
+      }
+    },
+    {
+      "id": "skill_8a81a4de02",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ヘリオス",
+        "en": "Helios",
+        "de": "Helios",
+        "fr": "Hélios",
+        "ko": "헬리오스",
+        "zhCN": "陽星"
+      },
+      "level": 10,
+      "iconUrl": "https://xivapi.com/i/003000/003129.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 330
+        }
+      },
+      "resource": {
+        "mp": 700
+      }
+    },
+    {
+      "id": "skill_acfa1d0257",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "メディカ",
+        "en": "Medica",
+        "de": "Reseda",
+        "fr": "Médica",
+        "ko": "메디카",
+        "zhCN": "醫治"
+      },
+      "level": 10,
+      "iconUrl": "https://xivapi.com/i/000000/000408.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "インドゥルゲンティア",
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "moreHeal": 500,
+          "heal": 300
+        }
+      },
+      "resource": {
+        "mp": 900
+      }
+    },
+    {
+      "id": "skill_560fe63ab0",
+      "roleGroup": "CASTER",
+      "sourceRole": "キャスター",
+      "name": {
+        "ja": "アドル",
+        "en": "Addle",
+        "de": "Stumpfsinn",
+        "fr": "Embrouillement",
+        "ko": "정신 교란",
+        "zhCN": "昏亂"
+      },
+      "level": 8,
+      "iconUrl": "https://xivapi.com/i/000000/000861.png",
+      "ability": true,
+      "assign": "SINGLE_ENEMY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0.9,
+          "physical": 0.95,
+          "unique": 1
+        }
+      }
+    },
+    {
+      "id": "skill_7fe670b7c9",
+      "roleGroup": "TANK",
+      "sourceRole": "タンク",
+      "name": {
+        "ja": "ランパート",
+        "en": "Rampart",
+        "de": "Schutzwall",
+        "fr": "Rempart",
+        "ko": "철벽 방어",
+        "zhCN": "鐵壁"
+      },
+      "level": 8,
+      "iconUrl": "https://xivapi.com/i/000000/000801.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 20,
+        "mitigation": {
+          "duration": 20,
+          "magic": 0.8,
+          "physical": 0.8,
+          "unique": 0.8
+        }
+      }
+    },
+    {
+      "id": "skill_bf0edd16a8",
+      "job": "GNB",
+      "sourceRole": "ガンブレイカー",
+      "name": {
+        "ja": "カモフラージュ",
+        "en": "Camouflage",
+        "de": "Camouflage",
+        "fr": "Camouflage",
+        "ko": "위장술",
+        "zhCN": "偽裝"
+      },
+      "level": 6,
+      "iconUrl": "https://xivapi.com/i/003000/003404.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 20,
+        "mitigation": {
+          "duration": 20,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9,
+          "parry": 0.5
+        }
+      }
+    },
+    {
+      "id": "skill_61abc28e90",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "フィジク",
+        "en": "Physick",
+        "de": "Physick",
+        "fr": "Médecine",
+        "ko": "치유술",
+        "zhCN": "醫術"
+      },
+      "level": 4,
+      "iconUrl": "https://xivapi.com/i/000000/000518.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      },
+      "resource": {
+        "mp": 400
+      }
+    },
+    {
+      "id": "skill_4f0bc9d30e",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ディアグノシス",
+        "en": "Diagnosis",
+        "de": "Diagnose",
+        "fr": "Diagnosis",
+        "ko": "진단치료",
+        "zhCN": "診斷"
+      },
+      "level": 2,
+      "iconUrl": "https://xivapi.com/i/003000/003652.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      },
+      "resource": {
+        "mp": 400
+      }
+    },
+    {
+      "id": "skill_b4d865ea78",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ベネフィク",
+        "en": "Benefic",
+        "de": "Harmonieaspekt",
+        "fr": "Bienfaisance",
+        "ko": "베네피크",
+        "zhCN": "吉星"
+      },
+      "level": 2,
+      "iconUrl": "https://xivapi.com/i/003000/003126.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 450
+        }
+      },
+      "resource": {
+        "mp": 400
+      }
+    },
+    {
+      "id": "skill_3232986ace",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ケアル",
+        "en": "Cure",
+        "de": "Vita",
+        "fr": "Soin",
+        "ko": "케알",
+        "zhCN": "治療"
+      },
+      "level": 2,
+      "iconUrl": "https://xivapi.com/i/000000/000405.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 450
+        }
+      },
+      "resource": {
+        "mp": 400
+      }
+    },
+    {
+      "id": "skill_e200060db0",
+      "roleGroup": "TANK",
+      "sourceRole": "タンク",
+      "name": {
+        "ja": "LB1",
+        "en": "LB1",
+        "de": "LB1",
+        "fr": "LB1",
+        "ko": "LB1",
+        "zhCN": "LB1"
+      },
+      "level": 1,
+      "iconUrl": "https://xivapi.com/i/000000/000103.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0.8,
+          "physical": 0.8,
+          "unique": 0.8
+        }
+      }
+    },
+    {
+      "id": "skill_db021c4a7b",
+      "roleGroup": "TANK",
+      "sourceRole": "タンク",
+      "name": {
+        "ja": "LB2",
+        "en": "LB2",
+        "de": "LB2",
+        "fr": "LB2",
+        "ko": "LB2",
+        "zhCN": "LB2"
+      },
+      "level": 1,
+      "iconUrl": "https://xivapi.com/i/000000/000103.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.6,
+          "physical": 0.6,
+          "unique": 0.6
+        }
+      }
+    },
+    {
+      "id": "skill_d1ea20a0ad",
+      "roleGroup": "TANK",
+      "sourceRole": "タンク",
+      "name": {
+        "ja": "LB3",
+        "en": "LB3",
+        "de": "LB3",
+        "fr": "LB3",
+        "ko": "LB3",
+        "zhCN": "LB3"
+      },
+      "level": 1,
+      "iconUrl": "https://xivapi.com/i/000000/000103.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 8,
+        "mitigation": {
+          "duration": 8,
+          "magic": 0.2,
+          "physical": 0.2,
+          "unique": 0.2
+        }
+      }
+    },
+    {
+      "id": "skill_562ee9ba0c",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "セラフィズム",
+        "en": "Seraphism",
+        "de": "Seraphenlehre",
+        "fr": "Séraphisme",
+        "ko": "세라피즘",
+        "zhCN": "熾天附體"
+      },
+      "level": 100,
+      "iconUrl": "https://xivapi.com/i/002000/002881.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 20,
+        "healing": {
+          "hot": {
+            "duration": 20,
+            "amount": 100
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_b55b5eff43",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "アクセッション",
+        "en": "Accession",
+        "de": "Höchstes Gut",
+        "fr": "Accession",
+        "ko": "강림",
+        "zhCN": "降臨之章"
+      },
+      "level": 100,
+      "iconUrl": "https://xivapi.com/i/002000/002883.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 240
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 432
+          }
+        }
+      },
+      "resource": {
+        "mp": 900
+      },
+      "availability": {
+        "duration": 20,
+        "skill": "セラフィズム"
+      }
+    },
+    {
+      "id": "skill_43f686f3f7",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "マニフェステーション",
+        "en": "Manifestation",
+        "de": "Manifestation",
+        "fr": "Manifestation",
+        "ko": "현시",
+        "zhCN": "顯靈之章"
+      },
+      "level": 100,
+      "iconUrl": "https://xivapi.com/i/002000/002882.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "秘策",
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 360
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 648
+          },
+          "additional": {
+            "duration": 30,
+            "amount": 648
+          }
+        }
+      },
+      "resource": {
+        "mp": 900
+      },
+      "availability": {
+        "duration": 20,
+        "skill": "セラフィズム"
+      }
+    },
+    {
+      "id": "skill_19dbf9a631",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "フィロソフィア",
+        "en": "Philosophia",
+        "de": "Philosophia",
+        "fr": "Philosophia",
+        "ko": "필로소피아",
+        "zhCN": "智慧之愛"
+      },
+      "level": 100,
+      "iconUrl": "https://xivapi.com/i/003000/003690.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 20,
+        "healing": {
+          "target": "SELF_EFFECTED_GCD",
+          "duration": 20,
+          "timesHealBuffed": 1.2
+        }
+      }
+    },
+    {
+      "id": "skill_9b0ded1c3f",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "サンサイン",
+        "en": "Sun Sign",
+        "de": "Sonnenzeichen",
+        "fr": "Signe solaire",
+        "ko": "태양궁",
+        "zhCN": "太陽星座"
+      },
+      "level": 100,
+      "iconUrl": "https://xivapi.com/i/003000/003109.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 1,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      },
+      "availability": {
+        "duration": 30,
+        "skill": "ニュートラルセクト"
+      }
+    },
+    {
+      "id": "skill_ca2afd31d8",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ディヴァインカレス",
+        "en": "Divine Caress",
+        "de": "Göttliche Umarmung",
+        "fr": "Caresse divine",
+        "ko": "신성한 손길",
+        "zhCN": "神愛撫"
+      },
+      "level": 100,
+      "iconUrl": "https://xivapi.com/i/002000/002128.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 1,
+      "effects": {
+        "duration": 10,
+        "healing": {
+          "hot": {
+            "duration": 15,
+            "amount": 200
+          }
+        },
+        "barrier": {
+          "effect": {
+            "duration": 10,
+            "amount": 400
+          }
+        }
+      },
+      "availability": {
+        "duration": 30,
+        "skill": "テンパランス"
+      }
+    },
+    {
+      "id": "skill_e1e2cf50aa",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "秘策",
+        "en": "Recitation",
+        "de": "Raffinesse",
+        "fr": "Récitation",
+        "ko": "비책",
+        "zhCN": "秘策"
+      },
+      "level": 98,
+      "iconUrl": "https://xivapi.com/i/002000/002822.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 15
+      }
+    },
+    {
+      "id": "skill_cc4837a335",
+      "roleGroup": "CASTER",
+      "sourceRole": "キャスター",
+      "name": {
+        "ja": "アドル",
+        "en": "Addle",
+        "de": "Stumpfsinn",
+        "fr": "Embrouillement",
+        "ko": "정신 교란",
+        "zhCN": "昏亂"
+      },
+      "level": 98,
+      "iconUrl": "https://xivapi.com/i/000000/000861.png",
+      "ability": true,
+      "assign": "SINGLE_ENEMY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.95,
+          "unique": 1
+        }
+      }
+    },
+    {
+      "id": "skill_9686644047",
+      "roleGroup": "TANK",
+      "sourceRole": "タンク",
+      "name": {
+        "ja": "リプライザル",
+        "en": "Reprisal",
+        "de": "Reflexion",
+        "fr": "Rétorsion",
+        "ko": "앙갚음",
+        "zhCN": "雪仇"
+      },
+      "level": 98,
+      "iconUrl": "https://xivapi.com/i/000000/000806.png",
+      "ability": true,
+      "assign": "RANGE_ENEMY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_b5092ac99a",
+      "job": "MCH",
+      "sourceRole": "機工士",
+      "name": {
+        "ja": "タクティシャン",
+        "en": "Tactician",
+        "de": "Taktiker",
+        "fr": "Tacticien",
+        "ko": "책략가",
+        "zhCN": "策動"
+      },
+      "level": 98,
+      "iconUrl": "https://xivapi.com/i/003000/003040.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85
+        }
+      }
+    },
+    {
+      "id": "skill_a14b168ba4",
+      "roleGroup": "MELEE",
+      "sourceRole": "近接",
+      "name": {
+        "ja": "牽制",
+        "en": "Feint",
+        "de": "Zermürben",
+        "fr": "Restreinte",
+        "ko": "견제",
+        "zhCN": "牽制"
+      },
+      "level": 98,
+      "iconUrl": "https://xivapi.com/i/000000/000828.png",
+      "ability": true,
+      "assign": "SINGLE_ENEMY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.95,
+          "physical": 0.9,
+          "unique": 1
+        }
+      }
+    },
+    {
+      "id": "skill_ba166a5fc4",
+      "job": "BRD",
+      "sourceRole": "吟遊詩人",
+      "name": {
+        "ja": "トルバドゥール",
+        "en": "Troubadour",
+        "de": "Troubadour",
+        "fr": "Troubadour",
+        "ko": "방랑하는 음악가",
+        "zhCN": "行吟"
+      },
+      "level": 98,
+      "iconUrl": "https://xivapi.com/i/002000/002612.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85
+        }
+      }
+    },
+    {
+      "id": "skill_db04479532",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ピュシスII",
+        "en": "Physis II",
+        "de": "Physis II",
+        "fr": "Physis II",
+        "ko": "퓌시스 2",
+        "zhCN": "自生II"
+      },
+      "level": 98,
+      "iconUrl": "https://xivapi.com/i/003000/003670.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "target": "RANGE_AFFECTED_ALL",
+          "duration": 15,
+          "timesHealBuffed": 1.1,
+          "hot": {
+            "duration": 15,
+            "amount": 130
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_8cb33d67cb",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ディグニティ(最小)",
+        "en": "Essential Dignity(minimum)",
+        "de": "Essenzielle Würde(minimum)",
+        "fr": "Dignité essentielle(le minimum)",
+        "ko": "본질적 위계(최소)",
+        "zhCN": "先天稟賦(最低限度)"
+      },
+      "level": 98,
+      "iconUrl": "https://xivapi.com/i/003000/003141.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 3,
+      "cooldown": 40,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      }
+    },
+    {
+      "id": "skill_0f35397a40",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ディグニティ(最大)",
+        "en": "Essential Dignity(maximum)",
+        "de": "Essenzielle Würde(maximal)",
+        "fr": "Dignité essentielle(maximum)",
+        "ko": "본질적 위계(최대)",
+        "zhCN": "先天稟賦(最大)"
+      },
+      "level": 98,
+      "iconUrl": "https://xivapi.com/i/003000/003141.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 3,
+      "cooldown": 40,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 900
+        }
+      }
+    },
+    {
+      "id": "skill_b046911424",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "テトラグラマトン",
+        "en": "Tetragrammaton",
+        "de": "Tetragrammaton",
+        "fr": "Tétragramme",
+        "ko": "신의 이름",
+        "zhCN": "神名"
+      },
+      "level": 98,
+      "iconUrl": "https://xivapi.com/i/002000/002633.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 2,
+      "cooldown": 60,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 700
+        }
+      }
+    },
+    {
+      "id": "skill_af4e016ede",
+      "job": "DNC",
+      "sourceRole": "舞者",
+      "name": {
+        "ja": "守りのサンバ",
+        "en": "Shield Samba",
+        "de": "Schildsamba",
+        "fr": "Samba protectrice",
+        "ko": "수세의 삼바",
+        "zhCN": "防守之桑巴"
+      },
+      "level": 98,
+      "iconUrl": "https://xivapi.com/i/003000/003469.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85
+        }
+      }
+    },
+    {
+      "id": "skill_dec1e6cb1b",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "意気軒昂の策",
+        "en": "Concitation",
+        "de": "Übermut",
+        "fr": "Traité de l'exultation",
+        "ko": "의기왕성책",
+        "zhCN": "意氣軒昂之策"
+      },
+      "level": 96,
+      "iconUrl": "https://xivapi.com/i/002000/002880.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 200
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 360
+          }
+        }
+      },
+      "resource": {
+        "mp": 900
+      }
+    },
+    {
+      "id": "skill_7f426ba1d7",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "エウクラシア・プログノシスII",
+        "en": "Eukrasian Prognosis II",
+        "de": "Eukratische Prognose II",
+        "fr": "Prognosis eucrasique II",
+        "ko": "정상건강: 예후 2",
+        "zhCN": "均衡預後II"
+      },
+      "level": 96,
+      "iconUrl": "https://xivapi.com/i/003000/003689.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 100
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 360
+          }
+        }
+      },
+      "resource": {
+        "mp": 800
+      }
+    },
+    {
+      "id": "skill_ee62bb4857",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "コンジャクション・ヘリオス",
+        "en": "Helios Conjunction",
+        "de": "Helios in Konjunktion",
+        "fr": "Hélios combiné",
+        "ko": "회합: 헬리오스",
+        "zhCN": "陽星合相"
+      },
+      "level": 96,
+      "iconUrl": "https://xivapi.com/i/003000/003567.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "ニュートラルセクト",
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "heal": 250,
+          "hot": {
+            "duration": 15,
+            "amount": 175
+          }
+        },
+        "barrier": {
+          "additional": {
+            "duration": 30,
+            "amount": 313
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_a7089f02f4",
+      "roleGroup": "TANK",
+      "sourceRole": "タンク",
+      "name": {
+        "ja": "ランパート",
+        "en": "Rampart",
+        "de": "Schutzwall",
+        "fr": "Rempart",
+        "ko": "철벽 방어",
+        "zhCN": "鐵壁"
+      },
+      "level": 94,
+      "iconUrl": "https://xivapi.com/i/000000/000801.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 20,
+        "mitigation": {
+          "duration": 20,
+          "magic": 0.8,
+          "physical": 0.8,
+          "unique": 0.8
+        },
+        "healing": {
+          "target": "SELF_AFFECTED_ALL",
+          "duration": 20,
+          "timesHealBuffed": 1.15
+        }
+      }
+    },
+    {
+      "id": "skill_3a9a91ee59",
+      "job": "GNB",
+      "sourceRole": "ガンブレイカー",
+      "name": {
+        "ja": "グレートネビュラ",
+        "en": "Great Nebula",
+        "de": "Große Nebula",
+        "fr": "Grande nébuleuse",
+        "ko": "대성운",
+        "zhCN": "大星雲"
+      },
+      "level": 92,
+      "iconUrl": "https://xivapi.com/i/003000/003435.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.6,
+          "physical": 0.6,
+          "unique": 0.6
+        },
+        "healing": {
+          "healRatio": 0.2
+        },
+        "hpBuff": {
+          "duration": 15,
+          "multiplier": 1.2
+        }
+      }
+    },
+    {
+      "id": "skill_b3c213d4cf",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "エクストリームガード",
+        "en": "Guardian",
+        "de": "Heilige Wacht",
+        "fr": "Garde extrême",
+        "ko": "극한 방어",
+        "zhCN": "極致防御"
+      },
+      "level": 92,
+      "iconUrl": "https://xivapi.com/i/002000/002524.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.6,
+          "physical": 0.6,
+          "unique": 0.6
+        },
+        "barrier": {
+          "effect": {
+            "duration": 15,
+            "amount": 1000
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_166a20abd5",
+      "job": "DRK",
+      "sourceRole": "暗黒騎士",
+      "name": {
+        "ja": "シャドウヴィジル",
+        "en": "Shadowed Vigil",
+        "de": "Schattenwacht",
+        "fr": "Vigile ténébreux",
+        "ko": "그림자 요새",
+        "zhCN": "暗影衛"
+      },
+      "level": 92,
+      "iconUrl": "https://xivapi.com/i/003000/003094.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.6,
+          "physical": 0.6,
+          "unique": 0.6
+        },
+        "healing": {
+          "heal": 1200
+        }
+      }
+    },
+    {
+      "id": "skill_9851da751f",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "ダムネーション",
+        "en": "Damnation",
+        "de": "Verdammnis",
+        "fr": "Damnation",
+        "ko": "지옥행",
+        "zhCN": "戮罪"
+      },
+      "level": 92,
+      "iconUrl": "https://xivapi.com/i/002000/002573.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.6,
+          "physical": 0.6,
+          "unique": 0.6
+        },
+        "healing": {
+          "hot": {
+            "duration": 15,
+            "amount": 400
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_76f6a43db8",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "メディガ",
+        "en": "Medica III",
+        "de": "Resega",
+        "fr": "Méga Médica",
+        "ko": "메디카가",
+        "zhCN": "醫養"
+      },
+      "level": 92,
+      "iconUrl": "https://xivapi.com/i/002000/002127.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "インドゥルゲンティア",
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "moreHeal": 450,
+          "heal": 250,
+          "hot": {
+            "duration": 15,
+            "amount": 175
+          }
+        }
+      },
+      "resource": {
+        "mp": 1000
+      }
+    },
+    {
+      "id": "skill_64b66095ac",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "疾風怒濤の計",
+        "en": "Expedient",
+        "de": "Sturm und Drang",
+        "fr": "Thèse fluidique",
+        "ko": "질풍노도계",
+        "zhCN": "疾風怒濤之計"
+      },
+      "level": 90,
+      "iconUrl": "https://xivapi.com/i/002000/002878.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 20,
+        "mitigation": {
+          "duration": 20,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_253c57d25e",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "プネウマ",
+        "en": "Pneuma",
+        "de": "Pneuma",
+        "fr": "Pneuma",
+        "ko": "프네우마",
+        "zhCN": "魂靈風息"
+      },
+      "level": 90,
+      "iconUrl": "https://xivapi.com/i/003000/003686.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 600
+        }
+      },
+      "resource": {
+        "mp": 700
+      }
+    },
+    {
+      "id": "skill_74d2a3039f",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "マクロコスモス(最小)",
+        "en": "Macrocosmos(minimum)",
+        "de": "Makrokosmos(minimum)",
+        "fr": "Macrocosme(le minimum)",
+        "ko": "대우주(최소)",
+        "zhCN": "大宇宙(最低限度)"
+      },
+      "level": 90,
+      "iconUrl": "https://xivapi.com/i/003000/003562.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 200
+        }
+      }
+    },
+    {
+      "id": "skill_6fbc7c1602",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "マクロコスモス(被ダメ50%分)",
+        "en": "Macrocosmos(50% damage received)",
+        "de": "Makrokosmos(50 % erlittener Schaden)",
+        "fr": "Macrocosme(50 % de dégâts reçus)",
+        "ko": "대우주(피 안 50%)",
+        "zhCN": "大宇宙(受到 50% 的傷害)"
+      },
+      "level": 90,
+      "iconUrl": "https://xivapi.com/i/003000/003562.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 0
+      }
+    },
+    {
+      "id": "skill_cc67ba3369",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "リタージー・オブ・ベル(ダメージトリガー)",
+        "en": "Liturgy of the Bell(damage trigger)",
+        "de": "Glockenspiel(Schaden auslösen)",
+        "fr": "Tintinnabule(déclencheur de dégâts)",
+        "ko": "예배종(데미지 트리거)",
+        "zhCN": "禮儀之鈴(傷害觸發)"
+      },
+      "level": 90,
+      "iconUrl": "https://xivapi.com/i/002000/002649.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      }
+    },
+    {
+      "id": "skill_4560f987e6",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "リタージー・オブ・ベル(時間経過:殘1)",
+        "en": "Liturgy of the Bell(Time Lapse: Stack 1)",
+        "de": "Glockenspiel(Zeitraffer: Stapel 1)",
+        "fr": "Tintinnabule(Time Lapse : Pile 1)",
+        "ko": "예배종(시간 경과 : 스택 1)",
+        "zhCN": "禮儀之鈴(延時攝影：堆棧 1)"
+      },
+      "level": 90,
+      "iconUrl": "https://xivapi.com/i/002000/002649.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 200
+        }
+      }
+    },
+    {
+      "id": "skill_168c6fa204",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "リタージー・オブ・ベル(時間経過:殘2)",
+        "en": "Liturgy of the Bell(Time Lapse: Stack 2)",
+        "de": "Glockenspiel(Zeitraffer: Stapel 2)",
+        "fr": "Tintinnabule(Time Lapse : Pile 2)",
+        "ko": "예배종(시간 경과 : 스택 2)",
+        "zhCN": "禮儀之鈴(延時攝影：堆棧 2)"
+      },
+      "level": 90,
+      "iconUrl": "https://xivapi.com/i/002000/002649.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      }
+    },
+    {
+      "id": "skill_8c9cd9f4c1",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "リタージー・オブ・ベル(時間経過:殘3)",
+        "en": "Liturgy of the Bell(Time Lapse: Stack 3)",
+        "de": "Glockenspiel(Zeitraffer: Stapel 3)",
+        "fr": "Tintinnabule(Time Lapse : Pile 3)",
+        "ko": "예배종(시간 경과 : 스택 3)",
+        "zhCN": "禮儀之鈴(延時攝影：堆棧 3)"
+      },
+      "level": 90,
+      "iconUrl": "https://xivapi.com/i/002000/002649.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 600
+        }
+      }
+    },
+    {
+      "id": "skill_08fc6d2b20",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "リタージー・オブ・ベル(時間経過:殘4)",
+        "en": "Liturgy of the Bell(Time Lapse: Stack 4)",
+        "de": "Glockenspiel(Zeitraffer: Stapel 4)",
+        "fr": "Tintinnabule(Time Lapse : Pile 4)",
+        "ko": "예배종(시간 경과 : 스택 4)",
+        "zhCN": "禮儀之鈴(延時攝影：堆棧 4)"
+      },
+      "level": 90,
+      "iconUrl": "https://xivapi.com/i/002000/002649.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 800
+        }
+      }
+    },
+    {
+      "id": "skill_adb6b7d60b",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "リタージー・オブ・ベル(時間経過:殘5)",
+        "en": "Liturgy of the Bell(Time Lapse: Stack 5)",
+        "de": "Glockenspiel(Zeitraffer: Stapel 5)",
+        "fr": "Tintinnabule(Time Lapse : Pile 5)",
+        "ko": "예배종(시간 경과 : 스택 5)",
+        "zhCN": "禮儀之鈴(延時攝影：堆棧 5)"
+      },
+      "level": 90,
+      "iconUrl": "https://xivapi.com/i/002000/002649.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 180,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 1000
+        }
+      }
+    },
+    {
+      "id": "skill_067cc3dfbd",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "ディヴァインヴェール",
+        "en": "Divine Veil",
+        "de": "Heiliger Quell",
+        "fr": "Voile divin",
+        "ko": "신성한 보호막",
+        "zhCN": "聖光幕簾"
+      },
+      "level": 88,
+      "iconUrl": "https://xivapi.com/i/002000/002508.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 400
+        },
+        "barrier": {
+          "buff": {
+            "duration": 30,
+            "multiplier": 0.1
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_68c040801d",
+      "job": "PCT",
+      "sourceRole": "ピクトマンサー",
+      "name": {
+        "ja": "テンペラグラッサ",
+        "en": "Tempera Grassa",
+        "de": "Fette Tempera",
+        "fr": "Tempera grassa",
+        "ko": "템페라 덧칠",
+        "zhCN": "油性坦培拉塗層"
+      },
+      "level": 88,
+      "iconUrl": "https://xivapi.com/i/003000/003836.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 1,
+      "effects": {
+        "duration": 10,
+        "barrier": {
+          "buff": {
+            "duration": 10,
+            "multiplier": 0.1
+          }
+        }
+      },
+      "availability": {
+        "duration": 10
+      }
+    },
+    {
+      "id": "skill_edd3425c44",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "展開戦術",
+        "en": "Deployment Tactics",
+        "de": "Dislokation",
+        "fr": "Stratagème du déploiement",
+        "ko": "전개전술",
+        "zhCN": "展開戰術"
+      },
+      "level": 88,
+      "iconUrl": "https://xivapi.com/i/002000/002808.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 0
+      }
+    },
+    {
+      "id": "skill_16032dcee6",
+      "job": "MCH",
+      "sourceRole": "機工士",
+      "name": {
+        "ja": "タクティシャン",
+        "en": "Tactician",
+        "de": "Taktiker",
+        "fr": "Tacticien",
+        "ko": "책략가",
+        "zhCN": "策動"
+      },
+      "level": 88,
+      "iconUrl": "https://xivapi.com/i/003000/003040.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_b2d8aa2626",
+      "job": "BRD",
+      "sourceRole": "吟遊詩人",
+      "name": {
+        "ja": "トルバドゥール",
+        "en": "Troubadour",
+        "de": "Troubadour",
+        "fr": "Troubadour",
+        "ko": "방랑하는 음악가",
+        "zhCN": "行吟"
+      },
+      "level": 88,
+      "iconUrl": "https://xivapi.com/i/002000/002612.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_606861de65",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ゾーエ",
+        "en": "Zoe",
+        "de": "Zoe",
+        "fr": "Zoe",
+        "ko": "생명력",
+        "zhCN": "活化"
+      },
+      "level": 88,
+      "iconUrl": "https://xivapi.com/i/003000/003668.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 10,
+        "healing": {
+          "target": "SELF_EFFECTED_GCD",
+          "duration": 30,
+          "timesHealBuffed": 1.5
+        }
+      }
+    },
+    {
+      "id": "skill_9401b0b104",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "星天交差",
+        "en": "Celestial Intersection",
+        "de": "Kongruenz",
+        "fr": "Rencontre céleste",
+        "ko": "천궁의 교차",
+        "zhCN": "巨星主宰"
+      },
+      "level": 88,
+      "iconUrl": "https://xivapi.com/i/003000/003556.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 2,
+      "cooldown": 30,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 200
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 400
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_75dab58ffb",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ディヴァインベニゾン",
+        "en": "Divine Benison",
+        "de": "Göttlicher Segen",
+        "fr": "Faveur divine",
+        "ko": "신성한 축복",
+        "zhCN": "神祝禱"
+      },
+      "level": 88,
+      "iconUrl": "https://xivapi.com/i/002000/002638.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 2,
+      "cooldown": 30,
+      "effects": {
+        "duration": 15,
+        "barrier": {
+          "effect": {
+            "duration": 15,
+            "amount": 500
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_98211fd864",
+      "job": "DNC",
+      "sourceRole": "舞者",
+      "name": {
+        "ja": "守りのサンバ",
+        "en": "Shield Samba",
+        "de": "Schildsamba",
+        "fr": "Samba protectrice",
+        "ko": "수세의 삼바",
+        "zhCN": "防守之桑巴"
+      },
+      "level": 88,
+      "iconUrl": "https://xivapi.com/i/003000/003469.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 90,
+      "effects": {
+        "duration": 15,
+        "mitigation": {
+          "duration": 15,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_f4eee52a76",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "生命回生法",
+        "en": "Protraction",
+        "de": "Protraktion",
+        "fr": "Loi de la protraction",
+        "ko": "생명회생술",
+        "zhCN": "生命回生法"
+      },
+      "level": 86,
+      "iconUrl": "https://xivapi.com/i/002000/002877.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 10,
+        "hpBuff": {
+          "duration": 10,
+          "multiplier": 1.1
+        }
+      }
+    },
+    {
+      "id": "skill_db2a422754",
+      "job": "RDM",
+      "sourceRole": "赤魔道士",
+      "name": {
+        "ja": "バマジク",
+        "en": "Magick Barrier",
+        "de": "Magiebarriere",
+        "fr": "Barrière anti-magie",
+        "ko": "바매직",
+        "zhCN": "抗死"
+      },
+      "level": 86,
+      "iconUrl": "https://xivapi.com/i/003000/003237.png",
+      "ability": true,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 120,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0.9,
+          "physical": 1,
+          "unique": 1
+        },
+        "healing": {
+          "target": "RANGE_AFFECTED_ALL",
+          "duration": 10,
+          "timesHealBuffed": 1.05
+        }
+      }
+    },
+    {
+      "id": "skill_3a5d2cf89f",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "エクザルテーション",
+        "en": "Exaltation",
+        "de": "Exaltation",
+        "fr": "Exaltation",
+        "ko": "성위 격상",
+        "zhCN": "擢升"
+      },
+      "level": 86,
+      "iconUrl": "https://xivapi.com/i/003000/003561.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 8,
+        "mitigation": {
+          "duration": 8,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "healing": {
+          "heal": 500
+        }
+      }
+    },
+    {
+      "id": "skill_2a95ef9882",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "アクアヴェール",
+        "en": "Aquaveil",
+        "de": "Wasserschleier",
+        "fr": "Aquavoile",
+        "ko": "물의 장막",
+        "zhCN": "水流幕"
+      },
+      "level": 86,
+      "iconUrl": "https://xivapi.com/i/002000/002648.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 8,
+        "mitigation": {
+          "duration": 8,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85
+        }
+      }
+    },
+    {
+      "id": "skill_3b2f5c35d1",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "フィジク",
+        "en": "Physick",
+        "de": "Physick",
+        "fr": "Médecine",
+        "ko": "치유술",
+        "zhCN": "醫術"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/000000/000518.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 450
+        }
+      },
+      "resource": {
+        "mp": 400
+      }
+    },
+    {
+      "id": "skill_3ac050aef6",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "鼓舞激勵の策",
+        "en": "Adloquium",
+        "de": "Adloquium",
+        "fr": "Traité du réconfort",
+        "ko": "고무격려책",
+        "zhCN": "鼓舞激勵之策"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/002000/002801.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "秘策",
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 300
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 540
+          },
+          "additional": {
+            "duration": 30,
+            "amount": 540
+          }
+        }
+      },
+      "resource": {
+        "mp": 900
+      }
+    },
+    {
+      "id": "skill_59900bf0bc",
+      "job": "SCH",
+      "sourceRole": "學者",
+      "name": {
+        "ja": "士気高揚の策",
+        "en": "Succor",
+        "de": "Kurieren",
+        "fr": "Traité du soulagement",
+        "ko": "사기고양책",
+        "zhCN": "士氣高揚之策"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/002000/002802.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 200
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 320
+          }
+        }
+      },
+      "resource": {
+        "mp": 900
+      }
+    },
+    {
+      "id": "skill_70b86de193",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "エウクラシア・ディアグノシス",
+        "en": "Eukrasian Diagnosis",
+        "de": "Eukratische Diagnose",
+        "fr": "Diagnosis eucrasique",
+        "ko": "정상건강: 진단치료",
+        "zhCN": "均衡診斷"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/003000/003659.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 300
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 540
+          }
+        }
+      },
+      "resource": {
+        "mp": 800
+      }
+    },
+    {
+      "id": "skill_aa414f99e4",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "エウクラシア・プログノシス",
+        "en": "Eukrasian Prognosis",
+        "de": "Eukratische Prognose",
+        "fr": "Prognosis eucrasique",
+        "ko": "정상건강: 예후",
+        "zhCN": "均衡預後"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/003000/003660.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 30,
+        "healing": {
+          "heal": 100
+        },
+        "barrier": {
+          "effect": {
+            "duration": 30,
+            "amount": 320
+          }
+        }
+      },
+      "resource": {
+        "mp": 800
+      }
+    },
+    {
+      "id": "skill_0d04ecea9a",
+      "job": "SGE",
+      "sourceRole": "賢者",
+      "name": {
+        "ja": "ディアグノシス",
+        "en": "Diagnosis",
+        "de": "Diagnose",
+        "fr": "Diagnosis",
+        "ko": "진단치료",
+        "zhCN": "診斷"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/003000/003652.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 450
+        }
+      },
+      "resource": {
+        "mp": 400
+      }
+    },
+    {
+      "id": "skill_df67c855d9",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "アスペクト・ベネフィク",
+        "en": "Aspected Benefic",
+        "de": "Harmonischer Orbis",
+        "fr": "Bienfaisance aspectée",
+        "ko": "별읽기: 베네피크",
+        "zhCN": "吉星相位"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/003000/003127.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "ニュートラルセクト",
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "heal": 250,
+          "hot": {
+            "duration": 15,
+            "amount": 250
+          }
+        },
+        "barrier": {
+          "additional": {
+            "duration": 30,
+            "amount": 625
+          }
+        }
+      },
+      "resource": {
+        "mp": 400
+      }
+    },
+    {
+      "id": "skill_665301cec3",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "アスペクト・ヘリオス",
+        "en": "Aspected Helios",
+        "de": "Aspektierter Helios",
+        "fr": "Hélios aspecté",
+        "ko": "별읽기: 헬리오스",
+        "zhCN": "陽星相位"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/003000/003130.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "ニュートラルセクト",
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "heal": 250,
+          "hot": {
+            "duration": 15,
+            "amount": 150
+          }
+        },
+        "barrier": {
+          "additional": {
+            "duration": 30,
+            "amount": 313
+          }
+        }
+      },
+      "resource": {
+        "mp": 800
+      }
+    },
+    {
+      "id": "skill_23794e27de",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ベネフィク",
+        "en": "Benefic",
+        "de": "Harmonieaspekt",
+        "fr": "Bienfaisance",
+        "ko": "베네피크",
+        "zhCN": "吉星"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/003000/003126.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 500
+        }
+      },
+      "resource": {
+        "mp": 400
+      }
+    },
+    {
+      "id": "skill_aba6e603c6",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ベネフィラ",
+        "en": "Benefic II",
+        "de": "Harmonieaspekt II",
+        "fr": "Bienfaisance II",
+        "ko": "베네피라",
+        "zhCN": "福星"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/003000/003128.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 800
+        }
+      },
+      "resource": {
+        "mp": 700
+      }
+    },
+    {
+      "id": "skill_532129de54",
+      "job": "AST",
+      "sourceRole": "占星術師",
+      "name": {
+        "ja": "ヘリオス",
+        "en": "Helios",
+        "de": "Helios",
+        "fr": "Hélios",
+        "ko": "헬리오스",
+        "zhCN": "陽星"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/003000/003129.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      },
+      "resource": {
+        "mp": 700
+      }
+    },
+    {
+      "id": "skill_03b349f1ab",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ケアル",
+        "en": "Cure",
+        "de": "Vita",
+        "fr": "Soin",
+        "ko": "케알",
+        "zhCN": "治療"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/000000/000405.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 500
+        }
+      },
+      "resource": {
+        "mp": 400
+      }
+    },
+    {
+      "id": "skill_07c2df8102",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ケアルガ",
+        "en": "Cure III",
+        "de": "Vitaga",
+        "fr": "Méga Soin",
+        "ko": "케알가",
+        "zhCN": "愈療"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/000000/000407.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "インドゥルゲンティア",
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "moreHeal": 800,
+          "heal": 600
+        }
+      },
+      "resource": {
+        "mp": 1500
+      }
+    },
+    {
+      "id": "skill_b6d1bcb2b1",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ケアルラ",
+        "en": "Cure II",
+        "de": "Vitra",
+        "fr": "Extra Soin",
+        "ko": "케알라",
+        "zhCN": "救療"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/000000/000406.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 800
+        }
+      },
+      "resource": {
+        "mp": 1000
+      }
+    },
+    {
+      "id": "skill_6be12a9f47",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ハート・オブ・ソラス",
+        "en": "Afflatus Solace",
+        "de": "Afflatus solatii",
+        "fr": "Offrande de réconfort",
+        "ko": "위로의 마음",
+        "zhCN": "安慰之心"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/002000/002640.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 800
+        }
+      }
+    },
+    {
+      "id": "skill_2a15929765",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "ハート・オブ・ラプチャー",
+        "en": "Afflatus Rapture",
+        "de": "Afflatus laetitiae",
+        "fr": "Offrande de ravissement",
+        "ko": "황홀한 마음",
+        "zhCN": "狂喜之心"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/002000/002643.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 400
+        }
+      }
+    },
+    {
+      "id": "skill_e231eaa55b",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "メディカ",
+        "en": "Medica",
+        "de": "Reseda",
+        "fr": "Médica",
+        "ko": "메디카",
+        "zhCN": "醫治"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/000000/000408.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "インドゥルゲンティア",
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "moreHeal": 600,
+          "heal": 400
+        }
+      },
+      "resource": {
+        "mp": 900
+      }
+    },
+    {
+      "id": "skill_229f78743d",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "メディカラ",
+        "en": "Medica II",
+        "de": "Resedra",
+        "fr": "Extra Médica",
+        "ko": "메디카라",
+        "zhCN": "醫濟"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/000000/000409.png",
+      "ability": false,
+      "assign": "RANGE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "effects": {
+        "duration": 15,
+        "healing": {
+          "heal": 250,
+          "hot": {
+            "duration": 15,
+            "amount": 150
+          }
+        }
+      },
+      "resource": {
+        "mp": 1000
+      }
+    },
+    {
+      "id": "skill_9d726eb52c",
+      "job": "WHM",
+      "sourceRole": "白魔道士",
+      "name": {
+        "ja": "リジェネ",
+        "en": "Regen",
+        "de": "Regena",
+        "fr": "Récup",
+        "ko": "리제네",
+        "zhCN": "再生"
+      },
+      "level": 85,
+      "iconUrl": "https://xivapi.com/i/002000/002628.png",
+      "ability": false,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 2.5,
+      "precondition": "インドゥルゲンティア",
+      "effects": {
+        "duration": 18,
+        "healing": {
+          "moreHeal": 450,
+          "hot": {
+            "duration": 18,
+            "amount": 250
+          }
+        }
+      },
+      "resource": {
+        "mp": 500
+      }
+    },
+    {
+      "id": "skill_2c83bd34dd",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "エクリブリウム",
+        "en": "Equilibrium",
+        "de": "Äquilibrium",
+        "fr": "Équilibre",
+        "ko": "평정심",
+        "zhCN": "泰然自若"
+      },
+      "level": 84,
+      "iconUrl": "https://xivapi.com/i/002000/002560.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 60,
+      "effects": {
+        "duration": 0,
+        "healing": {
+          "heal": 1200,
+          "hot": {
+            "duration": 15,
+            "amount": 200
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_a5aa0a98c1",
+      "job": "GNB",
+      "sourceRole": "ガンブレイカー",
+      "name": {
+        "ja": "オーロラ",
+        "en": "Aurora",
+        "de": "Aurora",
+        "fr": "Aurore",
+        "ko": "오로라",
+        "zhCN": "極光"
+      },
+      "level": 84,
+      "iconUrl": "https://xivapi.com/i/003000/003415.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 2,
+      "cooldown": 60,
+      "effects": {
+        "duration": 18,
+        "healing": {
+          "hot": {
+            "duration": 18,
+            "amount": 300
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_7c27b4b8ac",
+      "job": "GNB",
+      "sourceRole": "ガンブレイカー",
+      "name": {
+        "ja": "ハート・オブ・コランダム",
+        "en": "Heart of Corundum",
+        "de": "Herz des Korunds",
+        "fr": "Cœur de corindon",
+        "ko": "강옥의 심장",
+        "zhCN": "剛玉之心"
+      },
+      "level": 82,
+      "iconUrl": "https://xivapi.com/i/003000/003430.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 25,
+      "effects": {
+        "duration": 8,
+        "mitigation": {
+          "duration": 8,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85
+        },
+        "criticalMitigation": {
+          "duration": 4,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85
+        }
+      }
+    },
+    {
+      "id": "skill_8b3ecd971b",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "インターベンション",
+        "en": "Intervention",
+        "de": "Intervention",
+        "fr": "Intervention",
+        "ko": "중재",
+        "zhCN": "幹預"
+      },
+      "level": 82,
+      "iconUrl": "https://xivapi.com/i/002000/002512.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 10,
+      "precondition": "ランパート|センチネル|エクストリームガード",
+      "effects": {
+        "duration": 8,
+        "mitigation": {
+          "duration": 8,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "criticalMitigation": {
+          "duration": 4,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "conditionalMitigation": {
+          "magic": 0.8,
+          "physical": 0.8,
+          "unique": 0.8
+        },
+        "healing": {
+          "hot": {
+            "duration": 12,
+            "amount": 250
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_075061bda7",
+      "job": "PLD",
+      "sourceRole": "騎士",
+      "name": {
+        "ja": "ホーリーシェルトロン",
+        "en": "Holy Sheltron",
+        "de": "Heiliges Schiltron",
+        "fr": "Schiltron sacré",
+        "ko": "신성한 방벽",
+        "zhCN": "聖盾陣"
+      },
+      "level": 82,
+      "iconUrl": "https://xivapi.com/i/002000/002950.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 5,
+      "effects": {
+        "duration": 8,
+        "mitigation": {
+          "duration": 8,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85
+        },
+        "criticalMitigation": {
+          "duration": 4,
+          "magic": 0.85,
+          "physical": 0.85,
+          "unique": 0.85
+        },
+        "healing": {
+          "hot": {
+            "duration": 12,
+            "amount": 250
+          }
+        }
+      }
+    },
+    {
+      "id": "skill_c8d434902e",
+      "job": "DRK",
+      "sourceRole": "暗黒騎士",
+      "name": {
+        "ja": "オブレーション",
+        "en": "Oblation",
+        "de": "Opfergabe",
+        "fr": "Oblation",
+        "ko": "헌신",
+        "zhCN": "獻奉"
+      },
+      "level": 82,
+      "iconUrl": "https://xivapi.com/i/003000/003089.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 2,
+      "cooldown": 60,
+      "effects": {
+        "duration": 10,
+        "mitigation": {
+          "duration": 10,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_8f81a549d4",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "原初の血気",
+        "en": "Bloodwhetting",
+        "de": "Urimpuls",
+        "fr": "Intuition fougueuse",
+        "ko": "원초의 혈기",
+        "zhCN": "原初的血氣"
+      },
+      "level": 82,
+      "iconUrl": "https://xivapi.com/i/002000/002569.png",
+      "ability": true,
+      "assign": "SELF",
+      "charges": 1,
+      "cooldown": 25,
+      "effects": {
+        "duration": 8,
+        "mitigation": {
+          "duration": 8,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "criticalMitigation": {
+          "duration": 4,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    },
+    {
+      "id": "skill_6a429c5375",
+      "job": "WAR",
+      "sourceRole": "戰士",
+      "name": {
+        "ja": "原初の猛り",
+        "en": "Nascent Flash",
+        "de": "Urflackern",
+        "fr": "Exaltation naissante",
+        "ko": "원초의 분노",
+        "zhCN": "原初的勇猛"
+      },
+      "level": 82,
+      "iconUrl": "https://xivapi.com/i/002000/002567.png",
+      "ability": true,
+      "assign": "SINGLE_PARTY",
+      "charges": 1,
+      "cooldown": 25,
+      "effects": {
+        "duration": 8,
+        "mitigation": {
+          "duration": 8,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        },
+        "criticalMitigation": {
+          "duration": 4,
+          "magic": 0.9,
+          "physical": 0.9,
+          "unique": 0.9
+        }
+      }
+    }
+  ]
+}

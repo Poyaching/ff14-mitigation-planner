@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(node --input-type=module -e ' *)",
+      "Bash(node --check src/app.js)",
+      "Bash(node --check src/data/skills.js)",
+      "Bash(node --check src/engine/cooldown.js)",
+      "Bash(node --check src/ui/planner-table.js)",
+      "Read(//c/Users/user/Desktop/**)",
+      "Read(//c//**)"
+    ]
+  }
+}

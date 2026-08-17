@@ -1,0 +1,396 @@
+[
+  {
+    "id": "skill_65007fd91c",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "スリル・オブ・バトル",
+      "en": "Thrill of Battle",
+      "de": "Kampfrausch",
+      "fr": "Frisson de la bataille",
+      "ko": "전투의 짜릿함",
+      "zhCN": "戰栗"
+    },
+    "level": 78,
+    "iconUrl": "https://xivapi.com/i/000000/000263.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 10,
+      "healing": {
+        "target": "SELF_AFFECTED_ALL",
+        "duration": 10,
+        "timesHealBuffed": 1.2
+      },
+      "hpBuff": {
+        "duration": 10,
+        "multiplier": 1.2
+      }
+    }
+  },
+  {
+    "id": "skill_011af80a3c",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "シェイクオフ",
+      "en": "Shake It Off",
+      "de": "Abschütteln",
+      "fr": "Débarrassage",
+      "ko": "뿌리치기",
+      "zhCN": "擺脫"
+    },
+    "level": 76,
+    "iconUrl": "https://xivapi.com/i/002000/002563.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 300,
+        "hot": {
+          "duration": 15,
+          "amount": 100
+        }
+      },
+      "barrier": {
+        "buff": {
+          "duration": 30,
+          "multiplier": 0.15
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_de73c8a6b4",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "原初の猛り",
+      "en": "Nascent Flash",
+      "de": "Urflackern",
+      "fr": "Exaltation naissante",
+      "ko": "원초의 분노",
+      "zhCN": "原初的勇猛"
+    },
+    "level": 76,
+    "iconUrl": "https://xivapi.com/i/002000/002567.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 25,
+    "effects": {
+      "duration": 6,
+      "mitigation": {
+        "duration": 6,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_abf2394cab",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "シェイクオフ",
+      "en": "Shake It Off",
+      "de": "Abschütteln",
+      "fr": "Débarrassage",
+      "ko": "뿌리치기",
+      "zhCN": "擺脫"
+    },
+    "level": 68,
+    "iconUrl": "https://xivapi.com/i/002000/002563.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "hot": {
+          "duration": 15,
+          "amount": 100
+        }
+      },
+      "barrier": {
+        "buff": {
+          "duration": 30,
+          "multiplier": 0.15
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_043d84e9eb",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "エクリブリウム",
+      "en": "Equilibrium",
+      "de": "Äquilibrium",
+      "fr": "Équilibre",
+      "ko": "평정심",
+      "zhCN": "泰然自若"
+    },
+    "level": 58,
+    "iconUrl": "https://xivapi.com/i/002000/002560.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 1200
+      }
+    }
+  },
+  {
+    "id": "skill_8542faf48a",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "原初の直感",
+      "en": "Raw Intuition",
+      "de": "Urinstinkt",
+      "fr": "Intuition pure",
+      "ko": "원초의 직감",
+      "zhCN": "原初的直覺"
+    },
+    "level": 56,
+    "iconUrl": "https://xivapi.com/i/002000/002559.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 25,
+    "effects": {
+      "duration": 6,
+      "mitigation": {
+        "duration": 6,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_40c1709924",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "ホルムギャング",
+      "en": "Holmgang",
+      "de": "Holmgang",
+      "fr": "Holmgang",
+      "ko": "일대일 결투",
+      "zhCN": "死鬥"
+    },
+    "level": 42,
+    "iconUrl": "https://xivapi.com/i/000000/000266.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 240,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 1,
+        "physical": 1,
+        "unique": 1
+      }
+    }
+  },
+  {
+    "id": "skill_2e752a633c",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "ヴェンジェンス",
+      "en": "Vengeance",
+      "de": "Rachsucht",
+      "fr": "Représailles",
+      "ko": "보복",
+      "zhCN": "覆仇"
+    },
+    "level": 38,
+    "iconUrl": "https://xivapi.com/i/000000/000267.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.7,
+        "physical": 0.7,
+        "unique": 0.7
+      }
+    }
+  },
+  {
+    "id": "skill_7d8a34b462",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "スリル・オブ・バトル",
+      "en": "Thrill of Battle",
+      "de": "Kampfrausch",
+      "fr": "Frisson de la bataille",
+      "ko": "전투의 짜릿함",
+      "zhCN": "戰栗"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/000000/000263.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 10,
+      "hpBuff": {
+        "duration": 10,
+        "multiplier": 1.2
+      }
+    }
+  },
+  {
+    "id": "skill_9851da751f",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "ダムネーション",
+      "en": "Damnation",
+      "de": "Verdammnis",
+      "fr": "Damnation",
+      "ko": "지옥행",
+      "zhCN": "戮罪"
+    },
+    "level": 92,
+    "iconUrl": "https://xivapi.com/i/002000/002573.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.6,
+        "physical": 0.6,
+        "unique": 0.6
+      },
+      "healing": {
+        "hot": {
+          "duration": 15,
+          "amount": 400
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_2c83bd34dd",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "エクリブリウム",
+      "en": "Equilibrium",
+      "de": "Äquilibrium",
+      "fr": "Équilibre",
+      "ko": "평정심",
+      "zhCN": "泰然自若"
+    },
+    "level": 84,
+    "iconUrl": "https://xivapi.com/i/002000/002560.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 1200,
+        "hot": {
+          "duration": 15,
+          "amount": 200
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_8f81a549d4",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "原初の血気",
+      "en": "Bloodwhetting",
+      "de": "Urimpuls",
+      "fr": "Intuition fougueuse",
+      "ko": "원초의 혈기",
+      "zhCN": "原初的血氣"
+    },
+    "level": 82,
+    "iconUrl": "https://xivapi.com/i/002000/002569.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 25,
+    "effects": {
+      "duration": 8,
+      "mitigation": {
+        "duration": 8,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "criticalMitigation": {
+        "duration": 4,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_6a429c5375",
+    "job": "WAR",
+    "sourceRole": "戰士",
+    "name": {
+      "ja": "原初の猛り",
+      "en": "Nascent Flash",
+      "de": "Urflackern",
+      "fr": "Exaltation naissante",
+      "ko": "원초의 분노",
+      "zhCN": "原初的勇猛"
+    },
+    "level": 82,
+    "iconUrl": "https://xivapi.com/i/002000/002567.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 25,
+    "effects": {
+      "duration": 8,
+      "mitigation": {
+        "duration": 8,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "criticalMitigation": {
+        "duration": 4,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  }
+]

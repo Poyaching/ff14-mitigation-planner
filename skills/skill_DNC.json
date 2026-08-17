@@ -1,0 +1,248 @@
+[
+  {
+    "id": "skill_2020b51a3e",
+    "job": "DNC",
+    "sourceRole": "舞者",
+    "name": {
+      "ja": "インプロビゼーションフィニッシュ",
+      "en": "Improvised Finish",
+      "de": "Improvisiertes Finale",
+      "fr": "Final improvisé",
+      "ko": "즉흥 연기 마무리",
+      "zhCN": "即興表演結束"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003479.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0
+    }
+  },
+  {
+    "id": "skill_86cb5adc17",
+    "job": "DNC",
+    "sourceRole": "舞者",
+    "name": {
+      "ja": "インプロビゼーションフィニッシュ(踴りの激情0)",
+      "en": "Improvised Finish(Rising Rhythm 0)",
+      "de": "Improvisiertes Finale(Tanzekstase 0)",
+      "fr": "Final improvisé(Frénésie des danseurs 0)",
+      "ko": "즉흥 연기 마무리(열정 중첩 0)",
+      "zhCN": "即興表演結束(舞動的熱情 0)"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003479.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "barrier": {
+        "buff": {
+          "duration": 30,
+          "multiplier": 0.05
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_0cfdf1d921",
+    "job": "DNC",
+    "sourceRole": "舞者",
+    "name": {
+      "ja": "インプロビゼーションフィニッシュ(踴りの激情1)",
+      "en": "Improvised Finish(Rising Rhythm 1)",
+      "de": "Improvisiertes Finale(Tanzekstase 1)",
+      "fr": "Final improvisé(Frénésie des danseurs 1)",
+      "ko": "즉흥 연기 마무리(열정 중첩 1)",
+      "zhCN": "即興表演結束(舞動的熱情 1)"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003479.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "barrier": {
+        "buff": {
+          "duration": 30,
+          "multiplier": 0.06
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_5b5aa43a3b",
+    "job": "DNC",
+    "sourceRole": "舞者",
+    "name": {
+      "ja": "インプロビゼーションフィニッシュ(踴りの激情2)",
+      "en": "Improvised Finish(Rising Rhythm 2)",
+      "de": "Improvisiertes Finale(Tanzekstase 2)",
+      "fr": "Final improvisé(Frénésie des danseurs 2)",
+      "ko": "즉흥 연기 마무리(열정 중첩 2)",
+      "zhCN": "即興表演結束(舞動的熱情 2)"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003479.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "barrier": {
+        "buff": {
+          "duration": 30,
+          "multiplier": 0.07
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_119b2f2ab7",
+    "job": "DNC",
+    "sourceRole": "舞者",
+    "name": {
+      "ja": "インプロビゼーションフィニッシュ(踴りの激情3)",
+      "en": "Improvised Finish(Rising Rhythm 3)",
+      "de": "Improvisiertes Finale(Tanzekstase 3)",
+      "fr": "Final improvisé(Frénésie des danseurs 3)",
+      "ko": "즉흥 연기 마무리(열정 중첩 3)",
+      "zhCN": "即興表演結束(舞動的熱情 3)"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003479.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "barrier": {
+        "buff": {
+          "duration": 30,
+          "multiplier": 0.08
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_da314ff781",
+    "job": "DNC",
+    "sourceRole": "舞者",
+    "name": {
+      "ja": "インプロビゼーションフィニッシュ(踴りの激情4)",
+      "en": "Improvised Finish(Rising Rhythm 4)",
+      "de": "Improvisiertes Finale(Tanzekstase 4)",
+      "fr": "Final improvisé(Frénésie des danseurs 4)",
+      "ko": "즉흥 연기 마무리(열정 중첩 4)",
+      "zhCN": "即興表演結束(舞動的熱情 4)"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003479.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 0,
+      "barrier": {
+        "buff": {
+          "duration": 30,
+          "multiplier": 0.1
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_d4e4673a79",
+    "job": "DNC",
+    "sourceRole": "舞者",
+    "name": {
+      "ja": "守りのサンバ",
+      "en": "Shield Samba",
+      "de": "Schildsamba",
+      "fr": "Samba protectrice",
+      "ko": "수세의 삼바",
+      "zhCN": "防守之桑巴"
+    },
+    "level": 56,
+    "iconUrl": "https://xivapi.com/i/003000/003469.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_af4e016ede",
+    "job": "DNC",
+    "sourceRole": "舞者",
+    "name": {
+      "ja": "守りのサンバ",
+      "en": "Shield Samba",
+      "de": "Schildsamba",
+      "fr": "Samba protectrice",
+      "ko": "수세의 삼바",
+      "zhCN": "防守之桑巴"
+    },
+    "level": 98,
+    "iconUrl": "https://xivapi.com/i/003000/003469.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.85,
+        "physical": 0.85,
+        "unique": 0.85
+      }
+    }
+  },
+  {
+    "id": "skill_98211fd864",
+    "job": "DNC",
+    "sourceRole": "舞者",
+    "name": {
+      "ja": "守りのサンバ",
+      "en": "Shield Samba",
+      "de": "Schildsamba",
+      "fr": "Samba protectrice",
+      "ko": "수세의 삼바",
+      "zhCN": "防守之桑巴"
+    },
+    "level": 88,
+    "iconUrl": "https://xivapi.com/i/003000/003469.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  }
+]

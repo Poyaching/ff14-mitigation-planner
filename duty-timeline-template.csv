@@ -1,0 +1,12 @@
+Phase,Time,Action,Target,Type,Damage
+P1,00:04,AA,tank,physical,12000
+P1,00:07,阿斯卡隆之威,tank,physical,28000
+P1,00:18,AA,tank,physical,12000
+P1,00:32,AA,tank,physical,12000
+P1,00:40,責難,party,magic,51000
+P1,00:54,百雷,party,magic,51000
+P1,01:08,AA,tank,physical,12000
+P1,01:22,邪龍魔炎,party,magic,45000
+P2,01:36,古代爆震,party,magic,60000
+P2,01:50,AA,tank,physical,13000
+P2,02:04,百雷,party,magic,55000

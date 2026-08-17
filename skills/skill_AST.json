@@ -1,0 +1,1080 @@
+[
+  {
+    "id": "skill_f6d29358af",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ニュートラルセクト",
+      "en": "Neutral Sect",
+      "de": "Neutral",
+      "fr": "Adepte de la neutralité",
+      "ko": "하루별읽기",
+      "zhCN": "中間學派"
+    },
+    "level": 80,
+    "iconUrl": "https://xivapi.com/i/003000/003552.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "target": "SELF_EFFECTED_GCD",
+        "duration": 20,
+        "timesHealBuffed": 1.2
+      }
+    }
+  },
+  {
+    "id": "skill_bb3c55910b",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ディグニティ(最小)",
+      "en": "Essential Dignity(minimum)",
+      "de": "Essenzielle Würde(minimum)",
+      "fr": "Dignité essentielle(le minimum)",
+      "ko": "본질적 위계(최소)",
+      "zhCN": "先天稟賦(最低限度)"
+    },
+    "level": 78,
+    "iconUrl": "https://xivapi.com/i/003000/003141.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 2,
+    "cooldown": 40,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    }
+  },
+  {
+    "id": "skill_78a9d98af8",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ディグニティ(最大)",
+      "en": "Essential Dignity(maximum)",
+      "de": "Essenzielle Würde(maximal)",
+      "fr": "Dignité essentielle(maximum)",
+      "ko": "본질적 위계(최대)",
+      "zhCN": "先天稟賦(最大)"
+    },
+    "level": 78,
+    "iconUrl": "https://xivapi.com/i/003000/003141.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 2,
+    "cooldown": 40,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 900
+      }
+    }
+  },
+  {
+    "id": "skill_813994fcc3",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ホロスコープ",
+      "en": "Horoscope",
+      "de": "Horoskop",
+      "fr": "Horoscope",
+      "ko": "별점운",
+      "zhCN": "天宮圖"
+    },
+    "level": 76,
+    "iconUrl": "https://xivapi.com/i/003000/003550.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 10,
+      "healing": {
+        "heal": 200
+      }
+    }
+  },
+  {
+    "id": "skill_acefd7a47e",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ホロスコープ・ヘリオス",
+      "en": "Horoscope Helios",
+      "de": "Helios-Horoskop",
+      "fr": "Hélios aspecté",
+      "ko": "별점운: 헬리오스",
+      "zhCN": "陽星天宮圖"
+    },
+    "level": 76,
+    "iconUrl": "https://xivapi.com/i/003000/003551.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 400
+      }
+    }
+  },
+  {
+    "id": "skill_9264334dac",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "星天交差",
+      "en": "Celestial Intersection",
+      "de": "Kongruenz",
+      "fr": "Rencontre céleste",
+      "ko": "천궁의 교차",
+      "zhCN": "巨星主宰"
+    },
+    "level": 74,
+    "iconUrl": "https://xivapi.com/i/003000/003556.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 30,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 200
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 400
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_ba5763927b",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "クラウンレディ",
+      "en": "Lady of Crowns",
+      "de": "Königin der Kronen",
+      "fr": "Reine des couronnes",
+      "ko": "여왕의 날개",
+      "zhCN": "王冠之貴婦"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/003000/003146.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    },
+    "availability": {
+      "duration": 1200,
+      "skill": "アンブラルドロー"
+    }
+  },
+  {
+    "id": "skill_80b0dd5d7f",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "アーサリースター(巨星の支配者)",
+      "en": "Earthly Star(Giant Dominance)",
+      "de": "Irdischer Stern(Planetare Herrschaft)",
+      "fr": "Étoile terrestre(Domination stellaire)",
+      "ko": "지상의 별(큰별의 지배자)",
+      "zhCN": "地星(巨星主宰)"
+    },
+    "level": 62,
+    "iconUrl": "https://xivapi.com/i/003000/003144.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 720
+      }
+    }
+  },
+  {
+    "id": "skill_73de6e14cb",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "アーサリースター(星の支配者)",
+      "en": "Earthly Star(Earthly Dominance)",
+      "de": "Irdischer Stern(Irdische Herrschaft)",
+      "fr": "Étoile terrestre(Domination terrestre)",
+      "ko": "지상의 별(별의 지배자)",
+      "zhCN": "地星(地星主宰)"
+    },
+    "level": 62,
+    "iconUrl": "https://xivapi.com/i/003000/003143.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 540
+      }
+    }
+  },
+  {
+    "id": "skill_11a08b48dc",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "星天対抗",
+      "en": "Celestial Opposition",
+      "de": "Opposition",
+      "fr": "Opposition céleste",
+      "ko": "천궁의 반목",
+      "zhCN": "天星沖日"
+    },
+    "level": 60,
+    "iconUrl": "https://xivapi.com/i/003000/003142.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "heal": 200,
+        "hot": {
+          "duration": 15,
+          "amount": 100
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_b3f9c8a4c3",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "運命の輪",
+      "en": "Collective Unconscious",
+      "de": "Numinosum",
+      "fr": "Inconscient collectif",
+      "ko": "운명의 수레바퀴",
+      "zhCN": "命運之輪"
+    },
+    "level": 58,
+    "iconUrl": "https://xivapi.com/i/003000/003140.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "healing": {
+        "hot": {
+          "duration": 15,
+          "amount": 100
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_7b4262b395",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "アスペクト・ヘリオス",
+      "en": "Aspected Helios",
+      "de": "Aspektierter Helios",
+      "fr": "Hélios aspecté",
+      "ko": "별읽기: 헬리오스",
+      "zhCN": "陽星相位"
+    },
+    "level": 42,
+    "iconUrl": "https://xivapi.com/i/003000/003130.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "ニュートラルセクト",
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "heal": 200,
+        "hot": {
+          "duration": 15,
+          "amount": 150
+        }
+      },
+      "barrier": {
+        "additional": {
+          "duration": 30,
+          "amount": 250
+        }
+      }
+    },
+    "resource": {
+      "mp": 800
+    }
+  },
+  {
+    "id": "skill_727d474bb9",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "アスペクト・ベネフィク",
+      "en": "Aspected Benefic",
+      "de": "Harmonischer Orbis",
+      "fr": "Bienfaisance aspectée",
+      "ko": "별읽기: 베네피크",
+      "zhCN": "吉星相位"
+    },
+    "level": 34,
+    "iconUrl": "https://xivapi.com/i/003000/003127.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "ニュートラルセクト",
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "heal": 200,
+        "hot": {
+          "duration": 15,
+          "amount": 200
+        }
+      },
+      "barrier": {
+        "additional": {
+          "duration": 30,
+          "amount": 500
+        }
+      }
+    },
+    "resource": {
+      "mp": 400
+    }
+  },
+  {
+    "id": "skill_a011da397c",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "アストラルドロー",
+      "en": "Astral Draw",
+      "de": "Lichtziehen",
+      "fr": "Tirage astral",
+      "ko": "별빛 점지",
+      "zhCN": "星極抽卡"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/003000/003564.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 55,
+    "effects": {
+      "duration": 0
+    },
+    "availability": {
+      "timerShared": "アンブラルドロー"
+    }
+  },
+  {
+    "id": "skill_1945548e0d",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "アンブラルドロー",
+      "en": "Umbral Draw",
+      "de": "Schattenziehen",
+      "fr": "Tirage ombral",
+      "ko": "그림자 점지",
+      "zhCN": "靈極抽卡"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/003000/003565.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 55,
+    "effects": {
+      "duration": 0
+    },
+    "availability": {
+      "timerShared": "アストラルドロー"
+    }
+  },
+  {
+    "id": "skill_90dac0e86a",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "オシュオンの矢",
+      "en": "The Arrow",
+      "de": "Pfeil",
+      "fr": "La Flèche",
+      "ko": "오쉬온의 화살",
+      "zhCN": "放浪神之箭"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/003000/003112.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "target": "SINGLE_AFFECTED_ALL",
+        "duration": 15,
+        "timesHealBuffed": 1.1
+      }
+    },
+    "availability": {
+      "duration": 1200,
+      "skill": "アストラルドロー"
+    }
+  },
+  {
+    "id": "skill_a5169e2b38",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "サリャクの水瓶",
+      "en": "The Ewer",
+      "de": "Krug",
+      "fr": "L'Aiguière",
+      "ko": "살리아크의 물병",
+      "zhCN": "河流神之瓶"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/003000/003114.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "hot": {
+          "duration": 15,
+          "amount": 200
+        }
+      }
+    },
+    "availability": {
+      "duration": 1200,
+      "skill": "アンブラルドロー"
+    }
+  },
+  {
+    "id": "skill_5667a96a31",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ビエルゴの塔",
+      "en": "The Spire",
+      "de": "Turm",
+      "fr": "La Tour",
+      "ko": "비레고의 탑",
+      "zhCN": "建築神之塔"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/003000/003115.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 30,
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 400
+        }
+      }
+    },
+    "availability": {
+      "duration": 1200,
+      "skill": "アストラルドロー"
+    }
+  },
+  {
+    "id": "skill_859be5d134",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "世界樹の幹",
+      "en": "The Bole",
+      "de": "Eiche",
+      "fr": "Le Tronc",
+      "ko": "세계수의 줄기",
+      "zhCN": "世界樹之幹"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/003000/003111.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    },
+    "availability": {
+      "duration": 1200,
+      "skill": "アンブラルドロー"
+    }
+  },
+  {
+    "id": "skill_43ead96c2e",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ベネフィラ",
+      "en": "Benefic II",
+      "de": "Harmonieaspekt II",
+      "fr": "Bienfaisance II",
+      "ko": "베네피라",
+      "zhCN": "福星"
+    },
+    "level": 26,
+    "iconUrl": "https://xivapi.com/i/003000/003128.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 700
+      }
+    },
+    "resource": {
+      "mp": 700
+    }
+  },
+  {
+    "id": "skill_7008073a38",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ディグニティ(最小)",
+      "en": "Essential Dignity(minimum)",
+      "de": "Essenzielle Würde(minimum)",
+      "fr": "Dignité essentielle(le minimum)",
+      "ko": "본질적 위계(최소)",
+      "zhCN": "先天稟賦(最低限度)"
+    },
+    "level": 15,
+    "iconUrl": "https://xivapi.com/i/003000/003141.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 40,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    }
+  },
+  {
+    "id": "skill_e2c6d51853",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ディグニティ(最大)",
+      "en": "Essential Dignity(maximum)",
+      "de": "Essenzielle Würde(maximal)",
+      "fr": "Dignité essentielle(maximum)",
+      "ko": "본질적 위계(최대)",
+      "zhCN": "先天稟賦(最大)"
+    },
+    "level": 15,
+    "iconUrl": "https://xivapi.com/i/003000/003141.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 40,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 900
+      }
+    }
+  },
+  {
+    "id": "skill_8a81a4de02",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ヘリオス",
+      "en": "Helios",
+      "de": "Helios",
+      "fr": "Hélios",
+      "ko": "헬리오스",
+      "zhCN": "陽星"
+    },
+    "level": 10,
+    "iconUrl": "https://xivapi.com/i/003000/003129.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 330
+      }
+    },
+    "resource": {
+      "mp": 700
+    }
+  },
+  {
+    "id": "skill_b4d865ea78",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ベネフィク",
+      "en": "Benefic",
+      "de": "Harmonieaspekt",
+      "fr": "Bienfaisance",
+      "ko": "베네피크",
+      "zhCN": "吉星"
+    },
+    "level": 2,
+    "iconUrl": "https://xivapi.com/i/003000/003126.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 450
+      }
+    },
+    "resource": {
+      "mp": 400
+    }
+  },
+  {
+    "id": "skill_9b0ded1c3f",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "サンサイン",
+      "en": "Sun Sign",
+      "de": "Sonnenzeichen",
+      "fr": "Signe solaire",
+      "ko": "태양궁",
+      "zhCN": "太陽星座"
+    },
+    "level": 100,
+    "iconUrl": "https://xivapi.com/i/003000/003109.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    },
+    "availability": {
+      "duration": 30,
+      "skill": "ニュートラルセクト"
+    }
+  },
+  {
+    "id": "skill_8cb33d67cb",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ディグニティ(最小)",
+      "en": "Essential Dignity(minimum)",
+      "de": "Essenzielle Würde(minimum)",
+      "fr": "Dignité essentielle(le minimum)",
+      "ko": "본질적 위계(최소)",
+      "zhCN": "先天稟賦(最低限度)"
+    },
+    "level": 98,
+    "iconUrl": "https://xivapi.com/i/003000/003141.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 3,
+    "cooldown": 40,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    }
+  },
+  {
+    "id": "skill_0f35397a40",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ディグニティ(最大)",
+      "en": "Essential Dignity(maximum)",
+      "de": "Essenzielle Würde(maximal)",
+      "fr": "Dignité essentielle(maximum)",
+      "ko": "본질적 위계(최대)",
+      "zhCN": "先天稟賦(最大)"
+    },
+    "level": 98,
+    "iconUrl": "https://xivapi.com/i/003000/003141.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 3,
+    "cooldown": 40,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 900
+      }
+    }
+  },
+  {
+    "id": "skill_ee62bb4857",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "コンジャクション・ヘリオス",
+      "en": "Helios Conjunction",
+      "de": "Helios in Konjunktion",
+      "fr": "Hélios combiné",
+      "ko": "회합: 헬리오스",
+      "zhCN": "陽星合相"
+    },
+    "level": 96,
+    "iconUrl": "https://xivapi.com/i/003000/003567.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "ニュートラルセクト",
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "heal": 250,
+        "hot": {
+          "duration": 15,
+          "amount": 175
+        }
+      },
+      "barrier": {
+        "additional": {
+          "duration": 30,
+          "amount": 313
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_74d2a3039f",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "マクロコスモス(最小)",
+      "en": "Macrocosmos(minimum)",
+      "de": "Makrokosmos(minimum)",
+      "fr": "Macrocosme(le minimum)",
+      "ko": "대우주(최소)",
+      "zhCN": "大宇宙(最低限度)"
+    },
+    "level": 90,
+    "iconUrl": "https://xivapi.com/i/003000/003562.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 200
+      }
+    }
+  },
+  {
+    "id": "skill_6fbc7c1602",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "マクロコスモス(被ダメ50%分)",
+      "en": "Macrocosmos(50% damage received)",
+      "de": "Makrokosmos(50 % erlittener Schaden)",
+      "fr": "Macrocosme(50 % de dégâts reçus)",
+      "ko": "대우주(피 안 50%)",
+      "zhCN": "大宇宙(受到 50% 的傷害)"
+    },
+    "level": 90,
+    "iconUrl": "https://xivapi.com/i/003000/003562.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 180,
+    "effects": {
+      "duration": 0
+    }
+  },
+  {
+    "id": "skill_9401b0b104",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "星天交差",
+      "en": "Celestial Intersection",
+      "de": "Kongruenz",
+      "fr": "Rencontre céleste",
+      "ko": "천궁의 교차",
+      "zhCN": "巨星主宰"
+    },
+    "level": 88,
+    "iconUrl": "https://xivapi.com/i/003000/003556.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 2,
+    "cooldown": 30,
+    "effects": {
+      "duration": 30,
+      "healing": {
+        "heal": 200
+      },
+      "barrier": {
+        "effect": {
+          "duration": 30,
+          "amount": 400
+        }
+      }
+    }
+  },
+  {
+    "id": "skill_3a5d2cf89f",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "エクザルテーション",
+      "en": "Exaltation",
+      "de": "Exaltation",
+      "fr": "Exaltation",
+      "ko": "성위 격상",
+      "zhCN": "擢升"
+    },
+    "level": 86,
+    "iconUrl": "https://xivapi.com/i/003000/003561.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 8,
+      "mitigation": {
+        "duration": 8,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      },
+      "healing": {
+        "heal": 500
+      }
+    }
+  },
+  {
+    "id": "skill_df67c855d9",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "アスペクト・ベネフィク",
+      "en": "Aspected Benefic",
+      "de": "Harmonischer Orbis",
+      "fr": "Bienfaisance aspectée",
+      "ko": "별읽기: 베네피크",
+      "zhCN": "吉星相位"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/003000/003127.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "ニュートラルセクト",
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "heal": 250,
+        "hot": {
+          "duration": 15,
+          "amount": 250
+        }
+      },
+      "barrier": {
+        "additional": {
+          "duration": 30,
+          "amount": 625
+        }
+      }
+    },
+    "resource": {
+      "mp": 400
+    }
+  },
+  {
+    "id": "skill_665301cec3",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "アスペクト・ヘリオス",
+      "en": "Aspected Helios",
+      "de": "Aspektierter Helios",
+      "fr": "Hélios aspecté",
+      "ko": "별읽기: 헬리오스",
+      "zhCN": "陽星相位"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/003000/003130.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "precondition": "ニュートラルセクト",
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "heal": 250,
+        "hot": {
+          "duration": 15,
+          "amount": 150
+        }
+      },
+      "barrier": {
+        "additional": {
+          "duration": 30,
+          "amount": 313
+        }
+      }
+    },
+    "resource": {
+      "mp": 800
+    }
+  },
+  {
+    "id": "skill_23794e27de",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ベネフィク",
+      "en": "Benefic",
+      "de": "Harmonieaspekt",
+      "fr": "Bienfaisance",
+      "ko": "베네피크",
+      "zhCN": "吉星"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/003000/003126.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 500
+      }
+    },
+    "resource": {
+      "mp": 400
+    }
+  },
+  {
+    "id": "skill_aba6e603c6",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ベネフィラ",
+      "en": "Benefic II",
+      "de": "Harmonieaspekt II",
+      "fr": "Bienfaisance II",
+      "ko": "베네피라",
+      "zhCN": "福星"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/003000/003128.png",
+    "ability": false,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 800
+      }
+    },
+    "resource": {
+      "mp": 700
+    }
+  },
+  {
+    "id": "skill_532129de54",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "ヘリオス",
+      "en": "Helios",
+      "de": "Helios",
+      "fr": "Hélios",
+      "ko": "헬리오스",
+      "zhCN": "陽星"
+    },
+    "level": 85,
+    "iconUrl": "https://xivapi.com/i/003000/003129.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 400
+      }
+    },
+    "resource": {
+      "mp": 700
+    }
+  }
+]

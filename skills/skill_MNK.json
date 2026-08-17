@@ -1,0 +1,86 @@
+[
+  {
+    "id": "skill_fbcebb3070",
+    "job": "MNK",
+    "sourceRole": "モンク",
+    "name": {
+      "ja": "金剛の極意",
+      "en": "Riddle of Earth",
+      "de": "Steinernes Enigma",
+      "fr": "Énigme de la terre",
+      "ko": "금강의 극의",
+      "zhCN": "金剛極意"
+    },
+    "level": 64,
+    "iconUrl": "https://xivapi.com/i/002000/002537.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 120,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_312954a466",
+    "job": "MNK",
+    "sourceRole": "モンク",
+    "name": {
+      "ja": "金剛周天",
+      "en": "Earth's Reply",
+      "de": "Erdumrundung",
+      "fr": "Réaction de la terre",
+      "ko": "금강주천",
+      "zhCN": "金剛周天"
+    },
+    "level": 64,
+    "iconUrl": "https://xivapi.com/i/002000/002549.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 0,
+      "healing": {
+        "heal": 300
+      }
+    },
+    "availability": {
+      "duration": 30,
+      "skill": "金剛の極意"
+    }
+  },
+  {
+    "id": "skill_176add41a8",
+    "job": "MNK",
+    "sourceRole": "モンク",
+    "name": {
+      "ja": "マントラ",
+      "en": "Mantra",
+      "de": "Mantra",
+      "fr": "Mantra",
+      "ko": "만트라",
+      "zhCN": "真言"
+    },
+    "level": 42,
+    "iconUrl": "https://xivapi.com/i/000000/000216.png",
+    "ability": true,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15,
+      "healing": {
+        "target": "RANGE_AFFECTED_ALL",
+        "duration": 15,
+        "timesHealBuffed": 1.1
+      }
+    }
+  }
+]

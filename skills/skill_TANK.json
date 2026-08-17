@@ -1,0 +1,203 @@
+[
+  {
+    "id": "skill_9101445d01",
+    "roleGroup": "TANK",
+    "sourceRole": "タンク",
+    "name": {
+      "ja": "リプライザル",
+      "en": "Reprisal",
+      "de": "Reflexion",
+      "fr": "Rétorsion",
+      "ko": "앙갚음",
+      "zhCN": "雪仇"
+    },
+    "level": 22,
+    "iconUrl": "https://xivapi.com/i/000000/000806.png",
+    "ability": true,
+    "assign": "RANGE_ENEMY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_7fe670b7c9",
+    "roleGroup": "TANK",
+    "sourceRole": "タンク",
+    "name": {
+      "ja": "ランパート",
+      "en": "Rampart",
+      "de": "Schutzwall",
+      "fr": "Rempart",
+      "ko": "철벽 방어",
+      "zhCN": "鐵壁"
+    },
+    "level": 8,
+    "iconUrl": "https://xivapi.com/i/000000/000801.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 20,
+      "mitigation": {
+        "duration": 20,
+        "magic": 0.8,
+        "physical": 0.8,
+        "unique": 0.8
+      }
+    }
+  },
+  {
+    "id": "skill_e200060db0",
+    "roleGroup": "TANK",
+    "sourceRole": "タンク",
+    "name": {
+      "ja": "LB1",
+      "en": "LB1",
+      "de": "LB1",
+      "fr": "LB1",
+      "ko": "LB1",
+      "zhCN": "LB1"
+    },
+    "level": 1,
+    "iconUrl": "https://xivapi.com/i/000000/000103.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0.8,
+        "physical": 0.8,
+        "unique": 0.8
+      }
+    }
+  },
+  {
+    "id": "skill_db021c4a7b",
+    "roleGroup": "TANK",
+    "sourceRole": "タンク",
+    "name": {
+      "ja": "LB2",
+      "en": "LB2",
+      "de": "LB2",
+      "fr": "LB2",
+      "ko": "LB2",
+      "zhCN": "LB2"
+    },
+    "level": 1,
+    "iconUrl": "https://xivapi.com/i/000000/000103.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.6,
+        "physical": 0.6,
+        "unique": 0.6
+      }
+    }
+  },
+  {
+    "id": "skill_d1ea20a0ad",
+    "roleGroup": "TANK",
+    "sourceRole": "タンク",
+    "name": {
+      "ja": "LB3",
+      "en": "LB3",
+      "de": "LB3",
+      "fr": "LB3",
+      "ko": "LB3",
+      "zhCN": "LB3"
+    },
+    "level": 1,
+    "iconUrl": "https://xivapi.com/i/000000/000103.png",
+    "ability": false,
+    "assign": "RANGE_PARTY",
+    "charges": 1,
+    "cooldown": 2.5,
+    "effects": {
+      "duration": 8,
+      "mitigation": {
+        "duration": 8,
+        "magic": 0.2,
+        "physical": 0.2,
+        "unique": 0.2
+      }
+    }
+  },
+  {
+    "id": "skill_9686644047",
+    "roleGroup": "TANK",
+    "sourceRole": "タンク",
+    "name": {
+      "ja": "リプライザル",
+      "en": "Reprisal",
+      "de": "Reflexion",
+      "fr": "Rétorsion",
+      "ko": "앙갚음",
+      "zhCN": "雪仇"
+    },
+    "level": 98,
+    "iconUrl": "https://xivapi.com/i/000000/000806.png",
+    "ability": true,
+    "assign": "RANGE_ENEMY",
+    "charges": 1,
+    "cooldown": 60,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.9,
+        "unique": 0.9
+      }
+    }
+  },
+  {
+    "id": "skill_a7089f02f4",
+    "roleGroup": "TANK",
+    "sourceRole": "タンク",
+    "name": {
+      "ja": "ランパート",
+      "en": "Rampart",
+      "de": "Schutzwall",
+      "fr": "Rempart",
+      "ko": "철벽 방어",
+      "zhCN": "鐵壁"
+    },
+    "level": 94,
+    "iconUrl": "https://xivapi.com/i/000000/000801.png",
+    "ability": true,
+    "assign": "SELF",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 20,
+      "mitigation": {
+        "duration": 20,
+        "magic": 0.8,
+        "physical": 0.8,
+        "unique": 0.8
+      },
+      "healing": {
+        "target": "SELF_AFFECTED_ALL",
+        "duration": 20,
+        "timesHealBuffed": 1.15
+      }
+    }
+  }
+]
