@@ -44,14 +44,16 @@ export function renderPlannerTable(container, opts) {
     jobGroups.reduce((sum, g) => sum + (g.resource ? 1 : 0) + g.skills.length, 0) || 1;
 
   // --- colgroup ---
+  // 手機版需求：這幾欄要凍結在左邊（見下方 applyStickyOffsets），「招式」不用強制留大格，
+  // 交給 table-layout: auto 依內容動態撐開，這裡的寬度只是初始建議值。
   const fixedCols = [
-    ["phase", 70],
-    ["time", 72],
-    ["action", 260],
-    ["target", 78],
-    ["type", 78],
-    ["damage", 88],
-    ["result", 96],
+    ["phase-cell", 60],
+    ["time-cell", 68],
+    ["action-cell", 110],
+    ["target-cell", 64],
+    ["type-cell", 64],
+    ["damage-cell", 78],
+    ["result-cell", 90],
   ];
   const colgroup = document.createElement("colgroup");
   for (const [, width] of fixedCols) {
@@ -79,12 +81,13 @@ export function renderPlannerTable(container, opts) {
   const headRow3 = document.createElement("tr");
 
   const fixedLabels = ["階段", "時間", "招式", "目標", "類型", "傷害"];
-  for (const label of fixedLabels) {
+  fixedLabels.forEach((label, i) => {
     const th = document.createElement("th");
     th.textContent = label;
     th.rowSpan = 3;
+    th.className = fixedCols[i][0]; // 跟 tbody 對應欄位同一個 class，供 applyStickyOffsets 量測寬度
     headRow1.appendChild(th);
-  }
+  });
 
   const resultTh = document.createElement("th");
   resultTh.textContent = "結果傷害";
@@ -93,7 +96,7 @@ export function renderPlannerTable(container, opts) {
     "簡化規則：自身／單體減傷（例如預警、幹預）只套用在 target＝tank 的事件；" +
     "敵方或隊伍範圍減傷（例如雪仇、野戰治療陣）視為對所有傷害生效；條件式減傷（conditionalMitigation）暫不計算。";
   resultTh.rowSpan = 3;
-  resultTh.className = "result-header";
+  resultTh.className = "result-header result-cell";
   headRow1.appendChild(resultTh);
 
   const mitigationTh = document.createElement("th");
@@ -417,4 +420,25 @@ export function renderPlannerTable(container, opts) {
   table.appendChild(tbody);
 
   container.replaceChildren(table);
+
+  // 手機版需求：階段／時間／招式／目標／類型／傷害／結果傷害要凍結在左邊，橫向捲動時保持可見。
+  // 「招式」欄寬度是動態的（依內容撐開），沒辦法用固定 CSS 數字算 left 偏移，
+  // 所以在表格實際畫出來之後，直接量測 header 儲存格的實際寬度來算。
+  applyStickyOffsets(table, fixedCols);
+}
+
+/**
+ * 依序累加固定欄的實際渲染寬度，算出每欄要凍結在左邊多少 px，套用到 header 跟 body 對應的儲存格。
+ * @param {HTMLTableElement} table
+ * @param {[string, number][]} fixedCols [className, 初始建議寬度][]，順序就是欄位由左到右的順序
+ */
+function applyStickyOffsets(table, fixedCols) {
+  const headRow1 = table.querySelector("thead tr:first-child");
+  let left = 0;
+  for (const [cls] of fixedCols) {
+    const th = headRow1.querySelector(`th.${cls}`);
+    const px = `${left}px`;
+    for (const el of table.querySelectorAll(`.${cls}`)) el.style.left = px;
+    left += th ? th.getBoundingClientRect().width : 0;
+  }
 }
