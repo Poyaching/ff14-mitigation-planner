@@ -1,6 +1,7 @@
 // Top Bar（Spec §4）：匯入 CSV / 重設 / 匯出匯入全部場次 / 排軸名稱同步。
 
 import { parseDutyCsv } from "../data/csv.js";
+import { defaultIntervalSeconds } from "../engine/timeline.js";
 
 /**
  * @param {{
@@ -15,6 +16,7 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
   const fileInput = document.getElementById("csv-file-input");
   const resetBtn = document.getElementById("reset-btn");
   const fullTimelineToggle = document.getElementById("full-timeline-toggle");
+  const timelineIntervalInput = document.getElementById("timeline-interval-input");
   const exportBtn = document.getElementById("export-sessions-btn");
   const importSessionsBtn = document.getElementById("import-sessions-btn");
   const importSessionsInput = document.getElementById("import-sessions-file-input");
@@ -47,6 +49,15 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
     onChange();
   });
 
+  // 間距（秒）：留空／輸入無效值就退回自動（依資源節奏算出來的預設值，見 timeline.js）。
+  // 一樣是純畫面顯示用，不存進場次資料。
+  timelineIntervalInput.placeholder = String(defaultIntervalSeconds());
+  timelineIntervalInput.addEventListener("input", () => {
+    const value = Number(timelineIntervalInput.value);
+    state.timelineInterval = timelineIntervalInput.value !== "" && value > 0 ? value : null;
+    onChange();
+  });
+
   // 匯出全部場次（Spec 需求 2）
   exportBtn.addEventListener("click", () => onExportAll());
 
@@ -69,6 +80,11 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
   function refresh() {
     nameInput.value = state.planName;
     fullTimelineToggle.checked = state.showFullTimeline;
+    // 使用者正在打字時不要打斷（例如清空成空字串、正要改成 2 秒的過程），只在跟目前值不同時才同步。
+    const displayValue = state.timelineInterval == null ? "" : String(state.timelineInterval);
+    if (document.activeElement !== timelineIntervalInput && timelineIntervalInput.value !== displayValue) {
+      timelineIntervalInput.value = displayValue;
+    }
   }
 
   return { refresh };

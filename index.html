@@ -15,6 +15,19 @@
         <input type="checkbox" id="full-timeline-toggle" />
         完整時間線
       </label>
+      <label class="topbar-toggle">
+        間距
+        <input
+          id="timeline-interval-input"
+          class="timeline-interval-input"
+          type="number"
+          min="1"
+          step="1"
+          inputmode="numeric"
+          title="完整時間線的參考時間點間隔（秒），留空或輸入無效值會自動用資源節奏算出的預設值"
+        />
+        秒
+      </label>
       <input id="plan-name-input" class="plan-name-input" type="text" placeholder="排軸名稱" />
     </header>
 

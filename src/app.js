@@ -59,6 +59,9 @@ const state = {
   // 完整時間線開關（task.txt 需求 1）：純畫面顯示用，不屬於場次資料，不會存檔／匯出；
   // 預設打勾，不管是新場次還是匯入的場次，畫面一載入就是開啟狀態。
   showFullTimeline: true,
+  // 參考時間點的間距（秒）；null 代表「自動」，交給 buildDisplayEvents 依資源節奏算預設值。
+  // 使用者可以在 Top Bar 自行改成別的秒數（例如 2 秒），一樣是純畫面顯示用、不存檔。
+  timelineInterval: /** @type {number | null} */ (null),
   skillTiers: /** @type {import('./data/skills.js').Skill[]} */ ([]),
   skillUsages: /** @type {{ skillId: string, eventId: string, time: number }[]} */ ([]),
 };
@@ -164,7 +167,9 @@ function render() {
   levelBadge.textContent = `Lv.${state.level}`;
   jobsBadge.textContent = `${state.selectedJobs.size} 個職業`;
 
-  const displayEvents = state.showFullTimeline ? buildDisplayEvents(state.events) : state.events;
+  const displayEvents = state.showFullTimeline
+    ? buildDisplayEvents(state.events, state.timelineInterval ?? undefined)
+    : state.events;
 
   renderPlannerTable(tableContainer, {
     events: displayEvents,

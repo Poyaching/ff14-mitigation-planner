@@ -122,6 +122,16 @@ body {
   color: var(--text);
 }
 
+.timeline-interval-input {
+  width: 48px;
+  padding: 4px 6px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 13px;
+  background: #12151a;
+  color: var(--text);
+}
+
 /* Info bar */
 .infobar {
   display: flex;

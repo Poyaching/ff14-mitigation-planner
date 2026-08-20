@@ -16,8 +16,11 @@ function gcd(a, b) {
 
 const FALLBACK_INTERVAL_SECONDS = 20;
 
-/** 目前設定的所有資源節奏的最大公因數；沒有任何資源設定 regenSeconds 時退回預設值。 */
-function defaultIntervalSeconds() {
+/**
+ * 目前設定的所有資源節奏的最大公因數；沒有任何資源設定 regenSeconds 時退回預設值。
+ * 匯出給 UI 用，讓「間距」輸入框預設顯示這個自動算出來的值，使用者可以再自行改成別的秒數（例如 2 秒）。
+ */
+export function defaultIntervalSeconds() {
   const seconds = RESOURCE_JOBS.map((r) => r.regenSeconds).filter((n) => n > 0);
   if (seconds.length === 0) return FALLBACK_INTERVAL_SECONDS;
   return seconds.reduce(gcd);
@@ -25,12 +28,14 @@ function defaultIntervalSeconds() {
 
 /**
  * @param {import('../data/sample-duty.js').AttackEvent[]} events 依時間排序的原始事件
- * @param {number} [intervalSeconds] 參考時間點的間隔秒數，預設見 defaultIntervalSeconds()
+ * @param {number} [intervalSeconds] 參考時間點的間隔秒數，預設見 defaultIntervalSeconds()；
+ *   小於等於 0（例如使用者把輸入框清空或打了無效值）一樣退回預設值。
  * @returns {(import('../data/sample-duty.js').AttackEvent & { isMarker?: boolean })[]}
  *   依時間排序、原始事件與參考時間點合併後的清單
  */
 export function buildDisplayEvents(events, intervalSeconds = defaultIntervalSeconds()) {
   if (events.length === 0) return [];
+  if (!(intervalSeconds > 0)) intervalSeconds = defaultIntervalSeconds();
 
   const realTimes = new Set(events.map((e) => e.time));
   const lastTime = events[events.length - 1].time;
