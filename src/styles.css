@@ -337,6 +337,32 @@ body {
   line-height: 1.4;
 }
 
+/* 已登入邀請碼時取代輸入框顯示的狀態列（綠燈 + 文字），點一下登出／切換邀請碼。 */
+.collab-account-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  background: #1f2530;
+  color: var(--text);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.collab-account-status:hover {
+  background: #262d3a;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--used-text);
+}
+
 .job-role-heading:first-child {
   margin-top: 0;
 }

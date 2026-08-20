@@ -57,10 +57,19 @@
                 <button id="invite-login-btn" type="button">登入</button>
               </div>
             </div>
-            <div id="collab-room-row" hidden>
-              <input id="room-id-input" type="text" placeholder="房間代碼（隊伍自訂）" />
+            <button
+              id="collab-account-status"
+              class="collab-account-status"
+              type="button"
+              hidden
+              title="點一下登出，可以換一組邀請碼重新登入"
+            >
+              <span class="status-dot"></span> 邀請碼
+            </button>
+            <div id="collab-room-row">
+              <input id="room-id-input" type="text" placeholder="房間代碼（隊伍自訂）" disabled />
               <div class="session-actions">
-                <button id="join-room-btn" type="button">加入</button>
+                <button id="join-room-btn" type="button" disabled>加入</button>
                 <button id="leave-room-btn" type="button" hidden>離開</button>
               </div>
             </div>

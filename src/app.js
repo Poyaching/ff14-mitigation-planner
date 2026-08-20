@@ -11,7 +11,7 @@ import { renderPlannerTable } from "./ui/planner-table.js";
 import { initSettingsDrawer } from "./ui/settings-drawer.js";
 import { initToolbar } from "./ui/toolbar.js";
 import { initCollabPanel } from "./ui/collab-panel.js";
-import { onAuthChange, signInWithInviteCode, joinRoom, leaveRoom, pushRoomState } from "./firebase/collab.js";
+import { onAuthChange, signInWithInviteCode, signOutCollab, joinRoom, leaveRoom, pushRoomState } from "./firebase/collab.js";
 import { nextId, downloadJson } from "./utils.js";
 
 /** @returns {import('./data/storage.js').SessionData} */
@@ -392,6 +392,10 @@ async function main() {
   });
   collabPanel = initCollabPanel({
     onSignIn: (code) => signInWithInviteCode(code),
+    onSignOut: async () => {
+      disconnectRoom(); // 先清掉本機這邊記的連線狀態（collab.roomId 等），signOutCollab() 內部也會 leaveRoom() 一次，重複呼叫沒關係
+      await signOutCollab();
+    },
     onJoin: async (roomId) => {
       const trimmed = roomId.trim();
       setTableMasked(true); // 切場次／連線這段期間先擋住表格，避免點到切換過程中閃過的舊資料
