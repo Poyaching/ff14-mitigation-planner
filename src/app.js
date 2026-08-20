@@ -391,7 +391,16 @@ async function main() {
     onImportSessions: importSessionsFromFile,
   });
   collabPanel = initCollabPanel({
-    onSignIn: (code) => signInWithInviteCode(code),
+    onSignIn: async (code) => {
+      // 跟加入房間一樣，登入這段期間也先擋住表格，操作行為維持一致（不是因為登入會動到表格資料，
+      // 單純是「共編面板正在等網路回應」這件事，畫面上統一都用同一種遮罩表現）。
+      setTableMasked(true);
+      try {
+        await signInWithInviteCode(code);
+      } finally {
+        setTableMasked(false);
+      }
+    },
     onSignOut: async () => {
       disconnectRoom(); // 先清掉本機這邊記的連線狀態（collab.roomId 等），signOutCollab() 內部也會 leaveRoom() 一次，重複呼叫沒關係
       await signOutCollab();

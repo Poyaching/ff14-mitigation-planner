@@ -337,9 +337,11 @@ body {
   line-height: 1.4;
 }
 
-/* 已登入邀請碼時取代輸入框顯示的狀態列（綠燈 + 文字），點一下登出／切換邀請碼。 */
+/* 已登入邀請碼時取代輸入框顯示的狀態列（綠燈 + 文字），點一下登出／切換邀請碼。
+   display 故意不放在基本規則裡、只在 :not([hidden]) 裡設——放在基本規則會贏過瀏覽器
+   內建的 [hidden]{display:none}（同層級比對時 author 樣式一律贏過 UA 樣式，不管 specificity），
+   害 hidden 屬性形同虛設，未登入時這顆狀態列還是會被強制顯示出來。 */
 .collab-account-status {
-  display: flex;
   align-items: center;
   gap: 6px;
   border: 1px solid var(--border);
@@ -349,6 +351,10 @@ body {
   padding: 6px 10px;
   font-size: 13px;
   cursor: pointer;
+}
+
+.collab-account-status:not([hidden]) {
+  display: flex;
 }
 
 .collab-account-status:hover {
