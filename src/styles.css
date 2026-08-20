@@ -416,10 +416,13 @@ body {
   z-index: 15;
   align-items: center;
   justify-content: center;
+  padding: 0 32px;
   background: rgba(255, 255, 255, 0.85);
   color: #14181f; /* 白底改用深色字，不能沿用給深色底設計的 var(--text)（太亮，白底上幾乎看不到） */
   font-size: 14px;
   font-weight: 600;
+  text-align: center;
+  line-height: 1.6;
 }
 
 .table-mask:not([hidden]) {

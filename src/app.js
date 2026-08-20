@@ -175,10 +175,12 @@ const tableContainer = document.getElementById("planner-table-container");
 const levelBadge = document.getElementById("level-badge");
 const jobsBadge = document.getElementById("jobs-badge");
 const tableMask = document.getElementById("table-mask");
+const tableMaskText = document.getElementById("table-mask-text");
 
 /** 連線／切換場次這種有網路等待的期間，先擋住右邊的表格避免誤點，連上後才拿掉。 */
-function setTableMasked(masked) {
+function setTableMasked(masked, text = "連線中…") {
   tableMask.hidden = !masked;
+  if (masked) tableMaskText.textContent = text;
 }
 
 /**
@@ -187,10 +189,16 @@ function setTableMasked(masked) {
  * 編輯出跟房間對不上的內容。純本機場次（state.roomId 是 null）永遠不受影響。
  * 這是「持續性」的判斷，跟 setTableMasked() 那種「連線中…」的暫時性遮罩是同一顆遮罩、
  * 但邏輯上是兩件事：join/signIn 的 finally 都要呼叫這個而不是直接 setTableMasked(false)，
- * 不然「這個場次本來要連但沒連上」的狀態會被誤蓋掉。
+ * 不然「這個場次本來要連但沒連上」的狀態會被誤蓋掉。文字也跟著這裡改，不是固定的「連線中…」，
+ * 不然使用者會誤以為畫面正在連線，其實是靜止的、要自己動手才會有動作。
  */
 function refreshTableMask() {
-  setTableMasked(!!state.roomId && collab.roomId !== state.roomId);
+  const disconnected = !!state.roomId && collab.roomId !== state.roomId;
+  if (disconnected) {
+    setTableMasked(true, `此場次連結房間「${state.roomId}」，尚未連線。請在左側「多人共編」輸入房間代碼並按「加入」。`);
+  } else {
+    setTableMasked(false);
+  }
 }
 
 /**
