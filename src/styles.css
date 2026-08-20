@@ -375,6 +375,24 @@ body {
   pointer-events: auto;
 }
 
+/* 連線共編房間期間擋住表格（task.txt 需求）：z-index 故意介於 drawer-overlay(10) 和
+   settings-drawer(20) 之間，這樣抽屜開著的時候還是蓋在遮罩上面、可以照常操作、看得到連線狀態，
+   只有右邊的表格被擋住不能誤點。 */
+.table-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.table-mask:not([hidden]) {
+  display: flex;
+}
+
 /* Planner Table (Spec §2.1, §7, §19, §20, §21, §22) */
 .planner-table {
   border-collapse: collapse;
