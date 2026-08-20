@@ -368,6 +368,19 @@ async function main() {
     onSignIn: (code) => signInWithInviteCode(code),
     onJoin: async (roomId) => {
       const { existed, initialData } = await joinRoom(roomId, applyRemoteRoomState);
+      // bug 回報：加入一個「已經有資料」的房間，會直接用房間內容覆蓋掉目前場次本來的內容
+      // （例如剛匯入的「測試」場次，一加入既有房間，名稱／排入技能全部被房間資料取代），
+      // 覆蓋前沒有任何提示，使用者會覺得資料「不見了」。改成加入既有房間前先跟使用者確認。
+      if (existed) {
+        const roomName = initialData?.planName || "（未命名）";
+        const proceed = window.confirm(
+          `房間「${roomId}」已經有共編資料了（目前名稱：${roomName}）。\n加入後，「這個場次」本來的內容會被房間內容取代（不影響其他本機場次）。確定要加入嗎？`
+        );
+        if (!proceed) {
+          leaveRoom(); // 取消剛剛 joinRoom() 建立的即時監聽
+          throw new Error("已取消加入");
+        }
+      }
       collab.roomId = roomId;
       // 記錄這個場次連結到哪個房間，離開後也不清掉，讓場次選單可以標示、避免撞名選錯（見 state.roomId 註解）。
       state.roomId = roomId;

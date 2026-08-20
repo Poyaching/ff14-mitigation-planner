@@ -51,7 +51,9 @@ export function initCollabPanel({ onSignIn, onJoin, onLeave }) {
       leaveBtn.hidden = false;
       roomInput.disabled = true;
     } catch (err) {
-      status.textContent = `加入房間失敗（${err.code ?? err.message}）`;
+      // 使用者在「這個房間已有資料，確定要覆蓋本機內容嗎？」的確認框按取消，不算真的失敗，訊息用詞不同。
+      status.textContent =
+        err.message === "已取消加入" ? "已取消加入，本機內容維持不變" : `加入房間失敗（${err.code ?? err.message}）`;
       joinBtn.disabled = false;
     }
   });
