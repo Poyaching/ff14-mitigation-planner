@@ -7,12 +7,11 @@ const STORAGE_KEY = "ff14-mitigation-planner:v1";
  * @typedef {{
  *   id: string,
  *   planName: string,
- *   dutyName: string,
  *   level: number,
  *   selectedJobs: string[],
  *   visibleGroups: string[],
  *   events: import('./sample-duty.js').AttackEvent[],
- *   skillUsages: { skillId: string, eventId: string, time: number }[],
+ *   skillUsages: { skillId: string, eventId: string, time: number, target?: string | null }[],
  *   updatedAt: string,
  * }} SessionData
  *

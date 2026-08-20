@@ -2,14 +2,10 @@
 // 支援多場次，資料存放在 localStorage（Spec 需求 1），並可一次匯出全部場次（Spec 需求 2）。
 
 import { sampleDuty } from "./data/sample-duty.js";
-import {
-  JOBS,
-  GROUPS,
-  ALWAYS_VISIBLE_SKILLS,
-  loadSkillTiers,
-  pickActiveSkills,
-  getResourceColumns,
-} from "./data/skills.js";
+import { JOBS, RESOURCE_JOBS, ALWAYS_VISIBLE_SKILLS, PINNED_SKILLS, CUSTOM_SORT_GROUP } from "./data/jobs.js";
+import { GROUPS, GROUP_SORT_ORDER } from "./data/groups.js";
+import { loadSkillTiers, pickActiveSkills } from "./data/skills.js";
+import { buildDisplayEvents } from "./engine/timeline.js";
 import { loadStore, saveStore } from "./data/storage.js";
 import { renderPlannerTable } from "./ui/planner-table.js";
 import { initSettingsDrawer } from "./ui/settings-drawer.js";
@@ -20,9 +16,8 @@ import { nextId, downloadJson } from "./utils.js";
 function createDefaultSession() {
   return {
     id: nextId("session"),
-    planName: "極月讀 Lv70 學者練習",
-    dutyName: "極月讀（絕）",
-    level: 70,
+    planName: "幻朱雀",
+    level: 100,
     selectedJobs: ["SCH", "SGE"],
     visibleGroups: ["mitigation", "barrier"],
     events: sampleDuty,
@@ -36,7 +31,6 @@ function createBlankSession(templateState, index) {
   return {
     id: nextId("session"),
     planName: `新場次 ${index}`,
-    dutyName: "",
     level: templateState.level,
     selectedJobs: [...templateState.selectedJobs],
     visibleGroups: [...templateState.visibleGroups],
@@ -58,11 +52,12 @@ if (!store || Object.keys(store.sessions).length === 0) {
 const state = {
   sessionId: store.activeId,
   planName: "",
-  dutyName: "",
   level: 70,
   selectedJobs: new Set(),
   visibleGroups: new Set(),
   events: [],
+  // 正確時間線開關（task.txt 需求 1）：純畫面顯示用，不屬於場次資料，不會存檔／匯出。
+  showFullTimeline: false,
   skillTiers: /** @type {import('./data/skills.js').Skill[]} */ ([]),
   skillUsages: /** @type {{ skillId: string, eventId: string, time: number }[]} */ ([]),
 };
@@ -71,7 +66,6 @@ const state = {
 function loadSessionIntoState(session) {
   state.sessionId = session.id;
   state.planName = session.planName;
-  state.dutyName = session.dutyName;
   state.level = session.level;
   state.selectedJobs = new Set(session.selectedJobs);
   state.visibleGroups = new Set(session.visibleGroups);
@@ -86,7 +80,6 @@ function persistCurrentSession() {
   store.sessions[state.sessionId] = {
     id: state.sessionId,
     planName: state.planName,
-    dutyName: state.dutyName,
     level: state.level,
     selectedJobs: [...state.selectedJobs],
     visibleGroups: [...state.visibleGroups],
@@ -126,12 +119,29 @@ function buildJobGroups() {
     if (!skillsByJob.has(s.job)) skillsByJob.set(s.job, []);
     skillsByJob.get(s.job).push(s);
   }
-  for (const list of skillsByJob.values()) list.sort((a, b) => a.level - b.level);
+  // 排序規則（task.txt 需求 4）：PINNED_SKILLS 列出的技能（例如學者以太超流、能量吸收）固定排最前面，
+  // 緊接在資源計量條旁邊；其餘預設依分類「其他 > 護盾 > 減傷 > 治療」排序，同分類內再依等級排序；
+  // 有 CUSTOM_SORT_GROUP 設定的職業則改用該職業自己的分類順序，並把 extraGroup 列出的技能
+  // （例如學者仙女／熾天使系）獨立插在指定順位。
+  for (const [job, list] of skillsByJob) {
+    const pinned = PINNED_SKILLS[job] ?? [];
+    const custom = CUSTOM_SORT_GROUP[job];
+    const rank = (s) => {
+      const idx = pinned.indexOf(s.nameEn);
+      if (idx !== -1) return [0, idx, 0];
+      if (custom?.extraGroup?.nameEn.includes(s.nameEn)) return [1, custom.extraGroup.rank, s.level];
+      const groupOrder = custom?.groupOrder ?? GROUP_SORT_ORDER;
+      return [1, groupOrder[s.group] ?? 99, s.level];
+    };
+    list.sort((a, b) => {
+      const [ra, ga, la] = rank(a);
+      const [rb, gb, lb] = rank(b);
+      return ra - rb || ga - gb || la - lb;
+    });
+  }
 
   const resourceByJob = new Map(
-    getResourceColumns(state.skillTiers)
-      .filter((r) => state.selectedJobs.has(r.job))
-      .map((r) => [r.job, r])
+    RESOURCE_JOBS.filter((r) => state.selectedJobs.has(r.job)).map((r) => [r.job, r])
   );
 
   const jobGroups = [];
@@ -153,11 +163,14 @@ function render() {
   levelBadge.textContent = `Lv.${state.level}`;
   jobsBadge.textContent = `${state.selectedJobs.size} 個職業`;
 
+  const displayEvents = state.showFullTimeline ? buildDisplayEvents(state.events) : state.events;
+
   renderPlannerTable(tableContainer, {
-    events: state.events,
+    events: displayEvents,
     jobGroups: buildJobGroups(),
     skillUsages: state.skillUsages,
     skillTiers: state.skillTiers,
+    partyJobs: JOBS.filter((j) => state.selectedJobs.has(j.id)),
     onToggleUsage: (skillId, ev) => {
       const existingIndex = state.skillUsages.findIndex(
         (u) => u.skillId === skillId && u.eventId === ev.id
@@ -166,9 +179,17 @@ function render() {
         // 已排入 → 點擊取消（Spec §15 取消前面的技能後，後續 Lock 重新計算）
         state.skillUsages.splice(existingIndex, 1);
       } else {
-        state.skillUsages.push({ skillId, eventId: ev.id, time: ev.time });
+        state.skillUsages.push({ skillId, eventId: ev.id, time: ev.time, target: null });
       }
       render();
+    },
+    // 指定隊友（單體技能，例如神祝禱／安慰之心）：只改 target，不影響已排入狀態本身。
+    onSetTarget: (skillId, eventId, target) => {
+      const usage = state.skillUsages.find((u) => u.skillId === skillId && u.eventId === eventId);
+      if (usage) {
+        usage.target = target || null;
+        render();
+      }
     },
   });
 
@@ -234,8 +255,7 @@ async function importSessionsFromFile(file) {
     const id = nextId("session");
     store.sessions[id] = {
       id,
-      planName: session.planName ?? "（匯入的場次）",
-      dutyName: session.dutyName ?? "",
+      planName: session.planName ?? session.dutyName ?? "（匯入的場次）",
       level: typeof session.level === "number" ? session.level : 70,
       selectedJobs: Array.isArray(session.selectedJobs) ? session.selectedJobs : [],
       visibleGroups: Array.isArray(session.visibleGroups) ? session.visibleGroups : ["mitigation", "barrier"],

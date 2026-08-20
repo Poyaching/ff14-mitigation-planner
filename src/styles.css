@@ -99,6 +99,16 @@ body {
   background: #262d3a;
 }
 
+.topbar-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+}
+
 .plan-name-input {
   flex: 1;
   min-width: 160px;
@@ -441,6 +451,23 @@ body {
   background: var(--row-alt);
 }
 
+/* 「正確時間線」補的參考時間點：招式／目標／傷害等欄位是空的，視覺上淡化區分；
+   資源計量條、技能格則跟真實事件一樣可讀、可點擊排入技能（Spec：要能剛好卡整點秒數開資源）。 */
+.event-row.marker-row {
+  background: var(--reserved-bg);
+}
+
+.event-row.marker-row .phase-cell,
+.event-row.marker-row .time-cell,
+.event-row.marker-row .action-cell,
+.event-row.marker-row .target-cell,
+.event-row.marker-row .type-cell,
+.event-row.marker-row .damage-cell,
+.event-row.marker-row .result-cell {
+  color: var(--muted);
+  opacity: 0.65;
+}
+
 .phase-cell {
   text-align: center;
   font-weight: 600;
@@ -527,6 +554,35 @@ body {
   color: var(--locked-active-text);
 }
 
+/* 沒在 CD、但資源（以太超流／百合／蛇膽）用完了，不能點；用跟 CD 鎖不同的顏色區分原因。 */
+.skill-cell.state-locked.resource-out {
+  background: #2b1f14;
+  color: #d8a24a;
+}
+
 .skill-cell.group-mitigation.state-available:hover { background: #1e2c46; }
 .skill-cell.group-barrier.state-available:hover { background: #2a2440; }
+
+/* 單體指定技能已排入時，打勾格換成「指定隊友」下拉選單（Spec：只顯示職業前兩字）。 */
+.target-select {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  text-align-last: center;
+  border: none;
+  cursor: pointer;
+  padding: 0 2px;
+  /* 欄位很窄（44px），原生下拉箭頭會擠壓文字空間，隱藏掉讓「騎士」兩個字完整顯示。 */
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.target-select:focus {
+  outline: 1px solid var(--accent);
+}
 .skill-cell.group-healing.state-available:hover { background: #16351f; }

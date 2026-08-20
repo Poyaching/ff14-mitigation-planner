@@ -14,6 +14,7 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
   const importBtn = document.getElementById("import-csv-btn");
   const fileInput = document.getElementById("csv-file-input");
   const resetBtn = document.getElementById("reset-btn");
+  const fullTimelineToggle = document.getElementById("full-timeline-toggle");
   const exportBtn = document.getElementById("export-sessions-btn");
   const importSessionsBtn = document.getElementById("import-sessions-btn");
   const importSessionsInput = document.getElementById("import-sessions-file-input");
@@ -39,6 +40,13 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
     onChange();
   });
 
+  // 正確時間線（task.txt 需求 1）：開啟後在表格裡補上每 5 秒的參考時間點，
+  // 方便直接讀出資源計量條／技能 CD 在整點秒數的狀態。純顯示用，不會存進場次資料。
+  fullTimelineToggle.addEventListener("change", () => {
+    state.showFullTimeline = fullTimelineToggle.checked;
+    onChange();
+  });
+
   // 匯出全部場次（Spec 需求 2）
   exportBtn.addEventListener("click", () => onExportAll());
 
@@ -60,6 +68,7 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
   /** 場次切換後同步排軸名稱輸入框。 */
   function refresh() {
     nameInput.value = state.planName;
+    fullTimelineToggle.checked = state.showFullTimeline;
   }
 
   return { refresh };

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "skill_4fa7efea62",
+    "roleGroup": "MELEE",
+    "sourceRole": "近接",
+    "name": {
+      "ja": "牽制",
+      "en": "Feint",
+      "de": "Zermürben",
+      "fr": "Restreinte",
+      "ko": "견제",
+      "zhCN": "牽制"
+    },
+    "level": 22,
+    "iconUrl": "https://xivapi.com/i/000000/000828.png",
+    "ability": true,
+    "assign": "SINGLE_ENEMY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0.95,
+        "physical": 0.9,
+        "unique": 1
+      }
+    }
+  },
+  {
+    "id": "skill_a14b168ba4",
+    "roleGroup": "MELEE",
+    "sourceRole": "近接",
+    "name": {
+      "ja": "牽制",
+      "en": "Feint",
+      "de": "Zermürben",
+      "fr": "Restreinte",
+      "ko": "견제",
+      "zhCN": "牽制"
+    },
+    "level": 98,
+    "iconUrl": "https://xivapi.com/i/000000/000828.png",
+    "ability": true,
+    "assign": "SINGLE_ENEMY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.95,
+        "physical": 0.9,
+        "unique": 1
+      }
+    }
+  }
+]

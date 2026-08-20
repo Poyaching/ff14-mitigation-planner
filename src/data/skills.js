@@ -2,6 +2,11 @@
 // 依職業拆分成 skills/skill_<CODE>.json 多個檔案（見 scripts/split-skills.js）。
 // 原始資料是「每個等級節點一筆」（技能會隨等級成長，例如 CD 縮短、附加效果），
 // 因此這裡在載入時先攤平成「(職業, 招式) 家族」，畫面再依目前等級挑出該家族生效中的那一筆。
+//
+// 隊伍職業清單、顯示分類、資源欄位設定等固定選項已抽到 ./jobs.js、./groups.js，
+// 這裡只保留技能資料的讀取／攤平／查詢邏輯。
+
+import { ROLE_JOBS, JOB_NAME } from "./jobs.js";
 
 /**
  * @typedef {{
@@ -29,6 +34,8 @@
  *   duration: number,
  *   effects: SkillEffects,
  *   note?: string,
+ *   sharedCooldownWith: string | null,
+ *   availableAfter: { familyKey: string, duration: number, exclusiveWith: string[], startsOpen: boolean } | null,
  * }} Skill
  */
 
@@ -36,46 +43,6 @@
 // 由 scripts/split-skills.js 從 ff14_mitigation_skills_normalized.json 產生。
 // 若母檔內容有更新，重新執行該腳本即可重新產生所有分檔。
 const SKILLS_DIR = "./skills";
-
-/** 職業角色分類，僅用於設定面板分組顯示與共用技能（roleGroup）展開對象。 */
-const ROLE_JOBS = {
-  TANK: ["PLD", "WAR", "DRK", "GNB"],
-  HEALER: ["WHM", "SCH", "AST", "SGE"],
-  MELEE: ["MNK"],
-  RANGED: ["BRD", "MCH", "DNC"],
-  CASTER: ["RDM", "PCT"],
-};
-
-const ROLE_LABEL = {
-  TANK: "坦克",
-  HEALER: "治療",
-  MELEE: "近戰 DPS",
-  RANGED: "遠程 DPS",
-  CASTER: "法系 DPS",
-};
-
-const JOB_NAME = {
-  PLD: "騎士", WAR: "戰士", DRK: "暗黑騎士", GNB: "絕槍戰士",
-  WHM: "白魔導士", SCH: "學者", AST: "占星術師", SGE: "賢者",
-  MNK: "武僧", BRD: "吟遊詩人", MCH: "機工士", DNC: "舞者",
-  RDM: "赤魔導士", PCT: "繪靈法師",
-};
-
-/** @type {{ id: string, name: string, role: keyof typeof ROLE_JOBS }[]} */
-export const JOBS = Object.entries(ROLE_JOBS).flatMap(([role, ids]) =>
-  ids.map((id) => ({ id, name: JOB_NAME[id], role }))
-);
-
-export const ROLE_ORDER = Object.keys(ROLE_JOBS);
-export { ROLE_LABEL };
-
-export const GROUPS = ["mitigation", "barrier", "healing", "other"];
-export const GROUP_LABEL = {
-  mitigation: "減傷",
-  barrier: "護盾",
-  healing: "治療",
-  other: "其他",
-};
 
 const ASSIGN_LABEL = {
   SELF: "自身",
@@ -87,6 +54,25 @@ const ASSIGN_LABEL = {
 
 function stripVariantSuffix(name) {
   return name.replace(/[\s　]*[（(][^）)]*[）)]\s*$/, "").trim();
+}
+
+/**
+ * 有些技能到了更高等級會整個換一個名字，不是單純變體後綴（例如白魔的「醫濟」Medica II
+ * 升級成「醫養」Medica III、學者的「士氣高揚之策」Succor 升級成「意氣軒昂之策」Concitation），
+ * 自動判斷家族的規則（stripVariantSuffix + slug）沒辦法把它們認成同一招，會被拆成兩個獨立欄位。
+ * 這裡用「新名稱 → 舊名稱」手動列出這種情況，只影響「家族分組」的判斷依據，
+ * 不影響該等級節點實際顯示的技能名稱／圖示／效果（那些照樣用該節點自己的資料）。
+ * 名稱請填技能的英文名稱（Skill.nameEn）。
+ * @type {Record<string, string>}
+ */
+const SKILL_NAME_ALIASES = {
+  "Medica III": "Medica II", // 白魔：醫濟 → 醫養
+  "Concitation": "Succor", // 學者：士氣高揚之策 → 意氣軒昂之策
+};
+
+/** 家族分組用的名稱：套用 SKILL_NAME_ALIASES 後的結果（顯示用的 baseName 不受影響）。 */
+function familyBaseName(baseName) {
+  return SKILL_NAME_ALIASES[baseName] ?? baseName;
 }
 
 function slug(text) {
@@ -126,6 +112,28 @@ function flattenTiers(raw) {
     }
   }
 
+  // 原始資料的 availability.skill／availability.timerShared 是用日文技能名稱互相參照
+  // （例如占星「星極抽卡」→「アストラルドロー」），這裡先建一份 (job, 日文名) → familyKey 的對照表，
+  // 供下面把日文參照解析成本 app 慣用的 familyKey。
+  const jaNameToFamilyKey = new Map();
+  for (const s of expanded) {
+    if (!s.name?.ja) continue;
+    const familyKey = `${s.job}|${slug(familyBaseName(stripVariantSuffix(s.name.en)))}`;
+    jaNameToFamilyKey.set(`${s.job}|${s.name.ja}`, familyKey);
+  }
+  function resolveJaSkillName(job, ja) {
+    return ja ? jaNameToFamilyKey.get(`${job}|${ja}`) ?? null : null;
+  }
+
+  // 有些資源進本就已經持有（例如占星進場預設已經抽好星極的牌），用 initialHeld 標記；
+  // familyKeyInitialHeld 記錄哪些 familyKey 屬於這種「一開始就當作已觸發過」的技能。
+  const familyKeyInitialHeld = new Map();
+  for (const s of expanded) {
+    if (!s.initialHeld) continue;
+    const familyKey = `${s.job}|${slug(familyBaseName(stripVariantSuffix(s.name.en)))}`;
+    familyKeyInitialHeld.set(familyKey, true);
+  }
+
   // 同一 (job, 去除變體後綴的招式名, level) 可能有多筆（例如「延時攝影：堆棧 N」的後續 tick、
   // 「最低限度／最大」的條件效果）。優先保留沒有後綴的那筆；若整組都是變體，就取第一筆代表。
   const tierByKey = new Map();
@@ -142,7 +150,37 @@ function flattenTiers(raw) {
   }
 
   return [...tierByKey.values()].map(({ raw: s, baseName }) => {
-    const familyKey = `${s.job}|${slug(baseName)}`;
+    const familyKey = `${s.job}|${slug(familyBaseName(baseName))}`;
+
+    // 「限時技能」：必須先用過某個前置技能，才會在一段時間內變成可施放（例如占星抽卡後才能出牌、
+    // 學者天使聖像期間才能用的招式）。sharedCooldownWith 則是「跟另一個技能共用同一顆 CD」
+    // （例如占星的星極／靈極抽卡是同一顆 CD，用其中一個另一個也會進 CD）。
+    // 若前置技能本身也有 sharedCooldownWith，代表兩者互斥（用另一顆會讓這個的限時窗口失效），
+    // 一併記錄在 exclusiveWith，供 engine/cooldown.js 判斷「資源互斥」用。
+    const sharedCooldownWith = resolveJaSkillName(s.job, s.availability?.timerShared);
+    let availableAfter = null;
+    const requiredFamilyKey = resolveJaSkillName(s.job, s.availability?.skill);
+    if (requiredFamilyKey && s.availability?.duration) {
+      const requiredJa = expanded.find(
+        (e) => e.job === s.job && jaNameToFamilyKey.get(`${e.job}|${e.name.ja}`) === requiredFamilyKey
+      );
+      const exclusiveWith = resolveJaSkillName(s.job, requiredJa?.availability?.timerShared);
+      // startsOpen 預設是「前置技能本身就是一開始就當作已觸發過」（例如占星預設已持有星極的牌，
+      // 卡片的窗口從時間 0 就算開啟）；但這條推論不適用於互斥的那一對技能本身
+      // （例如靈極抽卡的前置是星極抽卡，星極一開始就算觸發過，並不代表靈極抽卡也要一開始就打開——
+      // 互斥雙方只有其中一邊該在一開始打開），所以也允許資料直接用 availability.startsOpen 明講覆蓋。
+      const startsOpen =
+        s.availability && "startsOpen" in s.availability
+          ? s.availability.startsOpen === true
+          : familyKeyInitialHeld.get(requiredFamilyKey) === true;
+      availableAfter = {
+        familyKey: requiredFamilyKey,
+        duration: s.availability.duration,
+        exclusiveWith: exclusiveWith ? [exclusiveWith] : [],
+        startsOpen,
+      };
+    }
+
     return {
       id: `${familyKey}|${s.level}`,
       familyKey,
@@ -158,66 +196,10 @@ function flattenTiers(raw) {
       duration: effectDuration(s.effects),
       effects: s.effects,
       note: s.note,
+      sharedCooldownWith,
+      availableAfter,
     };
   });
-}
-
-/**
- * 職業的「資源類」欄位設定（Spec 需求 5, 6，計算方式見 engine/resource.js）。
- * `gauge` 對應 engine/resource.js 的 GAUGE_COMPUTERS key；filled/empty 字元用來畫圓點計量條。
- */
-const RESOURCE_JOBS = [
-  {
-    job: "SCH",
-    label: "資源",
-    sublabel: "以太超流",
-    iconFromNameEn: "Aetherflow",
-    gauge: "aetherflow",
-    filledChar: "◆",
-    emptyChar: "◇",
-  },
-  {
-    job: "SGE",
-    label: "蛇膽",
-    sublabel: null,
-    iconFromNameEn: null,
-    gauge: "addersgall",
-    filledChar: "●",
-    emptyChar: "○",
-  },
-];
-
-/**
- * 這些技能是資源管理的核心動作（例如施放後會重置計量條），
- * 即使目前的「顯示分類」沒有勾選對應分類，也一定要顯示，
- * 讓資源欄位跟真正觸發它的技能分開呈現（Spec 需求 3-1, 4-1）。
- * @type {Record<string, string[]>} job → nameEn 清單
- */
-export const ALWAYS_VISIBLE_SKILLS = {
-  SCH: ["Aetherflow"],
-  SGE: ["Rhizomata"],
-};
-
-/**
- * 依職業回傳資源欄位設定（含圖示，若能在技能資料中找到對應招式的話）。
- * @param {Skill[]} tiers loadSkillTiers() 回傳的完整清單
- * @returns {{
- *   job: string, label: string, sublabel: string | null, icon: string | null,
- *   gauge: string, filledChar: string, emptyChar: string,
- * }[]}
- */
-export function getResourceColumns(tiers) {
-  return RESOURCE_JOBS.map((r) => ({
-    job: r.job,
-    label: r.label,
-    sublabel: r.sublabel,
-    icon: r.iconFromNameEn
-      ? tiers.find((s) => s.job === r.job && s.nameEn === r.iconFromNameEn)?.icon ?? null
-      : null,
-    gauge: r.gauge,
-    filledChar: r.filledChar,
-    emptyChar: r.emptyChar,
-  }));
 }
 
 /**

@@ -1,2 +1,20 @@
-1. 學者能量吸收已經更新再 ff14_mitigation_skills_normalized
-2. ff14_mitigation_skills_normalized 檔案幫我依職業拆分，標題 skill_SCH，讀取的時候可以透過迴圈的方式把資料讀進去，避免未來新職業，用可動態讀黨的方法讀取
+1.占星的資源
+
+覺得占星的邏輯應該要講詳細一點
+
+			星极抽卡	太阳神之衡	放浪神之箭	建筑神之塔	王冠之领主	靈級抽卡	战争神之枪	世界树之干	河流神之瓶	王冠之贵妇
+00:00.00	X		O														X			X			X			X							
+00:04.00	X		X			O											X			X			X			X							
+00:07.00	X		X			X			O								X			X			X			X				
+00:18.00	X		X			X			X			O					X			X			X			X			
+00:20.00	X		X			X			X			X			O									
+00:32.00	X		X			X			X			X			X		O							
+00:40.00	X		X			X			X			X			X		X			O									
+00:54.00	X		X			X			X			X			X		X			X			O									
+01:00.00			X			X			X			X			X		X			X			X			O		
+01:10.00			X			X			X			X			X		X			X			X			X		
+01:20.00			X			X			X			X			X		X			X			X			X		
+01:30.00			X			X			X			X			X		X			X			X			X		
+01:40.00			X			X			X			X			X		X			X			X			X		
+01:50.00			X			X			X			X			X		X			X			X			X		
+02:00.00	O														X		X			X			X			X		

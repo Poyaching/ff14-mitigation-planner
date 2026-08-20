@@ -1,12 +1,13 @@
 // 左側設定面板（Spec §4 Hamburger, §5, §6），含場次管理（Spec 需求 1）。
 
-import { ROLE_ORDER, ROLE_LABEL, GROUP_LABEL } from "../data/skills.js";
+import { ROLE_ORDER, ROLE_LABEL } from "../data/jobs.js";
+import { GROUP_LABEL } from "../data/groups.js";
 
 /**
  * @param {{
  *   state: {
  *     sessionId: string, level: number, selectedJobs: Set<string>, visibleGroups: Set<string>,
- *     planName: string, dutyName: string,
+ *     planName: string,
  *   },
  *   jobs: { id: string, name: string, role: string }[],
  *   groups: string[],
@@ -44,18 +45,12 @@ export function initSettingsDrawer({ state, jobs, groups, onChange, onSwitchSess
   newSessionBtn.addEventListener("click", () => onCreateSession());
   deleteSessionBtn.addEventListener("click", () => onDeleteSession());
 
-  // 名稱：設定面板 ↔ Top Bar 同步（Spec §4 排軸名稱）
+  // 名稱：設定面板 ↔ Top Bar 同步（Spec §4 排軸名稱，跟副本名稱共用同一個欄位，不用分開填兩次）
   const nameInput = document.getElementById("settings-name-input");
   const topbarNameInput = document.getElementById("plan-name-input");
   nameInput.addEventListener("input", () => {
     state.planName = nameInput.value;
     topbarNameInput.value = nameInput.value;
-  });
-
-  // 副本名稱
-  const dutyInput = document.getElementById("settings-duty-input");
-  dutyInput.addEventListener("input", () => {
-    state.dutyName = dutyInput.value;
   });
 
   // 等級（Spec §6）
@@ -135,7 +130,6 @@ export function initSettingsDrawer({ state, jobs, groups, onChange, onSwitchSess
     deleteSessionBtn.disabled = sessionCatalog.length <= 1;
 
     nameInput.value = state.planName;
-    dutyInput.value = state.dutyName;
     levelSelect.value = String(state.level);
     for (const [jobId, checkbox] of jobCheckboxes) checkbox.checked = state.selectedJobs.has(jobId);
     for (const [group, checkbox] of groupCheckboxes) checkbox.checked = state.visibleGroups.has(group);

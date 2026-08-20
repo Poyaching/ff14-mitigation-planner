@@ -187,6 +187,33 @@
     }
   },
   {
+    "id": "skill_manual_lord_of_crowns",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "クラウンロード",
+      "en": "Lord of Crowns",
+      "de": "König der Kronen",
+      "fr": "Roi des couronnes",
+      "ko": "왕의 날개",
+      "zhCN": "王冠之領主"
+    },
+    "level": 70,
+    "iconUrl": "https://xivapi.com/i/003000/003147.png",
+    "ability": true,
+    "assign": "RANGE_ENEMY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 0
+    },
+    "note": "對範圍內敵人造成傷害（不影響隊伍減傷計算，故未填 effects 數值）",
+    "availability": {
+      "duration": 1200,
+      "skill": "アストラルドロー"
+    }
+  },
+  {
     "id": "skill_80b0dd5d7f",
     "job": "AST",
     "sourceRole": "占星術師",
@@ -398,8 +425,11 @@
     "effects": {
       "duration": 0
     },
+    "initialHeld": true,
     "availability": {
-      "timerShared": "アンブラルドロー"
+      "timerShared": "アンブラルドロー",
+      "skill": "アンブラルドロー",
+      "duration": 999999
     }
   },
   {
@@ -424,7 +454,9 @@
       "duration": 0
     },
     "availability": {
-      "timerShared": "アストラルドロー"
+      "timerShared": "アストラルドロー",
+      "skill": "アストラルドロー",
+      "duration": 999999
     }
   },
   {
@@ -549,6 +581,60 @@
         "unique": 0.9
       }
     },
+    "availability": {
+      "duration": 1200,
+      "skill": "アンブラルドロー"
+    }
+  },
+  {
+    "id": "skill_manual_the_balance",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "陽の均衡",
+      "en": "The Balance",
+      "de": "Waage",
+      "fr": "La Balance",
+      "ko": "태양신의 저울",
+      "zhCN": "太陽神之衡"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/003000/003110.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 15
+    },
+    "note": "提升目標的暴擊率（進攻向增益，不影響隊伍減傷計算，故未填 effects 數值）",
+    "availability": {
+      "duration": 1200,
+      "skill": "アストラルドロー"
+    }
+  },
+  {
+    "id": "skill_manual_the_spear",
+    "job": "AST",
+    "sourceRole": "占星術師",
+    "name": {
+      "ja": "戦の槍",
+      "en": "The Spear",
+      "de": "Speer",
+      "fr": "La Lance",
+      "ko": "전쟁신의 창",
+      "zhCN": "戰爭神之槍"
+    },
+    "level": 30,
+    "iconUrl": "https://xivapi.com/i/003000/003113.png",
+    "ability": true,
+    "assign": "SINGLE_PARTY",
+    "charges": 1,
+    "cooldown": 1,
+    "effects": {
+      "duration": 15
+    },
+    "note": "提升目標的直擊率（進攻向增益，不影響隊伍減傷計算，故未填 effects 數值）",
     "availability": {
       "duration": 1200,
       "skill": "アンブラルドロー"

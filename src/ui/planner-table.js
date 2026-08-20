@@ -2,21 +2,22 @@
 // 使用真正的 HTML <table>，Phase 用 rowspan，減傷技能表頭用 colspan（Spec §2.1）。
 // 減傷技能底下再依職業分組（colspan），每個職業前面可能有一個資源計量條欄位。
 
-import { computeSkillColumnStates } from "../engine/cooldown.js";
-import { GAUGE_COMPUTERS, formatGauge } from "../engine/resource.js";
+import { computeSkillColumnStates, computeAvailabilityWindow, computeUsedSinceTrigger } from "../engine/cooldown.js";
+import { GAUGE_COMPUTERS, RESOURCE_CONSUMERS, formatGauge } from "../engine/resource.js";
 import { computeResultDamage } from "../engine/damage.js";
 import { formatTime, formatDamage } from "../utils.js";
 import { describeSkill } from "../data/skills.js";
 
 const STATE_LABEL = { available: "", used: "✓", locked: "🔒" };
 const TYPE_LABEL = { physical: "物理", magic: "魔法", true: "真傷" };
+const CANCEL_USAGE_VALUE = "__cancel__"; // 指定隊友選單裡的「取消排入」選項用的特殊值
 
 /**
  * @typedef {{
  *   job: string,
  *   label: string,
  *   resource: {
- *     job: string, label: string, sublabel: string | null, icon: string | null,
+ *     job: string, label: string, sublabel: string | null,
  *     gauge: string, filledChar: string, emptyChar: string,
  *   } | null,
  *   skills: import('../data/skills.js').Skill[],
@@ -28,13 +29,16 @@ const TYPE_LABEL = { physical: "物理", magic: "魔法", true: "真傷" };
  * @param {{
  *   events: import('../data/sample-duty.js').AttackEvent[],
  *   jobGroups: JobColumnGroup[],
- *   skillUsages: { skillId: string, eventId: string, time: number }[],
+ *   skillUsages: { skillId: string, eventId: string, time: number, target?: string | null }[],
  *   skillTiers: import('../data/skills.js').Skill[],
+ *   partyJobs: { id: string, name: string }[],
  *   onToggleUsage: (skillId: string, event: import('../data/sample-duty.js').AttackEvent) => void,
+ *   onSetTarget: (skillId: string, eventId: string, target: string) => void,
  * }} opts
  */
 export function renderPlannerTable(container, opts) {
-  const { events, jobGroups, skillUsages, skillTiers, onToggleUsage } = opts;
+  const { events, jobGroups, skillUsages, skillTiers, partyJobs, onToggleUsage, onSetTarget } = opts;
+  const usageByKey = new Map(skillUsages.map((u) => [`${u.skillId}|${u.eventId}`, u]));
 
   const totalMitigationCols =
     jobGroups.reduce((sum, g) => sum + (g.resource ? 1 : 0) + g.skills.length, 0) || 1;
@@ -116,18 +120,7 @@ export function renderPlannerTable(container, opts) {
         const rth = document.createElement("th");
         rth.className = "skill-header resource-header";
         rth.title = `${g.resource.label}${g.resource.sublabel ? `（${g.resource.sublabel}）` : ""}｜資源計量條（依已排入的技能自動計算）`;
-        if (g.resource.icon) {
-          const icon = document.createElement("img");
-          icon.className = "skill-icon";
-          icon.src = g.resource.icon;
-          icon.alt = g.resource.label;
-          icon.loading = "lazy";
-          rth.appendChild(icon);
-        } else {
-          const placeholder = document.createElement("span");
-          placeholder.className = "resource-placeholder-icon";
-          rth.appendChild(placeholder);
-        }
+        // 資源欄位不需要圖示，只顯示文字標籤即可。
         const label = document.createElement("span");
         label.className = "skill-name";
         label.textContent = g.resource.label;
@@ -172,35 +165,60 @@ export function renderPlannerTable(container, opts) {
   // --- tbody ---
   const tbody = document.createElement("tbody");
 
-  // 每個技能的 CD 狀態表（先算好，逐格查表）
+  // familyKey → 目前顯示中的技能 id，用來解析 skill.sharedCooldownWith／availableAfter 這類跨技能參照
+  // （例如占星星極／靈極抽卡共用 CD、卡片要先抽卡才能出牌）。
+  const skillIdByFamily = new Map();
+  for (const g of jobGroups) {
+    for (const skill of g.skills) skillIdByFamily.set(skill.familyKey, skill.id);
+  }
+
+  // 每個技能的 CD 狀態表（先算好，逐格查表）；同時算出「限時技能」的可施放窗口，
+  // 以及「每次觸發前置技能只能用一次」的已使用狀態（task.txt 占星資源需求：每張卡每次抽卡只能發一次）。
   const stateBySkill = new Map();
+  const availabilityBySkill = new Map();
+  const usedSinceTriggerBySkill = new Map();
   for (const g of jobGroups) {
     for (const skill of g.skills) {
-      stateBySkill.set(
-        skill.id,
-        computeSkillColumnStates(
-          events,
-          skillUsages.filter((u) => u.skillId === skill.id),
-          skill
-        )
-      );
+      const ownUsages = skillUsages.filter((u) => u.skillId === skill.id);
+      let sharedUsages = [];
+      if (skill.sharedCooldownWith) {
+        const siblingId = skillIdByFamily.get(skill.sharedCooldownWith);
+        if (siblingId) sharedUsages = skillUsages.filter((u) => u.skillId === siblingId);
+      }
+      stateBySkill.set(skill.id, computeSkillColumnStates(events, ownUsages, skill, sharedUsages));
+
+      if (skill.availableAfter) {
+        availabilityBySkill.set(skill.id, computeAvailabilityWindow(events, skillUsages, skill.availableAfter));
+        usedSinceTriggerBySkill.set(
+          skill.id,
+          computeUsedSinceTrigger(events, ownUsages, skillUsages, skill.availableAfter)
+        );
+      }
     }
   }
 
   // 每個職業的資源計量條（讀取「全部」SkillUsage，不受目前分類篩選影響 － Spec 需求 3, 4）
   const gaugeByJob = new Map();
+  // 每個職業「會消耗這個資源」的技能家族（familyKey 集合），資源用完時要把對應技能格鎖住，不能誤點。
+  const consumeFamiliesByJob = new Map();
   for (const g of jobGroups) {
     if (!g.resource) continue;
     const computeGauge = GAUGE_COMPUTERS[g.resource.gauge];
     if (computeGauge) gaugeByJob.set(g.job, computeGauge(events, skillUsages));
+    consumeFamiliesByJob.set(g.job, new Set(RESOURCE_CONSUMERS[g.resource.gauge] ?? []));
   }
 
-  // 結果傷害（讀取「全部」SkillUsage，不受目前分類篩選影響 － Spec 需求 5）
-  const resultByEvent = computeResultDamage(events, skillUsages, skillTiers);
+  // 結果傷害（讀取「全部」SkillUsage，不受目前分類篩選影響 － Spec 需求 5）。
+  // 「正確時間線」補的參考時間點（isMarker）沒有真實傷害，不需要計算。
+  const resultByEvent = computeResultDamage(
+    events.filter((ev) => !ev.isMarker),
+    skillUsages,
+    skillTiers
+  );
 
   events.forEach((ev, index) => {
     const tr = document.createElement("tr");
-    tr.className = "event-row";
+    tr.className = ev.isMarker ? "event-row marker-row" : "event-row";
 
     // Phase rowspan：只在該 Phase 第一列輸出 <td>
     const isFirstOfPhase = index === 0 || events[index - 1].phase !== ev.phase;
@@ -219,24 +237,31 @@ export function renderPlannerTable(container, opts) {
     timeTd.className = "time-cell";
     tr.appendChild(timeTd);
 
+    // 「正確時間線」補的參考時間點（isMarker）沒有招式／目標／類型／傷害／結果傷害，欄位留空即可。
     const actionTd = document.createElement("td");
-    actionTd.textContent = ev.action;
+    actionTd.textContent = ev.isMarker ? "" : ev.action;
     actionTd.className = "action-cell";
     tr.appendChild(actionTd);
 
     const targetTd = document.createElement("td");
-    targetTd.textContent = ev.target;
+    targetTd.textContent = ev.isMarker ? "" : ev.target;
     targetTd.className = "target-cell";
     tr.appendChild(targetTd);
 
     const typeTd = document.createElement("td");
-    typeTd.textContent = TYPE_LABEL[ev.type] ?? ev.type;
-    typeTd.className = `type-cell type-${ev.type}`;
+    if (!ev.isMarker) {
+      typeTd.textContent = TYPE_LABEL[ev.type] ?? ev.type;
+      typeTd.className = `type-cell type-${ev.type}`;
+    } else {
+      typeTd.className = "type-cell";
+    }
     tr.appendChild(typeTd);
 
     const damageTd = document.createElement("td");
     damageTd.className = "damage-cell";
-    if (Array.isArray(ev.damage)) {
+    if (ev.isMarker) {
+      // 留空
+    } else if (Array.isArray(ev.damage)) {
       const total = ev.damage.reduce((sum, d) => sum + d.amount, 0);
       damageTd.textContent = `${formatDamage(total)} ×${ev.damage.length}`;
       damageTd.title = ev.damage.map((d) => `${formatTime(d.time)} ${formatDamage(d.amount)}`).join("\n");
@@ -278,11 +303,75 @@ export function renderPlannerTable(container, opts) {
         const cellState = stateBySkill.get(skill.id).get(ev.id);
         const td = document.createElement("td");
         const covered = cellState.state === "locked" && cellState.covered;
-        td.className = `skill-cell group-${skill.group} state-${cellState.state}${covered ? " covered" : ""}`;
-        td.textContent = STATE_LABEL[cellState.state];
+
+        // 這個技能會消耗職業資源（例如以太超流／百合／蛇膽）的話，資源不夠時即使沒在 CD 也不能點
+        // （Spec：沒有資源的技能不能按）。
+        const consumesResource = consumeFamiliesByJob.get(g.job)?.has(skill.familyKey) ?? false;
+        let resourceOut = false;
+        if (consumesResource && cellState.state === "available") {
+          const gauge = gaugeByJob.get(g.job);
+          const current = gauge ? gauge.states.get(ev.id) ?? gauge.max : null;
+          resourceOut = current !== null && current <= 0;
+        }
+
+        // 限時技能（例如占星卡片）：還沒觸發前置技能、或前置技能的窗口已經失效（例如另一極抽卡把它蓋掉了），
+        // 一樣不能點（Spec §data/skills.js availableAfter）。
+        let notYetAvailable = false;
+        let usedThisCycle = false;
+        if (!resourceOut && cellState.state === "available" && skill.availableAfter) {
+          const windowMap = availabilityBySkill.get(skill.id);
+          notYetAvailable = windowMap ? !windowMap.get(ev.id) : false;
+          if (!notYetAvailable) {
+            // 已經在可施放窗口內，但這次持有期間已經發過牌了，要等下一次抽卡才能再發
+            // （task.txt 占星資源需求：每個只能發一次）。
+            const usedMap = usedSinceTriggerBySkill.get(skill.id);
+            usedThisCycle = usedMap ? usedMap.get(ev.id) : false;
+          }
+        }
+
+        const effectiveState = resourceOut || notYetAvailable || usedThisCycle ? "locked" : cellState.state;
+
+        td.className = `skill-cell group-${skill.group} state-${effectiveState}${covered ? " covered" : ""}${resourceOut || notYetAvailable || usedThisCycle ? " resource-out" : ""}`;
         td.dataset.skillId = skill.id;
         td.dataset.eventId = ev.id;
-        if (cellState.state === "locked") {
+
+        // 單體指定技能（Skill.assign === SINGLE_PARTY，例如神祝禱、安慰之心）已排入時，
+        // 把打勾換成「指定隊友」的下拉選單，方便標記這次是發給誰（Spec：為了簡單只顯示職業前兩字）。
+        if (effectiveState === "used" && skill.assign === "SINGLE_PARTY" && partyJobs?.length) {
+          const usage = usageByKey.get(`${skill.id}|${ev.id}`);
+          const select = document.createElement("select");
+          select.className = "target-select";
+          select.dataset.skillId = skill.id;
+          select.dataset.eventId = ev.id;
+          const blankOpt = document.createElement("option");
+          blankOpt.value = "";
+          blankOpt.textContent = "✓";
+          select.appendChild(blankOpt);
+          for (const job of partyJobs) {
+            const opt = document.createElement("option");
+            opt.value = job.id;
+            opt.textContent = job.name.slice(0, 2);
+            select.appendChild(opt);
+          }
+          // 選單會蓋住整個格子，點格子本身沒辦法再取消排入，所以額外提供一個「取消排入」選項。
+          const cancelOpt = document.createElement("option");
+          cancelOpt.value = CANCEL_USAGE_VALUE;
+          cancelOpt.textContent = "✕ 取消排入";
+          select.appendChild(cancelOpt);
+          select.value = usage?.target ?? "";
+          td.appendChild(select);
+        } else {
+          td.textContent = STATE_LABEL[effectiveState];
+        }
+
+        if (resourceOut) {
+          const resourceLabel = g.resource ? `${g.resource.label}${g.resource.sublabel ? `／${g.resource.sublabel}` : ""}` : "資源";
+          td.title = `${skill.name}\n沒有可消耗的${resourceLabel}`;
+        } else if (notYetAvailable) {
+          td.title = `${skill.name}\n目前不在可施放的時間窗口內（需要先用過對應的前置技能）`;
+        } else if (usedThisCycle) {
+          td.title = `${skill.name}\n這次已經發過牌了，要等下一次抽卡才能再發`;
+        } else if (cellState.state === "locked") {
           td.title = covered
             ? `${skill.name} 效果持續中\nCD 中｜下次可用：${formatTime(cellState.nextAvailable)}`
             : `${skill.name} CD 中\n下次可用：${formatTime(cellState.nextAvailable)}`;
@@ -296,14 +385,29 @@ export function renderPlannerTable(container, opts) {
     tbody.appendChild(tr);
   });
 
-  // 事件委派：點擊技能格
+  // 事件委派：點擊技能格。「正確時間線」補的參考時間點跟真實事件一樣可以排入技能
+  // （目的就是要能剛好卡在整點秒數開資源，例如 00:20、01:00）。
   tbody.addEventListener("click", (e) => {
+    if (e.target.closest("select.target-select")) return; // 點的是指定隊友選單，不要連帶取消排入
     const td = e.target.closest("td.skill-cell");
     if (!td || td.classList.contains("state-locked")) return;
     const skillId = td.dataset.skillId;
     const eventId = td.dataset.eventId;
     const ev = events.find((e2) => e2.id === eventId);
     if (ev) onToggleUsage(skillId, ev);
+  });
+
+  // 指定隊友下拉選單變更：一般選項只更新 target；選「取消排入」則整格取消（等同再點一次技能格）。
+  tbody.addEventListener("change", (e) => {
+    const select = e.target.closest("select.target-select");
+    if (!select) return;
+    const { skillId, eventId } = select.dataset;
+    if (select.value === CANCEL_USAGE_VALUE) {
+      const ev = events.find((e2) => e2.id === eventId);
+      if (ev) onToggleUsage(skillId, ev);
+      return;
+    }
+    onSetTarget(skillId, eventId, select.value);
   });
 
   const table = document.createElement("table");

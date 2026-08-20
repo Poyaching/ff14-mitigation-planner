@@ -1,0 +1,58 @@
+[
+  {
+    "id": "skill_560fe63ab0",
+    "roleGroup": "CASTER",
+    "sourceRole": "キャスター",
+    "name": {
+      "ja": "アドル",
+      "en": "Addle",
+      "de": "Stumpfsinn",
+      "fr": "Embrouillement",
+      "ko": "정신 교란",
+      "zhCN": "昏亂"
+    },
+    "level": 8,
+    "iconUrl": "https://xivapi.com/i/000000/000861.png",
+    "ability": true,
+    "assign": "SINGLE_ENEMY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 10,
+      "mitigation": {
+        "duration": 10,
+        "magic": 0.9,
+        "physical": 0.95,
+        "unique": 1
+      }
+    }
+  },
+  {
+    "id": "skill_cc4837a335",
+    "roleGroup": "CASTER",
+    "sourceRole": "キャスター",
+    "name": {
+      "ja": "アドル",
+      "en": "Addle",
+      "de": "Stumpfsinn",
+      "fr": "Embrouillement",
+      "ko": "정신 교란",
+      "zhCN": "昏亂"
+    },
+    "level": 98,
+    "iconUrl": "https://xivapi.com/i/000000/000861.png",
+    "ability": true,
+    "assign": "SINGLE_ENEMY",
+    "charges": 1,
+    "cooldown": 90,
+    "effects": {
+      "duration": 15,
+      "mitigation": {
+        "duration": 15,
+        "magic": 0.9,
+        "physical": 0.95,
+        "unique": 1
+      }
+    }
+  }
+]
