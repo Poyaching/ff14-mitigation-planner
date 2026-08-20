@@ -200,10 +200,18 @@ body {
   transform: translateX(0);
 }
 
+/* 標題固定在設定面板最上面，往下捲動內容（隊伍職業清單很長）時不會被一起捲走。
+   用負 margin 把 sticky 範圍延伸到跟 .settings-drawer 的 padding 一樣寬，再用 padding 補回間距，
+   這樣捲動到的內容才不會從標題左右露出來。 */
 .settings-drawer h2 {
-  margin-top: 0;
+  position: sticky;
+  top: 0;
+  margin: -16px -16px 12px;
+  padding: 16px 16px 8px;
+  background: var(--panel-bg);
   font-size: 16px;
   color: var(--text);
+  z-index: 1;
 }
 
 .settings-drawer label {

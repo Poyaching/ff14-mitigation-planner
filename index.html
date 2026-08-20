@@ -10,6 +10,11 @@
   <div id="app">
     <header class="topbar">
       <button id="hamburger-btn" class="icon-btn" aria-label="開啟設定">☰</button>
+      <button id="reset-btn">重設</button>
+      <label class="topbar-toggle">
+        <input type="checkbox" id="full-timeline-toggle" />
+        正確時間線
+      </label>
       <input id="plan-name-input" class="plan-name-input" type="text" placeholder="排軸名稱" />
     </header>
 
@@ -30,6 +35,17 @@
     <div class="layout">
       <aside id="settings-drawer" class="settings-drawer">
         <h2>設定</h2>
+        <details class="io-section">
+          <summary>資料匯入匯出</summary>
+          <div class="io-section-body">
+            <button id="import-csv-btn">匯入機制軸</button>
+            <input id="csv-file-input" type="file" accept=".csv" hidden />
+            <a id="csv-template-link" class="topbar-link" href="duty-timeline-template.csv" download>機制軸範本</a>
+            <button id="export-sessions-btn">匯出全部場次</button>
+            <button id="import-sessions-btn">匯入單一場次</button>
+            <input id="import-sessions-file-input" type="file" accept=".json" hidden />
+          </div>
+        </details>
         <fieldset>
           <legend>場次</legend>
           <select id="session-select"></select>
@@ -61,22 +77,6 @@
           <legend>隊伍職業</legend>
           <div id="job-checkboxes"></div>
         </fieldset>
-        <details class="io-section">
-          <summary>資料匯入匯出</summary>
-          <div class="io-section-body">
-            <button id="import-csv-btn">匯入 CSV</button>
-            <input id="csv-file-input" type="file" accept=".csv" hidden />
-            <a id="csv-template-link" class="topbar-link" href="duty-timeline-template.csv" download>下載 CSV 範本</a>
-            <button id="reset-btn">重設</button>
-            <label class="topbar-toggle">
-              <input type="checkbox" id="full-timeline-toggle" />
-              正確時間線
-            </label>
-            <button id="export-sessions-btn">匯出全部場次</button>
-            <button id="import-sessions-btn">匯入場次</button>
-            <input id="import-sessions-file-input" type="file" accept=".json" hidden />
-          </div>
-        </details>
         <button id="close-drawer-btn">關閉</button>
       </aside>
       <div id="drawer-overlay" class="drawer-overlay"></div>
