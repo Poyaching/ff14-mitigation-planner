@@ -40,8 +40,8 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
     onChange();
   });
 
-  // 正確時間線（task.txt 需求 1）：開啟後在表格裡補上每 5 秒的參考時間點，
-  // 方便直接讀出資源計量條／技能 CD 在整點秒數的狀態。純顯示用，不會存進場次資料。
+  // 完整時間線（task.txt 需求 1）：開啟後在表格裡補上依資源節奏計算出的參考時間點，
+  // 方便直接讀出資源計量條／技能 CD 在整點秒數的狀態。純顯示用，不會存進場次資料，預設打勾。
   fullTimelineToggle.addEventListener("change", () => {
     state.showFullTimeline = fullTimelineToggle.checked;
     onChange();

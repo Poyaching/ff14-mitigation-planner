@@ -56,8 +56,9 @@ const state = {
   selectedJobs: new Set(),
   visibleGroups: new Set(),
   events: [],
-  // 正確時間線開關（task.txt 需求 1）：純畫面顯示用，不屬於場次資料，不會存檔／匯出。
-  showFullTimeline: false,
+  // 完整時間線開關（task.txt 需求 1）：純畫面顯示用，不屬於場次資料，不會存檔／匯出；
+  // 預設打勾，不管是新場次還是匯入的場次，畫面一載入就是開啟狀態。
+  showFullTimeline: true,
   skillTiers: /** @type {import('./data/skills.js').Skill[]} */ ([]),
   skillUsages: /** @type {{ skillId: string, eventId: string, time: number }[]} */ ([]),
 };

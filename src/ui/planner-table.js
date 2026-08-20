@@ -212,7 +212,7 @@ export function renderPlannerTable(container, opts) {
   }
 
   // 結果傷害（讀取「全部」SkillUsage，不受目前分類篩選影響 － Spec 需求 5）。
-  // 「正確時間線」補的參考時間點（isMarker）沒有真實傷害，不需要計算。
+  // 「完整時間線」補的參考時間點（isMarker）沒有真實傷害，不需要計算。
   const resultByEvent = computeResultDamage(
     events.filter((ev) => !ev.isMarker),
     skillUsages,
@@ -240,7 +240,7 @@ export function renderPlannerTable(container, opts) {
     timeTd.className = "time-cell";
     tr.appendChild(timeTd);
 
-    // 「正確時間線」補的參考時間點（isMarker）沒有招式／目標／類型／傷害／結果傷害，欄位留空即可。
+    // 「完整時間線」補的參考時間點（isMarker）沒有招式／目標／類型／傷害／結果傷害，欄位留空即可。
     const actionTd = document.createElement("td");
     actionTd.textContent = ev.isMarker ? "" : ev.action;
     actionTd.className = "action-cell";
@@ -388,7 +388,7 @@ export function renderPlannerTable(container, opts) {
     tbody.appendChild(tr);
   });
 
-  // 事件委派：點擊技能格。「正確時間線」補的參考時間點跟真實事件一樣可以排入技能
+  // 事件委派：點擊技能格。「完整時間線」補的參考時間點跟真實事件一樣可以排入技能
   // （目的就是要能剛好卡在整點秒數開資源，例如 00:20、01:00）。
   tbody.addEventListener("click", (e) => {
     if (e.target.closest("select.target-select")) return; // 點的是指定隊友選單，不要連帶取消排入

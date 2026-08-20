@@ -37,7 +37,7 @@ export const ROLE_ORDER = Object.keys(ROLE_JOBS);
  * 職業的「資源類」欄位設定（Spec 需求 5, 6，計算方式見 engine/resource.js）。
  * `gauge` 對應 engine/resource.js 的 GAUGE_COMPUTERS key；filled/empty 字元用來畫圓點計量條。
  * 資源欄位不需要圖示，只顯示文字標籤即可。
- * `regenSeconds`：這個資源自己的變化節奏，供「正確時間線」（engine/timeline.js）計算參考時間點的間隔用。
+ * `regenSeconds`：這個資源自己的變化節奏，供「完整時間線」（engine/timeline.js）計算參考時間點的間隔用。
  */
 export const RESOURCE_JOBS = [
   {

@@ -380,7 +380,8 @@ body {
   z-index: 2;
 }
 
-/* 手機版需求：階段／時間／招式／目標／類型／傷害／結果傷害凍結在左邊，橫向捲動技能欄時保持可見。
+/* 手機版需求：階段／時間／招式／目標／類型／傷害／結果傷害顯示優先度較高，要凍結在左邊，
+   橫向捲動技能欄時保持可見；技能欄位的優先度比較低，捲動時該蓋在這幾欄下面。
    left 偏移是 JS（ui/planner-table.js applyStickyOffsets）量測實際欄寬後動態填入的。 */
 .planner-table .phase-cell,
 .planner-table .time-cell,
@@ -391,6 +392,19 @@ body {
 .planner-table .result-cell {
   position: sticky;
   z-index: 1;
+}
+
+/* 表頭裡的這幾欄要蓋在「一般表頭（職業／技能欄）」跟「tbody 的凍結欄」兩者之上，
+   這樣同時上下＋左右捲動時，凍結欄才會一直在最上層，技能欄／技能表頭都在它下面。
+   用 thead th.xxx-cell（比單純 .xxx-cell 更高的選擇器優先度）才能贏過上面那條規則。 */
+.planner-table thead th.phase-cell,
+.planner-table thead th.time-cell,
+.planner-table thead th.action-cell,
+.planner-table thead th.target-cell,
+.planner-table thead th.type-cell,
+.planner-table thead th.damage-cell,
+.planner-table thead th.result-cell {
+  z-index: 3;
 }
 
 .planner-table tbody .phase-cell,
@@ -531,7 +545,7 @@ body {
   background: var(--row-alt);
 }
 
-/* 「正確時間線」補的參考時間點：招式／目標／傷害等欄位是空的，視覺上淡化區分；
+/* 「完整時間線」補的參考時間點：招式／目標／傷害等欄位是空的，視覺上淡化區分；
    資源計量條、技能格則跟真實事件一樣可讀、可點擊排入技能（Spec：要能剛好卡整點秒數開資源）。 */
 .event-row.marker-row {
   background: var(--reserved-bg);
