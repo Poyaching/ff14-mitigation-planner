@@ -595,6 +595,53 @@ body {
   flex: none;
 }
 
+/* 「只顯示使用技能」（task.txt 需求）：職業／技能欄收成一欄，每個事件只列出實際排入的技能圖示。 */
+.used-skills-header {
+  writing-mode: horizontal-tb;
+  color: var(--muted);
+  border-top-color: transparent;
+}
+
+.used-skills-cell {
+  padding: 4px 8px;
+}
+
+.used-skill-icon-wrap {
+  display: inline-flex;
+  cursor: pointer;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.used-skill-icon-wrap .skill-icon,
+.used-skill-icon-wrap .resource-placeholder-icon {
+  width: 26px;
+  height: 26px;
+  margin: 0;
+}
+
+.used-skill-icon-wrap:hover .skill-icon,
+.used-skill-icon-wrap:hover .resource-placeholder-icon {
+  outline: 2px solid var(--accent);
+}
+
+/* covered：不是這次排入的格子，是「效果持續時間還罩著這個事件」（例如異想幻光這類有 duration
+   的技能），純顯示用不能點——跟一般表格 .skill-cell.state-locked.covered 用同一套配色語言。 */
+.used-skill-icon-wrap.covered {
+  cursor: default;
+  opacity: 0.4; /* 跟 .session-actions button:disabled 用同樣的透明度語言，明確表示這格不能點取消 */
+}
+
+.used-skill-icon-wrap.covered .skill-icon,
+.used-skill-icon-wrap.covered .resource-placeholder-icon {
+  outline: 2px dashed var(--locked-active-text);
+}
+
+.used-skill-icon-wrap.covered:hover .skill-icon,
+.used-skill-icon-wrap.covered:hover .resource-placeholder-icon {
+  outline: 2px dashed var(--locked-active-text);
+}
+
 .charge-badge {
   position: absolute;
   top: 4px;

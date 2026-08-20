@@ -34,14 +34,22 @@ const CANCEL_USAGE_VALUE = "__cancel__"; // 指定隊友選單裡的「取消排
  *   partyJobs: { id: string, name: string }[],
  *   onToggleUsage: (skillId: string, event: import('../data/sample-duty.js').AttackEvent) => void,
  *   onSetTarget: (skillId: string, eventId: string, target: string) => void,
+ *   showUsedSkillsOnly?: boolean,
  * }} opts
  */
 export function renderPlannerTable(container, opts) {
-  const { events, jobGroups, skillUsages, skillTiers, partyJobs, onToggleUsage, onSetTarget } = opts;
+  const { events, jobGroups, skillUsages, skillTiers, partyJobs, onToggleUsage, onSetTarget, showUsedSkillsOnly } = opts;
   const usageByKey = new Map(skillUsages.map((u) => [`${u.skillId}|${u.eventId}`, u]));
 
-  const totalMitigationCols =
-    jobGroups.reduce((sum, g) => sum + (g.resource ? 1 : 0) + g.skills.length, 0) || 1;
+  // 「只顯示使用技能」（task.txt 需求）：把整排職業／技能欄收成一欄，每個事件顯示這次真的
+  // 排入的技能圖示；有 duration 的技能（例如異想幻光這類有持續時間的護盾／減傷）如果效果還沒
+  // 結束，涵蓋到的後續事件也一併顯示同一個圖示（用跟一般表格同一套 stateBySkill／covered 判斷，
+  // 見下方），代表「這個機制當下有被這個效果罩住」，不是漏排。covered 的圖示是唯讀的，
+  // 只有真正排入的那一格可以點擊取消（不然點了不知道要取消哪一次施放）。
+
+  const totalMitigationCols = showUsedSkillsOnly
+    ? 1
+    : jobGroups.reduce((sum, g) => sum + (g.resource ? 1 : 0) + g.skills.length, 0) || 1;
 
   // --- colgroup ---
   // 手機版需求：這幾欄要凍結在左邊（見下方 applyStickyOffsets），「招式」不用強制留大格，
@@ -61,16 +69,22 @@ export function renderPlannerTable(container, opts) {
     col.style.width = `${width}px`;
     colgroup.appendChild(col);
   }
-  for (const g of jobGroups) {
-    if (g.resource) {
-      const col = document.createElement("col");
-      col.style.width = "48px";
-      colgroup.appendChild(col);
-    }
-    for (const _ of g.skills) {
-      const col = document.createElement("col");
-      col.style.width = "44px";
-      colgroup.appendChild(col);
+  if (showUsedSkillsOnly) {
+    const col = document.createElement("col");
+    col.style.width = "220px";
+    colgroup.appendChild(col);
+  } else {
+    for (const g of jobGroups) {
+      if (g.resource) {
+        const col = document.createElement("col");
+        col.style.width = "48px";
+        colgroup.appendChild(col);
+      }
+      for (const _ of g.skills) {
+        const col = document.createElement("col");
+        col.style.width = "44px";
+        colgroup.appendChild(col);
+      }
     }
   }
 
@@ -105,7 +119,13 @@ export function renderPlannerTable(container, opts) {
   mitigationTh.className = "mitigation-header";
   headRow1.appendChild(mitigationTh);
 
-  if (jobGroups.length === 0) {
+  if (showUsedSkillsOnly) {
+    const th = document.createElement("th");
+    th.textContent = "使用技能";
+    th.className = "skill-header empty used-skills-header";
+    th.rowSpan = 2;
+    headRow2.appendChild(th);
+  } else if (jobGroups.length === 0) {
     const th = document.createElement("th");
     th.textContent = "（沒有符合目前職業／分類的技能）";
     th.className = "skill-header empty";
@@ -287,6 +307,48 @@ export function renderPlannerTable(container, opts) {
     }
     tr.appendChild(resultTd);
 
+    if (showUsedSkillsOnly) {
+      const usedTd = document.createElement("td");
+      usedTd.className = "used-skills-cell";
+      for (const g of jobGroups) {
+        for (const skill of g.skills) {
+          const cellState = stateBySkill.get(skill.id)?.get(ev.id);
+          if (!cellState) continue;
+          const usedHere = cellState.state === "used";
+          const coveredHere = cellState.state === "locked" && cellState.covered;
+          if (!usedHere && !coveredHere) continue;
+
+          const wrap = document.createElement("span");
+          wrap.className = `used-skill-icon-wrap${coveredHere ? " covered" : ""}`;
+          if (usedHere) {
+            // 只有真的排入的那一格能點擊取消，效果持續涵蓋的格子純顯示用（不知道要取消哪一次施放）。
+            wrap.dataset.skillId = skill.id;
+            wrap.dataset.eventId = ev.id;
+            const usage = usageByKey.get(`${skill.id}|${ev.id}`);
+            wrap.title = usage?.target ? `${skill.name}（指定：${usage.target}）\n點一下取消排入` : `${skill.name}\n點一下取消排入`;
+          } else {
+            wrap.title = `${skill.name}\n效果持續時間涵蓋這個事件`;
+          }
+          if (skill.icon) {
+            const icon = document.createElement("img");
+            icon.className = "skill-icon";
+            icon.src = skill.icon;
+            icon.alt = skill.name;
+            icon.loading = "lazy";
+            wrap.appendChild(icon);
+          } else {
+            const placeholder = document.createElement("span");
+            placeholder.className = "resource-placeholder-icon";
+            wrap.appendChild(placeholder);
+          }
+          usedTd.appendChild(wrap);
+        }
+      }
+      tr.appendChild(usedTd);
+      tbody.appendChild(tr);
+      return;
+    }
+
     for (const g of jobGroups) {
       if (g.resource) {
         const rTd = document.createElement("td");
@@ -392,6 +454,17 @@ export function renderPlannerTable(container, opts) {
   // （目的就是要能剛好卡在整點秒數開資源，例如 00:20、01:00）。
   tbody.addEventListener("click", (e) => {
     if (e.target.closest("select.target-select")) return; // 點的是指定隊友選單，不要連帶取消排入
+
+    // 「只顯示使用技能」模式下，點技能圖示＝取消排入（這個精簡欄位沒有空格可以點來「新增」排入，
+    // 只能取消已經排入的；要新增請關掉這個模式，回到完整的職業／技能欄位表格）。
+    const usedIconWrap = e.target.closest(".used-skill-icon-wrap");
+    if (usedIconWrap) {
+      const { skillId, eventId } = usedIconWrap.dataset;
+      const ev = events.find((e2) => e2.id === eventId);
+      if (ev) onToggleUsage(skillId, ev);
+      return;
+    }
+
     const td = e.target.closest("td.skill-cell");
     if (!td || td.classList.contains("state-locked")) return;
     const skillId = td.dataset.skillId;

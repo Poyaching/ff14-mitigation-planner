@@ -16,6 +16,7 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
   const fileInput = document.getElementById("csv-file-input");
   const resetBtn = document.getElementById("reset-btn");
   const fullTimelineToggle = document.getElementById("full-timeline-toggle");
+  const usedSkillsOnlyToggle = document.getElementById("used-skills-only-toggle");
   const timelineIntervalInput = document.getElementById("timeline-interval-input");
   const exportBtn = document.getElementById("export-sessions-btn");
   const importSessionsBtn = document.getElementById("import-sessions-btn");
@@ -45,6 +46,13 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
   // 方便直接讀出資源計量條／技能 CD 在整點秒數的狀態。純顯示用，不會存進場次資料，預設打勾。
   fullTimelineToggle.addEventListener("change", () => {
     state.showFullTimeline = fullTimelineToggle.checked;
+    onChange();
+  });
+
+  // 只顯示使用技能（task.txt 需求）：把整排職業／技能欄收成一欄，只顯示每個事件實際排入的
+  // 技能圖示，方便快速看完整份排軸的結果，不用逐欄找打勾。純畫面顯示用，不存進場次資料。
+  usedSkillsOnlyToggle.addEventListener("change", () => {
+    state.showUsedSkillsOnly = usedSkillsOnlyToggle.checked;
     onChange();
   });
 
@@ -82,6 +90,7 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
     // 使用者正在打字時不要打斷，只在跟目前值不同時才同步（避免游標跳到最後面）。
     if (document.activeElement !== nameInput) nameInput.value = state.planName;
     fullTimelineToggle.checked = state.showFullTimeline;
+    usedSkillsOnlyToggle.checked = state.showUsedSkillsOnly;
     // 使用者正在打字時不要打斷（例如清空成空字串、正要改成 2 秒的過程），只在跟目前值不同時才同步。
     const displayValue = state.timelineInterval == null ? "" : String(state.timelineInterval);
     if (document.activeElement !== timelineIntervalInput && timelineIntervalInput.value !== displayValue) {

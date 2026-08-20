@@ -63,6 +63,9 @@ const state = {
   // 完整時間線開關（task.txt 需求 1）：純畫面顯示用，不屬於場次資料，不會存檔／匯出；
   // 預設打勾，不管是新場次還是匯入的場次，畫面一載入就是開啟狀態。
   showFullTimeline: true,
+  // 只顯示使用技能開關（task.txt 需求）：開啟後表格的職業／技能欄收成一欄，只顯示每個事件
+  // 實際排入的技能圖示。純畫面顯示用，不屬於場次資料，不會存檔／匯出，預設不勾。
+  showUsedSkillsOnly: false,
   // 參考時間點的間距（秒）；null 代表「自動」，交給 buildDisplayEvents 依資源節奏算預設值。
   // 使用者可以在 Top Bar 自行改成別的秒數（例如 2 秒），一樣是純畫面顯示用、不存檔。
   timelineInterval: /** @type {number | null} */ (null),
@@ -283,6 +286,7 @@ function render() {
     skillUsages: state.skillUsages,
     skillTiers: state.skillTiers,
     partyJobs: JOBS.filter((j) => state.selectedJobs.has(j.id)),
+    showUsedSkillsOnly: state.showUsedSkillsOnly,
     onToggleUsage: (skillId, ev) => {
       const existingIndex = state.skillUsages.findIndex(
         (u) => u.skillId === skillId && u.eventId === ev.id
