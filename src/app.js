@@ -182,6 +182,18 @@ function setTableMasked(masked) {
 }
 
 /**
+ * 遮罩規則（bug 回報）：這個場次本來連過某個房間（state.roomId 有值），但現在沒有真的連上
+ * （collab.roomId 對不起來，例如切場次切過來、或按過離開之後）就要遮罩，避免在離線狀態下
+ * 編輯出跟房間對不上的內容。純本機場次（state.roomId 是 null）永遠不受影響。
+ * 這是「持續性」的判斷，跟 setTableMasked() 那種「連線中…」的暫時性遮罩是同一顆遮罩、
+ * 但邏輯上是兩件事：join/signIn 的 finally 都要呼叫這個而不是直接 setTableMasked(false)，
+ * 不然「這個場次本來要連但沒連上」的狀態會被誤蓋掉。
+ */
+function refreshTableMask() {
+  setTableMasked(!!state.roomId && collab.roomId !== state.roomId);
+}
+
+/**
  * 依「職業」把可見技能分組（Spec 需求：Mitigation 底下多一層職業分類，方便尋找），
  * 每組前面視情況插入該職業的資源計量條欄位（例如學者的以太超流、賢者的蛇膽）。
  * 職業順序沿用設定面板的角色分組順序（坦克／治療／近戰／遠程／法系）。
@@ -239,6 +251,7 @@ let toolbar;
 
 function render() {
   persistCurrentSession();
+  refreshTableMask();
 
   // 有連線共編房間時，只要跟上次同步過的內容不一樣就寫回房間（debounce 見 pushRoomState）。
   if (collab.roomId) {
@@ -398,12 +411,15 @@ async function main() {
       try {
         await signInWithInviteCode(code);
       } finally {
-        setTableMasked(false);
+        // 不能直接 setTableMasked(false)：如果目前這個場次本來就連過房間、只是還沒重新連上，
+        // 登入完不代表已經連上房間，遮罩要不要拿掉得看 state.roomId／collab.roomId 是否吻合。
+        refreshTableMask();
       }
     },
     onSignOut: async () => {
       disconnectRoom(); // 先清掉本機這邊記的連線狀態（collab.roomId 等），signOutCollab() 內部也會 leaveRoom() 一次，重複呼叫沒關係
       await signOutCollab();
+      refreshTableMask();
     },
     onJoin: async (roomId) => {
       const trimmed = roomId.trim();
@@ -422,10 +438,13 @@ async function main() {
         }
         await establishRoomConnection(trimmed);
       } finally {
-        setTableMasked(false);
+        refreshTableMask(); // 連線成功才會拿掉遮罩；失敗的話 state.roomId／collab.roomId 對不上，繼續遮罩
       }
     },
-    onLeave: () => disconnectRoom(),
+    onLeave: () => {
+      disconnectRoom();
+      refreshTableMask(); // 離開後這個場次還是「連過房間」的狀態，只是沒連上了，要重新遮罩
+    },
   });
   onAuthChange((signedIn) => collabPanel.setSignedIn(signedIn));
 
