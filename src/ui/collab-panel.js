@@ -19,6 +19,7 @@ export function initCollabPanel({ onSignIn, onJoin, onLeave }) {
 
   function resetRoomUi() {
     joinBtn.hidden = false;
+    joinBtn.disabled = false; // 加入成功後 disabled 會停在 true（成功分支沒有重置），害後面重新顯示的按鈕點了沒反應
     leaveBtn.hidden = true;
     roomInput.disabled = false;
   }
