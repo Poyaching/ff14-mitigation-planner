@@ -10,6 +10,8 @@ import { loadStore, saveStore } from "./data/storage.js";
 import { renderPlannerTable } from "./ui/planner-table.js";
 import { initSettingsDrawer } from "./ui/settings-drawer.js";
 import { initToolbar } from "./ui/toolbar.js";
+import { initCollabPanel } from "./ui/collab-panel.js";
+import { onAuthChange, signInWithInviteCode, joinRoom, leaveRoom, pushRoomState } from "./firebase/collab.js";
 import { nextId, downloadJson } from "./utils.js";
 
 /** @returns {import('./data/storage.js').SessionData} */
@@ -78,6 +80,46 @@ function loadSessionIntoState(session) {
 }
 
 loadSessionIntoState(store.sessions[store.activeId] ?? Object.values(store.sessions)[0]);
+
+// --- 多人共編（task.txt 需求）：加入房間後，職業／等級／顯示分類／副本事件／已排入技能
+// 全部即時同步給房間內所有人，見 firebase/collab.js。 ---
+const collab = { roomId: /** @type {string | null} */ (null) };
+let lastPushedJson = /** @type {string | null} */ (null);
+let collabPanel;
+
+/** 目前場次裡「會同步給房間」的欄位（不含畫面顯示用的完整時間線開關等純本機設定）。 */
+function syncableSnapshot() {
+  return {
+    planName: state.planName,
+    level: state.level,
+    selectedJobs: [...state.selectedJobs],
+    visibleGroups: [...state.visibleGroups],
+    events: state.events,
+    skillUsages: state.skillUsages,
+  };
+}
+
+/** 收到房間資料（加入時的初始值、或之後其他人改動）時套進本機 state 並重繪。 */
+function applyRemoteRoomState(data) {
+  if (!data) return;
+  state.planName = data.planName ?? state.planName;
+  state.level = typeof data.level === "number" ? data.level : state.level;
+  state.selectedJobs = new Set(data.selectedJobs ?? []);
+  state.visibleGroups = new Set(data.visibleGroups ?? []);
+  state.events = Array.isArray(data.events) ? data.events : state.events;
+  state.skillUsages = Array.isArray(data.skillUsages) ? data.skillUsages : state.skillUsages;
+  // 先把「已同步過」的基準線設成剛套用的內容，render() 裡才不會把剛收到的資料當成本機改動又寫回去。
+  lastPushedJson = JSON.stringify(syncableSnapshot());
+  render();
+}
+
+/** 離開房間（不管是使用者按離開、還是切換/新增/刪除場次導致連線不再有意義）。 */
+function disconnectRoom() {
+  if (!collab.roomId) return;
+  leaveRoom();
+  collab.roomId = null;
+  lastPushedJson = null;
+}
 
 /** 把目前 state 寫回 store 裡對應的場次，並存進 localStorage。 */
 function persistCurrentSession() {
@@ -164,6 +206,15 @@ let toolbar;
 function render() {
   persistCurrentSession();
 
+  // 有連線共編房間時，只要跟上次同步過的內容不一樣就寫回房間（debounce 見 pushRoomState）。
+  if (collab.roomId) {
+    const json = JSON.stringify(syncableSnapshot());
+    if (json !== lastPushedJson) {
+      lastPushedJson = json;
+      pushRoomState(syncableSnapshot());
+    }
+  }
+
   levelBadge.textContent = `Lv.${state.level}`;
   jobsBadge.textContent = `${state.selectedJobs.size} 個職業`;
 
@@ -206,6 +257,11 @@ function render() {
 function switchSession(id) {
   const session = store.sessions[id];
   if (!session) return;
+  // 房間是綁在單一場次的資料上，切換場次後原本的連線就沒意義了，要求使用者切回來後重新加入。
+  if (collab.roomId) {
+    disconnectRoom();
+    collabPanel?.forceDisconnectUi();
+  }
   loadSessionIntoState(session);
   render();
 }
@@ -299,6 +355,22 @@ async function main() {
     onExportAll: exportAllSessions,
     onImportSessions: importSessionsFromFile,
   });
+  collabPanel = initCollabPanel({
+    onSignIn: (code) => signInWithInviteCode(code),
+    onJoin: async (roomId) => {
+      const { existed, initialData } = await joinRoom(roomId, applyRemoteRoomState);
+      collab.roomId = roomId;
+      if (existed) {
+        applyRemoteRoomState(initialData);
+      } else {
+        // 新房間：把本機目前資料當作初始值寫上去（強制清掉基準線，讓 render() 一定會 push）。
+        lastPushedJson = null;
+        render();
+      }
+    },
+    onLeave: () => disconnectRoom(),
+  });
+  onAuthChange((signedIn) => collabPanel.setSignedIn(signedIn));
 
   tableContainer.replaceChildren();
   tableContainer.textContent = "技能資料載入中…";

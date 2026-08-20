@@ -21,7 +21,6 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
   const importSessionsBtn = document.getElementById("import-sessions-btn");
   const importSessionsInput = document.getElementById("import-sessions-file-input");
   const nameInput = document.getElementById("plan-name-input");
-  const settingsNameInput = document.getElementById("settings-name-input");
 
   importBtn.addEventListener("click", () => fileInput.click());
 
@@ -70,15 +69,18 @@ export function initToolbar({ state, onChange, onExportAll, onImportSessions }) 
     await onImportSessions(file);
   });
 
-  // 排軸名稱：Top Bar ↔ 設定面板同步（Spec §4）
+  // 排軸名稱（Spec §4，跟副本名稱共用同一個欄位，全站只有這一個輸入框）。
+  // 要呼叫 onChange() 才會實際存進 store／讓漢堡選單裡的場次選項文字跟著更新（bug：先前沒呼叫，
+  // 改名字後場次選單顯示的還是舊名字，重新整理甚至會遺失剛改的名字）。
   nameInput.addEventListener("input", () => {
     state.planName = nameInput.value;
-    settingsNameInput.value = nameInput.value;
+    onChange();
   });
 
   /** 場次切換後同步排軸名稱輸入框。 */
   function refresh() {
-    nameInput.value = state.planName;
+    // 使用者正在打字時不要打斷，只在跟目前值不同時才同步（避免游標跳到最後面）。
+    if (document.activeElement !== nameInput) nameInput.value = state.planName;
     fullTimelineToggle.checked = state.showFullTimeline;
     // 使用者正在打字時不要打斷（例如清空成空字串、正要改成 2 秒的過程），只在跟目前值不同時才同步。
     const displayValue = state.timelineInterval == null ? "" : String(state.timelineInterval);

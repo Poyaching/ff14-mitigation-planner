@@ -49,6 +49,25 @@
       <aside id="settings-drawer" class="settings-drawer">
         <h2>設定</h2>
         <details class="io-section">
+          <summary>多人共編</summary>
+          <div class="io-section-body collab-body">
+            <div id="collab-login-row">
+              <input id="invite-code-input" type="password" placeholder="邀請碼" autocomplete="off" />
+              <div class="session-actions">
+                <button id="invite-login-btn" type="button">登入</button>
+              </div>
+            </div>
+            <div id="collab-room-row" hidden>
+              <input id="room-id-input" type="text" placeholder="房間代碼（隊伍自訂）" />
+              <div class="session-actions">
+                <button id="join-room-btn" type="button">加入</button>
+                <button id="leave-room-btn" type="button" hidden>離開</button>
+              </div>
+            </div>
+            <p id="collab-status" class="collab-status"></p>
+          </div>
+        </details>
+        <details class="io-section">
           <summary>資料匯入匯出</summary>
           <div class="io-section-body">
             <button id="import-csv-btn">匯入機制軸</button>
@@ -67,10 +86,6 @@
             <button id="delete-session-btn" type="button">刪除此場次</button>
           </div>
         </fieldset>
-        <label>
-          名稱
-          <input id="settings-name-input" type="text" />
-        </label>
         <label>
           等級
           <select id="settings-level-select">

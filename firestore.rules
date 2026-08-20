@@ -1,0 +1,19 @@
+// Firestore Security Rules — 多人共編（task.txt 需求）。
+//
+// 這個 App 是純前端靜態網站，沒有後端，所以「有沒有登入」是唯一的存取控制關卡。
+// 全部使用者共用同一組 Firebase Auth 帳號（邀請碼＝這組帳號的密碼），
+// 所以這裡不需要另外比對 uid／allowlist，只要確認 request.auth 存在即可。
+//
+// 部署方式（擇一）：
+// 1. Firebase Console → 你的專案 → Firestore Database → Rules 分頁，把下面內容整份貼上、發布。
+// 2. 有裝 Firebase CLI 的話：firebase deploy --only firestore:rules
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 一個房間 = 一份文件，裡面放這個「場次」的全部可共編欄位（見 src/firebase/collab.js）。
+    match /rooms/{roomId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

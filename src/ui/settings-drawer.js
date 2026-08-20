@@ -45,13 +45,8 @@ export function initSettingsDrawer({ state, jobs, groups, onChange, onSwitchSess
   newSessionBtn.addEventListener("click", () => onCreateSession());
   deleteSessionBtn.addEventListener("click", () => onDeleteSession());
 
-  // 名稱：設定面板 ↔ Top Bar 同步（Spec §4 排軸名稱，跟副本名稱共用同一個欄位，不用分開填兩次）
-  const nameInput = document.getElementById("settings-name-input");
-  const topbarNameInput = document.getElementById("plan-name-input");
-  nameInput.addEventListener("input", () => {
-    state.planName = nameInput.value;
-    topbarNameInput.value = nameInput.value;
-  });
+  // 名稱：只在 Top Bar 有一個輸入框（Spec §4 排軸名稱，跟副本名稱共用同一個欄位，
+  // 設定面板不需要再重複一個，改名後場次選單的選項文字會在 refresh() 裡跟著更新）。
 
   // 等級（Spec §6）
   const levelSelect = document.getElementById("settings-level-select");
@@ -129,7 +124,6 @@ export function initSettingsDrawer({ state, jobs, groups, onChange, onSwitchSess
     sessionSelect.value = state.sessionId;
     deleteSessionBtn.disabled = sessionCatalog.length <= 1;
 
-    nameInput.value = state.planName;
     levelSelect.value = String(state.level);
     for (const [jobId, checkbox] of jobCheckboxes) checkbox.checked = state.selectedJobs.has(jobId);
     for (const [group, checkbox] of groupCheckboxes) checkbox.checked = state.visibleGroups.has(group);
