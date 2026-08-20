@@ -232,6 +232,7 @@ body {
 }
 
 .settings-drawer input[type="text"],
+.settings-drawer input[type="password"],
 .settings-drawer select {
   display: block;
   width: 100%;
@@ -321,6 +322,13 @@ body {
   font-weight: 600;
   color: var(--muted);
   margin-top: 8px;
+}
+
+.collab-status {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 6px 0 0;
+  line-height: 1.4;
 }
 
 .job-role-heading:first-child {
