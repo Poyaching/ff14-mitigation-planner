@@ -128,6 +128,37 @@ function disconnectRoom() {
   lastPushedJson = null;
 }
 
+/**
+ * 實際連線到房間（訂閱 Firestore、套用資料）。呼叫端要先確保「目前作用中的場次」就是
+ * 使用者想連結的那個場次（見 onJoin：如果本機已經有場次連過這個房間，會先切過去再呼叫這裡）。
+ * @param {string} roomId
+ * @param {{ skipConfirm?: boolean }} [opts] skipConfirm：這是「自己的房間」（本機本來就連過），
+ *   房間資料本來就等於這個場次自己推上去的內容，不用再跳確認覆蓋。
+ */
+async function establishRoomConnection(roomId, { skipConfirm = false } = {}) {
+  const { existed, initialData } = await joinRoom(roomId, applyRemoteRoomState);
+  if (existed && !skipConfirm) {
+    const roomName = initialData?.planName || "（未命名）";
+    const proceed = window.confirm(
+      `房間「${roomId}」已經有共編資料了（目前名稱：${roomName}）。\n加入後，「這個場次」本來的內容會被房間內容取代（不影響其他本機場次）。確定要加入嗎？`
+    );
+    if (!proceed) {
+      leaveRoom(); // 取消剛剛 joinRoom() 建立的即時監聽
+      throw new Error("已取消加入");
+    }
+  }
+  collab.roomId = roomId;
+  // 記錄這個場次連結到哪個房間，離開後也不清掉，讓場次選單可以標示、避免撞名選錯（見 state.roomId 註解）。
+  state.roomId = roomId;
+  if (existed) {
+    applyRemoteRoomState(initialData);
+  } else {
+    // 新房間：把本機目前資料當作初始值寫上去（強制清掉基準線，讓 render() 一定會 push）。
+    lastPushedJson = null;
+    render();
+  }
+}
+
 /** 把目前 state 寫回 store 裡對應的場次，並存進 localStorage。 */
 function persistCurrentSession() {
   store.sessions[state.sessionId] = {
@@ -367,30 +398,17 @@ async function main() {
   collabPanel = initCollabPanel({
     onSignIn: (code) => signInWithInviteCode(code),
     onJoin: async (roomId) => {
-      const { existed, initialData } = await joinRoom(roomId, applyRemoteRoomState);
-      // bug 回報：加入一個「已經有資料」的房間，會直接用房間內容覆蓋掉目前場次本來的內容
-      // （例如剛匯入的「測試」場次，一加入既有房間，名稱／排入技能全部被房間資料取代），
-      // 覆蓋前沒有任何提示，使用者會覺得資料「不見了」。改成加入既有房間前先跟使用者確認。
-      if (existed) {
-        const roomName = initialData?.planName || "（未命名）";
-        const proceed = window.confirm(
-          `房間「${roomId}」已經有共編資料了（目前名稱：${roomName}）。\n加入後，「這個場次」本來的內容會被房間內容取代（不影響其他本機場次）。確定要加入嗎？`
-        );
-        if (!proceed) {
-          leaveRoom(); // 取消剛剛 joinRoom() 建立的即時監聽
-          throw new Error("已取消加入");
-        }
+      const trimmed = roomId.trim();
+      // bug 回報：如果這台裝置上已經有場次連過這個房間了（不管是不是目前作用中的場次），
+      // 應該直接切過去繼續用那個場次，而不是拿房間資料覆蓋「目前正在看的」這個場次、
+      // 生出兩個內容一樣、都掛同一個房間標籤的場次。
+      const localMatchId = Object.keys(store.sessions).find((id) => store.sessions[id].roomId === trimmed);
+      if (localMatchId && localMatchId !== state.sessionId) {
+        switchSession(localMatchId);
       }
-      collab.roomId = roomId;
-      // 記錄這個場次連結到哪個房間，離開後也不清掉，讓場次選單可以標示、避免撞名選錯（見 state.roomId 註解）。
-      state.roomId = roomId;
-      if (existed) {
-        applyRemoteRoomState(initialData);
-      } else {
-        // 新房間：把本機目前資料當作初始值寫上去（強制清掉基準線，讓 render() 一定會 push）。
-        lastPushedJson = null;
-        render();
-      }
+      // 不管是本來就在這個場次上、還是剛切過去，只要是本機已經連過的房間就是「自己的」，
+      // 資料本來就是這個場次自己推上去的，不用再跳確認覆蓋的視窗。
+      await establishRoomConnection(trimmed, { skipConfirm: localMatchId != null });
     },
     onLeave: () => disconnectRoom(),
   });
