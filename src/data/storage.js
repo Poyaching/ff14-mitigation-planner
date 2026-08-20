@@ -13,6 +13,7 @@ const STORAGE_KEY = "ff14-mitigation-planner:v1";
  *   events: import('./sample-duty.js').AttackEvent[],
  *   skillUsages: { skillId: string, eventId: string, time: number, target?: string | null }[],
  *   updatedAt: string,
+ *   roomId?: string | null,
  * }} SessionData
  *
  * @typedef {{ sessions: Record<string, SessionData>, activeId: string }} Store

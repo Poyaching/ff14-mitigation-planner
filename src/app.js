@@ -25,6 +25,7 @@ function createDefaultSession() {
     events: sampleDuty,
     skillUsages: [],
     updatedAt: new Date().toISOString(),
+    roomId: null,
   };
 }
 
@@ -39,6 +40,7 @@ function createBlankSession(templateState, index) {
     events: [],
     skillUsages: [],
     updatedAt: new Date().toISOString(),
+    roomId: null,
   };
 }
 
@@ -66,6 +68,10 @@ const state = {
   timelineInterval: /** @type {number | null} */ (null),
   skillTiers: /** @type {import('./data/skills.js').Skill[]} */ ([]),
   skillUsages: /** @type {{ skillId: string, eventId: string, time: number }[]} */ ([]),
+  // 這個場次曾經加入過的多人共編房間代碼（純本機標記，不會同步給房間內其他人）。
+  // 只用來在漢堡的場次選單裡標示「這是共編場次」，跟撞名的個人場次區分開，離開房間也不會清掉，
+  // 方便之後想重新加入同一個房間時知道要打什麼代碼。
+  roomId: /** @type {string | null} */ (null),
 };
 
 /** 把一個 SessionData 套進目前的 state（Set 需要另外轉換）。 */
@@ -77,6 +83,7 @@ function loadSessionIntoState(session) {
   state.visibleGroups = new Set(session.visibleGroups);
   state.events = session.events;
   state.skillUsages = session.skillUsages;
+  state.roomId = session.roomId ?? null;
 }
 
 loadSessionIntoState(store.sessions[store.activeId] ?? Object.values(store.sessions)[0]);
@@ -132,6 +139,7 @@ function persistCurrentSession() {
     events: state.events,
     skillUsages: state.skillUsages,
     updatedAt: new Date().toISOString(),
+    roomId: state.roomId,
   };
   store.activeId = state.sessionId;
   saveStore(store);
@@ -140,7 +148,7 @@ function persistCurrentSession() {
 function sessionCatalog() {
   return Object.values(store.sessions)
     .sort((a, b) => a.updatedAt.localeCompare(b.updatedAt))
-    .map((s) => ({ id: s.id, name: s.planName }));
+    .map((s) => ({ id: s.id, name: s.planName, roomId: s.roomId ?? null }));
 }
 
 const tableContainer = document.getElementById("planner-table-container");
@@ -324,6 +332,7 @@ async function importSessionsFromFile(file) {
       events: Array.isArray(session.events) ? session.events : [],
       skillUsages: Array.isArray(session.skillUsages) ? session.skillUsages : [],
       updatedAt: new Date().toISOString(),
+      roomId: typeof session.roomId === "string" ? session.roomId : null,
     };
     firstNewId ??= id;
     importedCount += 1;
@@ -360,6 +369,8 @@ async function main() {
     onJoin: async (roomId) => {
       const { existed, initialData } = await joinRoom(roomId, applyRemoteRoomState);
       collab.roomId = roomId;
+      // 記錄這個場次連結到哪個房間，離開後也不清掉，讓場次選單可以標示、避免撞名選錯（見 state.roomId 註解）。
+      state.roomId = roomId;
       if (existed) {
         applyRemoteRoomState(initialData);
       } else {

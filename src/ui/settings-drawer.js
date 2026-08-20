@@ -110,14 +110,16 @@ export function initSettingsDrawer({ state, jobs, groups, onChange, onSwitchSess
 
   /**
    * 依目前 state／場次清單重新同步畫面上的欄位（場次切換後、或任何 state 變動後呼叫）。
-   * @param {{ id: string, name: string }[]} sessionCatalog
+   * @param {{ id: string, name: string, roomId: string | null }[]} sessionCatalog
    */
   function refresh(sessionCatalog) {
     sessionSelect.replaceChildren(
       ...sessionCatalog.map((s) => {
         const opt = document.createElement("option");
         opt.value = s.id;
-        opt.textContent = s.name || "（未命名場次）";
+        // 曾經加入過共編房間的場次，名稱後面自動帶上房間代碼，避免跟撞名的個人場次選錯。
+        const roomSuffix = s.roomId ? `（${s.roomId} 房間）` : "";
+        opt.textContent = (s.name || "（未命名場次）") + roomSuffix;
         return opt;
       })
     );
